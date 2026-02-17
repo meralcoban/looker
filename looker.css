@@ -1,26 +1,22 @@
-/* Tabloyu esnek bir kutu (flexbox) haline getirir */
-.reportTable tbody {
-  display: flex !important;
-  flex-wrap: wrap !important; /* Kartlar sığmazsa alt satıra geçer */
-  gap: 15px !important; /* Kartlar arası boşluk */
-  padding: 10px !important;
+/* Satırları birbirinden tamamen koparır */
+.reportTable {
+  border-spacing: 0 15px !important; 
+  border-collapse: separate !important;
 }
 
-.reportTable tr {
-  display: flex !important;
-}
-
-/* Her bir satırı kare bir karta dönüştürür */
 .rowCell {
-  width: 120px !important; /* Genişlik ve yükseklik eşitlenirse kare olur */
-  height: 120px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  background: #ffffff !important;
-  border-radius: 15px !important; /* Yuvarlak köşeler */
-  box-shadow: 0 8px 16px rgba(0,0,0,0.08) !important;
-  border: 1px solid #e2e8f0 !important;
-  text-align: center !important;
+  background: white !important;
+  padding: 20px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
+  border: none !important;
+  /* Sol tarafa durum rengi için kalın bir şerit ekler */
+  border-left: 8px solid #3b82f6 !important; 
+}
+
+/* Üzerine gelince kartın büyümesi efekti */
+.reportTable tr:hover .rowCell {
+  transform: scale(1.02);
+  transition: all 0.2s ease;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
 }
