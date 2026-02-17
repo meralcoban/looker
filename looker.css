@@ -35,7 +35,7 @@
 
 
 .reportTable tr:hover td.rowCell {
-  background-color: #ef4444 !important; 
+  background-color: #C9301C !important; 
   transform: scale(1.02);
   transition: all 0.2s ease;
 }
