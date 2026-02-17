@@ -11,7 +11,7 @@
 /* 2. Kart (Hücre) - Burayı en spesifik hale getirdik */
 .reportTable tr td.rowCell {
   background-color: #B22222 !important; /* Koyu/Canlı Kırmızı */
-  background: #dc2626 !important;
+  background: #b22222 !important;
   color: #ffffff !important; /* Yazılar beyaz */
   padding: 20px !important;
   border-radius: 12px !important;
