@@ -1,22 +1,61 @@
-/* Satırları birbirinden tamamen koparır */
+/* 1. Tabloyu Esnek Bir Kutuya Dönüştür */
 .reportTable {
-  border-spacing: 0 15px !important; 
-  border-collapse: separate !important;
-}
-
-.rowCell {
-  background: white !important;
-  padding: 20px !important;
-  border-radius: 12px !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
   border: none !important;
-  /* Sol tarafa durum rengi için kalın bir şerit ekler */
-  border-left: 8px solid #3b82f6 !important; 
+  background-color: transparent !important;
+  display: block !important; /* Tablo yapısını kırar */
 }
 
-/* Üzerine gelince kartın büyümesi efekti */
-.reportTable tr:hover .rowCell {
-  transform: scale(1.02);
-  transition: all 0.2s ease;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+.reportTable tbody {
+  display: flex !important;
+  flex-wrap: wrap !important; /* Sığmayan kartları alt satıra atar */
+  gap: 20px !important;      /* Kartlar arası boşluk */
+  padding: 10px !important;
+  justify-content: center !important;
+}
+
+/* 2. Her Satırı Bir Kart (Dikdörtgen/Kare) Yap */
+.reportTable tr {
+  display: flex !important;
+  flex-direction: column !important; /* Hücreleri alt alta dizer */
+  width: 180px !important;           /* Kart Genişliği */
+  min-height: 140px !important;      /* Kart Yüksekliği */
+  background: #ffffff !important;
+  border-radius: 16px !important;    /* Yumuşak köşeler */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid #f1f5f9 !important;
+  padding: 15px !important;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* 3. Kartın İçindeki Hücreler (Port İsmi ve Değer) */
+.rowCell {
+  display: block !important;
+  border: none !important;
+  padding: 8px 0 !important;
+  text-align: center !important;
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+/* İlk hücreyi (Port İsmi) başlık gibi yap */
+.rowCell:first-child {
+  font-weight: bold !important;
+  color: #1e293b !important;
+  font-size: 16px !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+  margin-bottom: 10px;
+}
+
+/* 4. Durum Renklerini Karta Yansıt (Sol Şerit) */
+/* Looker'dan gelen renk kuralına göre kartın soluna renk ekler */
+.rowCell[style*="background-color"] {
+  border-radius: 8px !important;
+  color: white !important;
+  margin-top: auto; /* Değeri kartın en altına iter */
+}
+
+/* 5. Hover Efekti */
+.reportTable tr:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1) !important;
 }
