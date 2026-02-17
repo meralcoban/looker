@@ -1,80 +1,35 @@
-/* 1. Genel Tablo Yapısı */
+/* 1. Satırları birbirinden ayırıp "Kart" haline getirme */
 .reportTable {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif !important;
-  color: #334155 !important;
-  border-collapse: separate !important;
-  border-spacing: 0 4px !important; /* Satırları birbirinden ayırarak kart görünümü verir */
-  table-layout: fixed;
-}
-
-/* 2. Başlıklar (Header) - İstediğin Açık Mavi Gradyan */
-th.headerCell, 
-.headerCell.dimension, 
-.headerCell.pivot, 
-.headerCell.measure, 
-.headerCell.calculation {
-  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%) !important; /* Açık Mavi Gradyan */
-  color: white !important;
-  padding: 12px 8px !important;
+  border-spacing: 0 12px !important; /* Kartlar arası dikey boşluk */
+  background-color: transparent !important;
   border: none !important;
-  font-weight: 600 !important;
-  text-transform: uppercase;
-  font-size: 11px;
-  letter-spacing: 0.5px;
 }
 
-/* İlk ve son başlık hücresinin köşelerini yuvarlatır */
-th.headerCell:first-child { border-radius: 8px 0 0 8px !important; }
-th.headerCell:last-child { border-radius: 0 8px 8px 0 !important; }
-
-/* 3. Veri Hücreleri (Row Cells) */
 .rowCell {
-  vertical-align: middle !important;
-  padding: 10px 8px !important;
-  background-color: #ffffff !important;
-  border-top: 1px solid #e2e8f0 !important;
-  border-bottom: 1px solid #e2e8f0 !important;
-  border-left: none !important;
-  border-right: none !important;
-  font-size: 13px;
-}
-
-/* Satırın başı ve sonu için oval geçiş */
-.rowCell:first-child { 
-  border-left: 1px solid #e2e8f0 !important; 
-  border-radius: 8px 0 0 8px !important; 
-}
-.rowCell:last-child { 
-  border-right: 1px solid #e2e8f0 !important; 
-  border-radius: 0 8px 8px 0 !important; 
-}
-
-/* 4. Hover Efekti */
-.reportTable tr:hover .rowCell {
-  background-color: #f1f5f9 !important; /* Üzerine gelince çok hafif grileşir */
-}
-
-/* 5. Sayısal Değerler ve Pill (Hap) Görünümü */
-/* Looker'da renklendirdiğin (Sarı/Yeşil) alanları daha oval yapar */
-.rowCell div, .rowCell span {
-  border-radius: 12px !important;
-  padding: 2px 10px !important;
-  font-weight: bold;
-}
-
-/* 6. Tooltip Özelleştirme */
-#tooltip {
-  background-color: #1e293b !important;
-  color: white !important;
-  border-radius: 6px !important;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2) !important;
-  padding: 8px !important;
+  background: #ffffff !important;
   border: none !important;
+  border-radius: 12px !important; /* Kart köşelerini yuvarla */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05) !important; /* Hafif gölge */
+  padding: 15px 20px !important;
+  font-size: 14px !important;
+  color: #334155 !important;
 }
 
-/* 7. Toplam (Total) Satırı */
-.total {
-  border-top: 2px solid #3b82f6 !important;
-  background-color: #f8fafc !important;
-  font-weight: bold !important;
+/* 2. Değerleri (Health: %X) şık birer rozet yapma */
+/* Bu kısım metin içinde "%" işaretini arar ve o hücreyi özelleştirir */
+.rowCell:contains("%") {
+  font-weight: 700 !important;
+}
+
+/* 3. 5 Segmentli Renk Vurgusu (Arka Plan Yerine Kenar Çizgisi) */
+/* Kartın soluna renkli bir şerit ekleyerek durumu belli ederiz */
+/* Not: Bu renkler Looker'daki "Formatting" kurallarınla uyumlu çalışır */
+.rowCell[style*="background-color: rgb(255, 0, 0)"] { /* %0-20 Kırmızı */
+  border-left: 6px solid #ef4444 !important;
+  background-color: #fef2f2 !important;
+}
+
+.rowCell[style*="background-color: rgb(255, 255, 0)"] { /* %80-100 Sarı (Senin istediğin durum) */
+  border-left: 6px solid #eab308 !important;
+  background-color: #fefce8 !important;
 }
