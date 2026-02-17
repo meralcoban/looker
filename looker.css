@@ -10,7 +10,7 @@
 
 /* 2. Kart (Hücre) - Burayı en spesifik hale getirdik */
 .reportTable tr td.rowCell {
-  background-color: #dc2626 !important; /* Koyu/Canlı Kırmızı */
+  background-color: #B22222 !important; /* Koyu/Canlı Kırmızı */
   background: #dc2626 !important;
   color: #ffffff !important; /* Yazılar beyaz */
   padding: 20px !important;
