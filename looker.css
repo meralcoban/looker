@@ -1,43 +1,64 @@
-/* Satırları birbirinden tamamen koparır */
-
+/* 1. Tabloyu ve Gövdeyi Esnek Yap */
 .reportTable {
-
-  border-spacing: 0 15px !important; 
-
-  border-collapse: separate !important;
-
-}
-
-
-
-.rowCell {
-
-  background: white !important;
-
-  padding: 20px !important;
-
-  border-radius: 12px !important;
-
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
-
+  display: block !important;
+  background: transparent !important;
   border: none !important;
-
-  /* Sol tarafa durum rengi için kalın bir şerit ekler */
-
-  border-left: 8px solid #B22222 !important; 
-
 }
 
+.reportTable tbody {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 25px !important;
+  padding: 30px !important;
+}
 
+/* 2. Kart (Satır) - Tam Kare Tasarımı */
+.reportTable tr {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 220px !important;  /* Genişliği sabitledik */
+  height: 220px !important; /* Yüksekliği sabitledik */
+  background: #ffffff !important;
+  border-radius: 24px !important;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1) !important;
+  padding: 20px !important;
+  justify-content: center !important; /* Dikey orta */
+  align-items: center !important;    /* Yatay orta */
+  position: relative !important;
+  border: 1px solid #e2e8f0 !important;
+}
 
-/* Üzerine gelince kartın büyümesi efekti */
+/* 3. Hücrelerdeki Metni Zorla Göster */
+.rowCell {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  color: #1e293b !important; /* KOYU LACİVERT - Mutlaka görünür */
+  text-align: center !important;
+  background: transparent !important;
+  border: none !important;
+  font-family: 'Segoe UI', Roboto, sans-serif !important;
+  overflow: visible !important;
+}
 
-.reportTable tr:hover .rowCell {
+/* Port İsmi (Üstte, Büyük) */
+.rowCell:first-child {
+  font-weight: 800 !important;
+  font-size: 20px !important;
+  color: #3b82f6 !important; /* Mavi renk */
+  margin-bottom: 12px !important;
+}
 
-  transform: scale(1.02);
+/* Health Değeri (Ortada, En Büyük) */
+.rowCell:nth-child(2) {
+  font-size: 32px !important;
+  font-weight: 900 !important;
+  color: #1e293b !important;
+}
 
-  transition: all 0.2s ease;
-
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
-
+/* 4. "..." Şeklindeki Gereksiz Başlıkları Gizle */
+.headerCell {
+  display: none !important;
 }
