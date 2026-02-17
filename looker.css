@@ -1,22 +1,40 @@
-/* Satırları birbirinden tamamen koparır */
-.reportTable {
-  border-spacing: 0 15px !important; 
+/* 1. Tablo genelinde beyazlığı temizleyelim */
+.reportTable, 
+.reportTable tbody, 
+.reportTable tr {
+  background-color: transparent !important;
+  background: transparent !important;
   border-collapse: separate !important;
+  border-spacing: 0 15px !important;
 }
 
-.rowCell {
-  background: white !important;
+/* 2. Kart (Hücre) - Burayı en spesifik hale getirdik */
+.reportTable tr td.rowCell {
+  background-color: #dc2626 !important; /* Koyu/Canlı Kırmızı */
+  background: #dc2626 !important;
+  color: #ffffff !important; /* Yazılar beyaz */
   padding: 20px !important;
   border-radius: 12px !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
   border: none !important;
-  /* Sol tarafa durum rengi için kalın bir şerit ekler */
-  border-left: 8px solid #b22222 !important; 
+  
+  /* Sol taraftaki çıkıntı - Açık Kırmızı */
+  border-left: 10px solid #fca5a5 !important; 
+  
+  display: table-cell !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
-/* Üzerine gelince kartın büyümesi efekti */
-.reportTable tr:hover .rowCell {
+/* 3. Metinlerin kırmızı üstünde kaybolmaması için */
+.rowCell, .rowCell a, .rowCell span, .rowCell div {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+/* 4. Üzerine gelince efekt */
+.reportTable tr:hover td.rowCell {
+  background-color: #ef4444 !important; /* Biraz daha açık kırmızı */
   transform: scale(1.02);
   transition: all 0.2s ease;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
 }
