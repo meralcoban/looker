@@ -1,0 +1,76 @@
+/* 1. Genel Tablo Yapısı - Modern ve Gölgeli */
+.reportTable {
+  font-family: 'Inter', 'Roboto', Arial, sans-serif !important;
+  font-size: 13px !important;
+  border: none !important;
+  border-collapse: separate !important;
+  border-spacing: 0 6px !important; /* Satırlar arası hafif boşluk bırakır */
+  background-color: transparent !important;
+  width: 100% !important;
+}
+
+/* 2. Başlık Alanı - Senin istediğin o açık mavi gradyan */
+.reportTable th {
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%) !important;
+  color: #ffffff !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  font-weight: 700 !important;
+  padding: 12px 15px !important;
+  border: none !important;
+  border-radius: 6px !important; /* Başlık köşelerini yuvarlar */
+  text-align: center !important;
+}
+
+/* 3. Veri Hücreleri - Temiz ve Okunaklı */
+.reportTable td {
+  background-color: #ffffff !important;
+  color: #1e293b !important;
+  padding: 10px 15px !important;
+  border-top: 1px solid #f1f5f9 !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+  border-left: none !important;
+  border-right: none !important;
+  transition: all 0.2s ease;
+}
+
+/* Satırın ilk hücresinin sol köşesini yuvarlar */
+.reportTable td:first-child {
+  border-left: 1px solid #f1f5f9 !important;
+  border-top-left-radius: 8px !important;
+  border-bottom-left-radius: 8px !important;
+}
+
+/* Satırın son hücresinin sağ köşesini yuvarlar */
+.reportTable td:last-child {
+  border-right: 1px solid #f1f5f9 !important;
+  border-top-right-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+}
+
+/* 4. Hover Efekti - Satırın üzerine gelince parlaması */
+.reportTable tr:hover td {
+  background-color: #f8fafc !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 5. Koşullu Renklendirme Kutuları (Pill/Rozet Tasarımı) */
+/* Eğer Looker'dan gelen background-color varsa onları oval yapar */
+.reportTable td div, 
+.reportTable td span {
+  border-radius: 20px !important; /* Tam oval yapar */
+  padding: 4px 12px !important;
+  font-weight: 600 !important;
+  display: inline-block;
+}
+
+/* 6. Tooltip Özelleştirme - Daha modern bir kutu */
+#tooltip {
+  background-color: #1e293b !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 10px !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3) !important;
+  border: none !important;
+}
