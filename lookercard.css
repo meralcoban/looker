@@ -19,7 +19,7 @@
 .reportTable tr.headerRow {
   display: flex !important;
   flex-direction: column !important;
-  width: 200px !important;  
+  width: 205px !important;  
   height: 160px !important; 
   background-color: #B22222 !important; 
   background: #B22222 !important;
