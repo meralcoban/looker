@@ -11,6 +11,7 @@
   flex-wrap: wrap !important;
   gap: 25px !important;
   padding: 30px !important;
+  justify-content: center !important;
 }
 
 
