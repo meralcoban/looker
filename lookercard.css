@@ -3,6 +3,7 @@
   display: block !important;
   background: transparent !important;
   border: none !important;
+  overflow: visible !important;
 }
 
 .reportTable tbody {
@@ -12,12 +13,14 @@
   padding: 30px !important;
 }
 
-.reportTable tr {
+
+.reportTable tr, 
+.reportTable tr:first-child, 
+.reportTable tr.headerRow {
   display: flex !important;
   flex-direction: column !important;
   width: 220px !important;  
   height: 220px !important; 
-  /* Arka plan koyu kırmızı */
   background-color: #B22222 !important; 
   background: #B22222 !important;
   border-radius: 24px !important;
@@ -26,53 +29,51 @@
   justify-content: center !important; 
   align-items: center !important;    
   position: relative !important;
-  border: none !important;
-  
-  border-left: 10px solid #781E12 !important; 
+  margin-bottom: 0 !important;
+  border-left: 10px solid #fca5a5 !important; 
+  overflow: visible !important;
+  visibility: visible !important;
 }
 
-.rowCell {
+
+.rowCell, .headerCell, .indexCell {
   display: block !important;
   width: 100% !important;
-  height: auto !important;
   opacity: 1 !important;
   visibility: visible !important;
-
   color: #ffffff !important; 
   text-align: center !important;
   background: transparent !important;
   border: none !important;
   font-family: 'Segoe UI', Roboto, sans-serif !important;
-  overflow: visible !important;
+  font-size: 18px !important; 
+  z-index: 5 !important;
 }
 
-.rowCell:first-child {
+
+.rowCell:first-child, .headerCell:first-child {
   font-weight: 800 !important;
-  font-size: 20px !important; /* Buradaki büyüklüğü artık hissedeceksin */
-  color: #ffffff !important;
+  font-size: 20px !important;
   margin-bottom: 12px !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
   padding-bottom: 8px !important;
 }
 
-.rowCell:nth-child(2) {
-  font-size: 32px !important; /* Değerleri çok daha büyük yaptık */
+
+.rowCell:nth-child(2), .headerCell:nth-child(2) {
+  font-size: 32px !important; 
   font-weight: 900 !important;
-  color: #ffffff !important;
 }
 
-.rowCell a, .rowCell span, .rowCell div {
-  color: #ffffff !important;
-  font-size: inherit !important;
-  text-decoration: none !important;
-}
 
 .reportTable tr:hover {
   transform: translateY(-8px) scale(1.02);
-  background-color: #d42a2a !important; /* Üzerine gelince biraz daha açılır */
+  background-color: #d42a2a !important;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.headerCell {
+
+.reportTable thead {
   display: none !important;
 }
