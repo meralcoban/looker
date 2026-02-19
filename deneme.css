@@ -1,61 +1,54 @@
-/* 1. Üstteki Boşluğu ve Başlıkları Tamamen Sil */
-.reportTable thead, .reportTable tr.headerRow, .viz-title {
-  display: none !important;
-}
-
-/* 2. Kartları Ortala */
-.reportTable tbody {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 15px !important;
-  justify-content: center !important;
-  padding: 20px !important;
-}
-
-/* 3. Kart Tasarımı (Zarif 105x40 Boyutu) */
+/* Genel tablo yapısını bozmamak için */
 .reportTable tr {
   display: flex !important;
   flex-direction: column !important;
-  width: 105px !important;  
-  height: 40px !important; 
-  background-color: #f1f5f9 !important; /* Varsayılan Gri */
-  border-radius: 12px !important;
-  padding: 5px !important;
-  justify-content: center !important; 
-  align-items: center !important;
-  border-left: 6px solid #cbd5e1 !important;
-}
-
-/* 4. Font Ayarı: 10px ve Normal Ağırlık */
-.reportTable td.rowCell {
-  /* !important buradaki 12px inline style'ı ezer */
-  font-size: 10px !important; 
-  font-weight: 400 !important; 
-  color: #1e293b !important;
-  text-align: center !important;
+  width: 120px !important;  
+  height: 80px !important; 
+  background-color: transparent !important; /* Arka planı şeffaf yaptık ki alttaki div görünsün */
   border: none !important;
+  padding: 0 !important; /* Paylaşılan div'in tam sığması için */
+  justify-content: center !important;
+  align-items: center !important;
 }
 
-/* 5. RENK TETİKLEYİCİLERİ (Class Yakalama) */
-
-/* DEĞER 0 (KIRMIZI) */
-.reportTable tr:has(.s_0) { 
-  background-color: #B22222 !important; 
-  border-left-color: #781E12 !important; 
+/* Senin oluşturduğun HTML Box yapısı */
+.health-box {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 12px !important;
+  color: #ffffff !important;
+  font-family: 'Segoe UI', sans-serif !important;
+  font-size: 12px !important;
+  text-align: center !important;
+  padding: 10px !important;
+  box-sizing: border-box !important;
 }
-.reportTable tr:has(.s_0) td.rowCell { color: #ffffff !important; }
 
-/* DEĞER 20-40 (SARI/TURUNCU) */
-.reportTable tr:has(.s_20), .reportTable tr:has(.s_40) { 
-  background-color: #f59e0b !important; 
-  border-left-color: #b45309 !important; 
+/* Dinamik Renk Tanımlamaları */
+.health-box.green {
+  background-color: #228B22 !important; /* Yeşil */
+  border-left: 6px solid #1a6b1a !important;
+  box-shadow: 0 4px 10px rgba(34, 139, 34, 0.3) !important;
 }
 
-/* DEĞER 60-100 (YEŞİL) */
-.reportTable tr:has(.s_60), .reportTable tr:has(.s_80), .reportTable tr:has(.s_100) { 
-  background-color: #228B22 !important; 
-  border-left-color: #145214 !important; 
+.health-box.yellow {
+  background-color: #DAA520 !important; /* Sarı/Altın */
+  border-left: 6px solid #b8860b !important;
+  box-shadow: 0 4px 10px rgba(218, 165, 32, 0.3) !important;
 }
-.reportTable tr:has(.s_60) td.rowCell, .reportTable tr:has(.s_80) td.rowCell, .reportTable tr:has(.s_100) td.rowCell { 
-  color: #ffffff !important; 
+
+.health-box.red {
+  background-color: #b12908 !important; /* Kırmızı */
+  border-left: 6px solid #781E12 !important;
+  box-shadow: 0 4px 10px rgba(177, 41, 8, 0.3) !important;
+}
+
+/* RowCell içindeki ekstra paddingleri temizle */
+.rowCell {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
 }
