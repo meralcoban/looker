@@ -1,4 +1,4 @@
-
+/* Ana tablo ayarları */
 .reportTable {
   display: block !important;
   background: transparent !important;
@@ -12,79 +12,50 @@
   padding: 20px !important;
   justify-content: center !important;
 }
-/* Genel tablo yapısını bozmamak için */
+
+/* Satır ayarları - Kutunun iskeleti */
 .reportTable tr {
-  display: flex !important;
-  flex-direction: column !important;
+  display: block !important; /* Flex yerine block deneyelim */
   width: 120px !important;  
   height: 80px !important; 
-  background-color: transparent !important; /* Arka planı şeffaf yaptık ki alttaki div görünsün */
+  background-color: transparent !important;
   border: none !important;
-  padding: 0 !important; /* Paylaşılan div'in tam sığması için */
-  justify-content: center !important;
-  align-items: center !important;
-}
-.reportTable tr.headerRow, 
-.reportTable thead,
-.reportTable th {
-  display: none !important;
+  margin: 5px !important;
 }
 
-.rowCell {
+/* Hücre ayarları - İçindeki div'i kaplaması için */
+.reportTable td.rowCell {
   display: block !important;
   width: 100% !important;
-  color: #ffffff !important; 
-  text-align: center !important;
-  font-family: 'Segoe UI', Roboto, sans-serif !important;
-  font-size: 12px !important; 
-  font-weight: 400 !important; /* Bold olmayan normal yazı */
-  line-height: 1.2 !important;
+  height: 100% !important;
+  padding: 0 !important;
+  background: transparent !important;
   border: none !important;
+  overflow: visible !important; /* İçerik gizlenmesin */
 }
 
-.reportTable tr.headerRow, 
-.reportTable thead,
-.reportTable th {
-  display: none !important;
-}
 /* Senin oluşturduğun HTML Box yapısı */
+/* Önemli: HTML içinde class="health-box yellow" şeklinde yazdığından emin ol */
 .health-box {
-  width: 100% !important;
-  height: 100% !important;
   display: flex !important;
+  width: 120px !important; /* Sabit genişlik */
+  height: 80px !important; /* Sabit yükseklik */
   align-items: center !important;
   justify-content: center !important;
   border-radius: 12px !important;
   color: #ffffff !important;
   font-family: 'Segoe UI', sans-serif !important;
-  font-size: 12px !important;
+  font-size: 11px !important;
   text-align: center !important;
-  padding: 10px !important;
+  padding: 5px !important;
   box-sizing: border-box !important;
+  visibility: visible !important;
 }
 
-/* Dinamik Renk Tanımlamaları */
-.health-box.green {
-  background-color: #228B22 !important; /* Yeşil */
-  border-left: 6px solid #1a6b1a !important;
-  box-shadow: 0 4px 10px rgba(34, 139, 34, 0.3) !important;
-}
+/* Renkler */
+.health-box.green { background-color: #228B22 !important; border-left: 6px solid #1a6b1a !important; }
+.health-box.yellow { background-color: #DAA520 !important; border-left: 6px solid #b8860b !important; }
+.health-box.red { background-color: #b12908 !important; border-left: 6px solid #781E12 !important; }
 
-.health-box.yellow {
-  background-color: #DAA520 !important; /* Sarı/Altın */
-  border-left: 6px solid #b8860b !important;
-  box-shadow: 0 4px 10px rgba(218, 165, 32, 0.3) !important;
-}
-
-.health-box.red {
-  background-color: #b12908 !important; /* Kırmızı */
-  border-left: 6px solid #781E12 !important;
-  box-shadow: 0 4px 10px rgba(177, 41, 8, 0.3) !important;
-}
-
-/* RowCell içindeki ekstra paddingleri temizle */
-.rowCell {
-  background: transparent !important;
-  border: none !important;
-  padding: 0 !important;
-}
+/* Başlıkları gizle */
+.reportTable thead, .reportTable .headerRow { display: none !important; }
