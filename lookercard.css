@@ -63,24 +63,6 @@
   display: none !important;
 }
 
-.reportTable tr:has([title*="0"]), 
-.reportTable tr:has([aria-label*="0"]),
-.reportTable tr:has([title*="CRIT"]) {
-  background-color: #B22222 !important;
-  border-left: 6px solid #781E12 !important;
-}
-.reportTable tr:has([title*="0"]) .rowCell,
-.reportTable tr:has([title*="CRIT"]) .rowCell {
-  color: #ffffff !important;
-}
-
-.reportTable tr:has([title*="40"]), 
-.reportTable tr:has([aria-label*="40"]),
-.reportTable tr:has([title*="OK"]) {
-  background-color: #228B22 !important;
-  border-left: 6px solid #145214 !important;
-}
-.reportTable tr:has([title*="40"]) .rowCell,
-.reportTable tr:has([title*="OK"]) .rowCell {
-  color: #ffffff !important;
+.reportTable td.rowCell:contains("80") { 
+  background-color: #228B22 !important; 
 }
