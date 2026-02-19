@@ -63,6 +63,6 @@
   display: none !important;
 }
 
-.reportTable td.rowCell:contains("80") { 
+.rowCell:contains("80") { 
   background-color: #228B22 !important; 
 }
