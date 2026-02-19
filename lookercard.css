@@ -1,153 +1,73 @@
+
 .reportTable {
-
   display: block !important;
-
   background: transparent !important;
-
   border: none !important;
-
-  overflow: visible !important;
-
 }
-
-
 
 .reportTable tbody {
-
   display: flex !important;
-
   flex-wrap: wrap !important;
-
-  gap: 25px !important;
-
-  padding: 30px !important;
-
-  justify-content: center !important;
-
-}
-
-
-
-
-
-.reportTable tr, 
-
-.reportTable tr:first-child, 
-
-.reportTable tr.headerRow {
-
-  display: flex !important;
-
-  flex-direction: column !important;
-
-  width: 105px !important;  
-
-  height: 30px !important; 
-
-  background-color: #B22222 !important; 
-
-  background: #B22222 !important;
-
-  border-radius: 20px !important;
-
-  box-shadow: 0 12px 30px rgba(178, 34, 34, 0.3) !important;
-
+  gap: 15px !important; 
   padding: 20px !important;
+  justify-content: center !important;
+}
 
+
+.reportTable tr {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 105px !important;  
+  height: 30px !important; 
+  background-color: #B22222 !important; 
+  border-radius: 15px !important;
+  box-shadow: 0 8px 20px rgba(178, 34, 34, 0.2) !important;
+  padding: 10px !important;
   justify-content: center !important; 
-
   align-items: center !important;    
-
   position: relative !important;
-
-  margin-bottom: 0 !important;
-
-  border-left: 10px solid #781E12 !important; 
-
-  overflow: visible !important;
-
-  visibility: visible !important;
-
+  border-left: 6px solid #781E12 !important; 
 }
 
-
-
-
-
-.rowCell, .headerCell, .indexCell {
-
-  display: block !important;
-
-  width: 100% !important;
-
-  opacity: 1 !important;
-
-  visibility: visible !important;
-
-  color: #ffffff !important; 
-
-  text-align: center !important;
-
-  background: transparent !important;
-
-  border: none !important;
-
-  font-family: Segoe UI, Roboto, 'sans-serif' !important;
-
-  font-size: 10px !important; 
-
-  z-index: 5 !important;
-
-}
-
-
-
-
-
-.rowCell:first-child, .headerCell:first-child {
-
-  font-weight: 400 !important;
-
-  font-size: 10px !important;
-
-  margin-bottom: 12px !important;
-
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
-
-  padding-bottom: 8px !important;
-
-}
-
-
-
-
-
-.rowCell:nth-child(2), .headerCell:nth-child(2) {
-
-  font-size: 15px !important; 
-
-  font-weight: 900 !important;
-
-}
-
-
-
-
-
-.reportTable tr:hover {
-
-  transform: translateY(-8px) scale(1.02);
-
-  background-color: #d42a2a !important;
-
-  transition: all 0.3s ease;
-
-}
-
-
-
-.reportTable thead {
-
+.reportTable tr.headerRow, 
+.reportTable thead,
+.reportTable th {
   display: none !important;
+}
 
+.rowCell {
+  display: block !important;
+  width: 100% !important;
+  color: #ffffff !important; 
+  text-align: center !important;
+  font-family: 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 10px !important; 
+  font-weight: 400 !important; /* Bold olmayan normal yazı */
+  line-height: 1.2 !important;
+  border: none !important;
+}
+
+.rowCell:first-child {
+  font-size: 10px !important;
+  font-weight: 400 !important;
+  margin-bottom: 4px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+  padding-bottom: 2px !important;
+}
+
+
+.rowCell:nth-child(2) {
+  font-size: 14px !important; 
+  font-weight: 700 !important; 
+}
+
+
+.reportTable tr:has(div:contains("0")) {
+  background-color: #B22222 !important;
+}
+
+
+.reportTable tr:has(div:contains("40")) {
+  background-color: #228B22 !important;
+  border-left: 6px solid #145214 !important;
 }
