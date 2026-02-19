@@ -18,7 +18,7 @@
   flex-direction: column !important;
   width: 105px !important;  
   height: 65px !important; 
-  background-color: #b12908 !important; /* Varsayılan Kırmızı */
+  background-color: #b22222 !important; 
   border-radius: 15px !important;
   box-shadow: 0 8px 20px rgba(178, 34, 34, 0.2) !important;
   padding: 10px !important;
@@ -32,16 +32,16 @@
 .reportTable tr:nth-child(1),
 .reportTable tr:nth-child(2),
 .reportTable tr:nth-child(3) {
-  background-color: #FFA500 !important; 
-  border-left-color: #1a5e1a !important;
+  background-color: #b22222 !important; 
+  border-left-color: #781E12 !important;
   box-shadow: 0 8px 20px rgba(34, 139, 34, 0.2) !important;
 }
 
 
 .reportTable tr:nth-child(4),
 .reportTable tr:nth-child(5) {
-  background-color: #FFD700 !important;
-  border-left-color: #b8860b !important;
+  background-color: #E8710A !important;
+  border-left-color: #F0E68C !important;
   box-shadow: 0 8px 20px rgba(218, 165, 32, 0.2) !important;
 }
 
@@ -55,11 +55,6 @@
   font-weight: 400 !important;
   line-height: 1.2 !important;
   border: none !important;
-}
-
-.reportTable tr:nth-child(4) .rowCell,
-.reportTable tr:nth-child(5) .rowCell {
-  color: #000000 !important;
 }
 
 .reportTable tr.headerRow, 
