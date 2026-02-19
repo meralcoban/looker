@@ -17,8 +17,8 @@
 .reportTable tr {
   display: flex !important;
   flex-direction: column !important;
-  width: 110px !important;  
-  height: 70px !important; 
+  width: 105px !important;  
+  height: 65px !important; 
   background-color: #b12908; 
   border-radius: 15px !important;
   box-shadow: 0 8px 20px rgba(178, 34, 34, 0.2) !important;
@@ -41,7 +41,7 @@
   color: #ffffff !important; 
   text-align: center !important;
   font-family: 'Segoe UI', Roboto, sans-serif !important;
-  font-size: 10px !important; 
+  font-size: 12px !important; 
   font-weight: 400 !important; /* Bold olmayan normal yazı */
   line-height: 1.2 !important;
   border: none !important;
