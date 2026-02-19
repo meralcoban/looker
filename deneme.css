@@ -56,18 +56,11 @@
 }*/
 
 
-
-.reportTable tr.headerRow, 
-.reportTable thead,
-.reportTable th {
-  display: none !important;
-}
-
 /* İlk 3 kutuyu yeşil yap */
 .reportTable tr:nth-child(1) .rowCell,
 .reportTable tr:nth-child(2) .rowCell,
 .reportTable tr:nth-child(3) .rowCell {
-    background-color: #228B22 !important;
+    background-color: #b22222 !important;
     border-left: 6px solid #1a6b1a !important;
 }
 
