@@ -19,7 +19,7 @@
   flex-direction: column !important;
   width: 105px !important;  
   height: 30px !important; 
-  background-color: #B22222 !important; 
+  background-color: #B22222; 
   border-radius: 15px !important;
   box-shadow: 0 8px 20px rgba(178, 34, 34, 0.2) !important;
   padding: 10px !important;
