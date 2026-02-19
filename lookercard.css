@@ -18,7 +18,7 @@
   display: flex !important;
   flex-direction: column !important;
   width: 105px !important;  
-  height: 50px !important; 
+  height: 60px !important; 
   background-color: #b12908; 
   border-radius: 15px !important;
   box-shadow: 0 8px 20px rgba(178, 34, 34, 0.2) !important;
@@ -56,13 +56,8 @@
 }*/
 
 
-.rowCell:nth-child(2) {
-  font-size: 14px !important; 
-  font-weight: 700 !important; 
-}
 
-
-.reportTable tr:has(.rowCell[title*="0"]) {
+.reportTable tr:has(.rowCell[tr*="0"]) {
   background-color: #B22222 !important;
   border-left: 6px solid #781E12 !important;
 }
@@ -86,7 +81,7 @@
   display: none !important;
 }
 
-.reportTable tr:has([aria-label*="CRIT"]) {
+.reportTable tr:has([tr*="CRIT"]) {
   background-color: #B22222 !important;
   border-left: 6px solid #781E12 !important;
 }
@@ -96,7 +91,7 @@
 
 /* Eğer hücre içeriği "OK" (40) ise kartı YEŞİL yap */
 
-.reportTable tr:has([aria-label*="OK"]) {
+.reportTable tr:has([tr*="OK"]) {
   background-color: #228B22 !important;
   border-left: 6px solid #145214 !important;
 }
