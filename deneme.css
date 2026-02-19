@@ -1,4 +1,4 @@
-/* Ana tablo ayarları */
+
 .reportTable {
   display: block !important;
   background: transparent !important;
@@ -13,49 +13,74 @@
   justify-content: center !important;
 }
 
-/* Satır ayarları - Kutunun iskeleti */
+
 .reportTable tr {
-  display: block !important; /* Flex yerine block deneyelim */
-  width: 120px !important;  
-  height: 80px !important; 
-  background-color: transparent !important;
-  border: none !important;
-  margin: 5px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  width: 105px !important;  
+  height: 65px !important; 
+  background-color: #b12908; 
+  border-radius: 15px !important;
+  box-shadow: 0 8px 20px rgba(178, 34, 34, 0.2) !important;
+  padding: 10px !important;
+  justify-content: center !important; 
+  align-items: center !important;    
+  position: relative !important;
+  border-left: 6px solid #781E12 !important; 
 }
 
-/* Hücre ayarları - İçindeki div'i kaplaması için */
-.reportTable td.rowCell {
+.reportTable tr.headerRow, 
+.reportTable thead,
+.reportTable th {
+  display: none !important;
+}
+
+.rowCell {
   display: block !important;
   width: 100% !important;
-  height: 100% !important;
-  padding: 0 !important;
-  background: transparent !important;
-  border: none !important;
-  overflow: visible !important; /* İçerik gizlenmesin */
-}
-
-/* Senin oluşturduğun HTML Box yapısı */
-/* Önemli: HTML içinde class="health-box yellow" şeklinde yazdığından emin ol */
-.health-box {
-  display: flex !important;
-  width: 120px !important; /* Sabit genişlik */
-  height: 80px !important; /* Sabit yükseklik */
-  align-items: center !important;
-  justify-content: center !important;
-  border-radius: 12px !important;
-  color: #ffffff !important;
-  font-family: 'Segoe UI', sans-serif !important;
-  font-size: 11px !important;
+  color: #ffffff !important; 
   text-align: center !important;
-  padding: 5px !important;
-  box-sizing: border-box !important;
-  visibility: visible !important;
+  font-family: 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 12px !important; 
+  font-weight: 400 !important; /* Bold olmayan normal yazı */
+  line-height: 1.2 !important;
+  border: none !important;
 }
 
-/* Renkler */
-.health-box.green { background-color: #228B22 !important; border-left: 6px solid #1a6b1a !important; }
-.health-box.yellow { background-color: #DAA520 !important; border-left: 6px solid #b8860b !important; }
-.health-box.red { background-color: #b12908 !important; border-left: 6px solid #781E12 !important; }
+/*.rowCell:first-child {
+  font-size: 10px !important;
+  font-weight: 400 !important;
+  margin-bottom: 4px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+  padding-bottom: 2px !important;
+}*/
 
-/* Başlıkları gizle */
-.reportTable thead, .reportTable .headerRow { display: none !important; }
+
+
+.reportTable tr.headerRow, 
+.reportTable thead,
+.reportTable th {
+  display: none !important;
+}
+
+/* İlk 3 kutuyu yeşil yap */
+.reportTable tr:nth-child(1) .rowCell,
+.reportTable tr:nth-child(2) .rowCell,
+.reportTable tr:nth-child(3) .rowCell {
+    background-color: #228B22 !important;
+    border-left: 6px solid #1a6b1a !important;
+}
+
+/* 4. ve 5. kutuyu sarı yap */
+.reportTable tr:nth-child(4) .rowCell,
+.reportTable tr:nth-child(5) .rowCell {
+    background-color: #DAA520 !important;
+    border-left: 6px solid #b8860b !important;
+}
+
+/* Diğerlerini kırmızı yap */
+.reportTable tr .rowCell {
+    background-color: #b12908;
+    border-radius: 12px;
+    padding: 10px;
+}
