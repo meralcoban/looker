@@ -1,4 +1,4 @@
-
+/* 1. Ana Tablo ve Taşıyıcı */
 .reportTable {
   display: block !important;
   background: transparent !important;
@@ -14,66 +14,61 @@
   justify-content: center !important;
 }
 
-
-.reportTable tr, 
-.reportTable tr:first-child, 
-.reportTable tr.headerRow {
+/* 2. Kart (Satır) - GENEL TASARIM */
+.reportTable tr {
   display: flex !important;
   flex-direction: column !important;
   width: 140px !important;  
   height: 80px !important; 
-  background-color: #B22222 !important; 
-  background: #B22222 !important;
-  border-radius: 24px !important;
-  box-shadow: 0 12px 30px rgba(178, 34, 34, 0.3) !important;
-  padding: 20px !important;
+  border-radius: 20px !important; /* Biraz daha zarif yaptık */
+  padding: 15px !important;
   justify-content: center !important; 
   align-items: center !important;    
   position: relative !important;
-  margin-bottom: 0 !important;
-  border-left: 10px solid #781E12 !important; 
-  overflow: visible !important;
-  visibility: visible !important;
+  border-left: 8px solid rgba(0,0,0,0.1) !important; /* Varsayılan şerit */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05) !important;
+  background-color: #f8fafc !important; /* Varsayılan açık gri kart */
 }
 
-
+/* 3. Yazı Tipi: 10px ve BOLD OLMAYAN */
 .rowCell, .headerCell, .indexCell {
   display: block !important;
   width: 100% !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  color: #ffffff !important; 
+  color: #1e293b !important; /* Varsayılan koyu yazı */
   text-align: center !important;
   background: transparent !important;
   border: none !important;
-  font-family: Segoe UI, Roboto, 'sans-serif' !important;
+  font-family: 'Segoe UI', Roboto, sans-serif !important;
   font-size: 10px !important; 
+  font-weight: 400 !important; /* BOLD OLMAYAN (Normal) */
   z-index: 5 !important;
 }
 
-
-.rowCell:first-child, .headerCell:first-child {
-  font-weight: 800 !important;
-  font-size: 20px !important;
-  margin-bottom: 12px !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
-  padding-bottom: 8px !important;
+/* İlk Hücre (Port İsmi) İçin Özel Boyut (Hala 10px ama biraz daha belirgin olabilir) */
+.rowCell:first-child {
+  border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+  margin-bottom: 4px !important;
+  padding-bottom: 4px !important;
 }
 
+/* --- 4. DİNAMİK RENK DEĞİŞİMLERİ (CONDITION-BASED) --- */
 
-.rowCell:nth-child(2), .headerCell:nth-child(2) {
-  font-size: 32px !important; 
-  font-weight: 900 !important;
+/* KOŞUL 1: KRİTİK (Kırmızı) - Looker'da kırmızı atandığında tetiklenir */
+.reportTable tr:has([style*="background-color: rgb(255, 0, 0)"]),
+.reportTable tr:has([style*="background-color: #FF0000"]) {
+  background-color: #B22222 !important;
+  border-left: 8px solid #781E12 !important;
+}
+.reportTable tr:has([style*="background-color: rgb(255, 0, 0)"]) .rowCell {
+  color: #ffffff !important; /* Kırmızıda yazıları beyaz yap */
 }
 
-
-.reportTable tr:hover {
-  transform: translateY(-8px) scale(1.02);
-  background-color: #d42a2a !important;
-  transition: all 0.3s ease;
+/* KOŞUL 2: SARI (Değer 100 ise) - Senin istediğin o "No Result" durumu */
+.reportTable tr:has([style*="background-color: rgb(255, 255, 0)"]),
+.reportTable tr:has([style*="background-color: #FFFF00"]) {
+  background-color: #fef08a !important; /* Yumuşak Sarı */
+  border-left: 8px solid #eab308 !important;
 }
 
-
-.reportTable thead {
-  display: none !important;
-}
+/* 5. Header Gizleme */
+.reportTable thead { display: none !important; }
