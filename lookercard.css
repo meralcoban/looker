@@ -19,7 +19,7 @@
   flex-direction: column !important;
   width: 105px !important;  
   height: 30px !important; 
-  background-color: #f8fafc; 
+  background-color: #b12908; 
   border-radius: 15px !important;
   box-shadow: 0 8px 20px rgba(178, 34, 34, 0.2) !important;
   padding: 10px !important;
@@ -84,4 +84,22 @@
 .reportTable thead,
 .reportTable th {
   display: none !important;
+}
+.reportTable tr:has([title*="CRIT"]), 
+.reportTable tr:has([aria-label*="CRIT"]) {
+  background-color: #B22222 !important;
+  border-left: 6px solid #781E12 !important;
+}
+.reportTable tr:has([title*="CRIT"]) .rowCell {
+  color: #ffffff !important; /* Yazıları beyaz yap */
+}
+
+/* Eğer hücre içeriği "OK" (40) ise kartı YEŞİL yap */
+.reportTable tr:has([title*="OK"]), 
+.reportTable tr:has([aria-label*="OK"]) {
+  background-color: #228B22 !important;
+  border-left: 6px solid #145214 !important;
+}
+.reportTable tr:has([title*="OK"]) .rowCell {
+  color: #ffffff !important;
 }
