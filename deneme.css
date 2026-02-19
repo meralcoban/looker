@@ -1,3 +1,17 @@
+
+.reportTable {
+  display: block !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+.reportTable tbody {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 15px !important; 
+  padding: 20px !important;
+  justify-content: center !important;
+}
 /* Genel tablo yapısını bozmamak için */
 .reportTable tr {
   display: flex !important;
@@ -10,7 +24,29 @@
   justify-content: center !important;
   align-items: center !important;
 }
+.reportTable tr.headerRow, 
+.reportTable thead,
+.reportTable th {
+  display: none !important;
+}
 
+.rowCell {
+  display: block !important;
+  width: 100% !important;
+  color: #ffffff !important; 
+  text-align: center !important;
+  font-family: 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 12px !important; 
+  font-weight: 400 !important; /* Bold olmayan normal yazı */
+  line-height: 1.2 !important;
+  border: none !important;
+}
+
+.reportTable tr.headerRow, 
+.reportTable thead,
+.reportTable th {
+  display: none !important;
+}
 /* Senin oluşturduğun HTML Box yapısı */
 .health-box {
   width: 100% !important;
