@@ -19,7 +19,7 @@
   flex-direction: column !important;
   width: 105px !important;  
   height: 30px !important; 
-  background-color: #B22222; 
+  background-color: #f8fafc; 
   border-radius: 15px !important;
   box-shadow: 0 8px 20px rgba(178, 34, 34, 0.2) !important;
   padding: 10px !important;
@@ -71,7 +71,7 @@
 }
 
 
-.reportTable tr:has(.rowCell[title*="40"]) {
+.reportTable tr:has(.rowCell[tr*="40"]) {
   background-color: #228B22 !important;
   border-left: 6px solid #145214 !important;
 }
