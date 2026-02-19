@@ -1,17 +1,14 @@
+}
 
-.reportTable {
-  position: relative !important;
-  padding-top: 80px !important; 
-
-
-.reportTable::before {
-  content: "ACTIVE ROBOTS"; 
+div#visContainer::before {
+  content: "ACTIVE ROBOTS";
   position: absolute;
   top: 10px;
   left: 50%;
-  transform: translateX(-50%); 
+  transform: translateX(-50%);
+  z-index: 1000;
   
-  
+
   text-align: center; 
   font-size: 20px; 
   font-family: 'Roboto', sans-serif; 
@@ -21,11 +18,68 @@
   color: #ffffff; 
   border-radius: 50px; 
   box-shadow: 0 10px 15px -3px rgba(178, 34, 34, 0.4);
-  
+  white-space: nowrap;
+}
+.reportTable {
+  display: block !important;
+  background: transparent !important;
+  border: none !important;
+}
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap; 
-  z-index: 100;
+.reportTable tbody {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 15px !important; 
+  padding: 20px !important;
+  justify-content: center !important;
+}
+
+.reportTable tr {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 150px !important;  
+  height: 70px !important; 
+  background-color: #b22222 !important; 
+  border-radius: 15px !important;
+  box-shadow: 0 8px 20px rgba(178, 34, 34, 0.2) !important;
+  padding: 10px !important;
+  justify-content: center !important; 
+  align-items: center !important;    
+  position: relative !important;
+  border-left: 6px solid #781E12 !important; 
+}
+
+
+.reportTable tr:nth-child(1),
+.reportTable tr:nth-child(2),
+.reportTable tr:nth-child(3) {
+  background-color: #b22222 !important; 
+  border-left-color: #781E12 !important;
+  box-shadow: 0 8px 20px rgba(34, 139, 34, 0.2) !important;
+}
+
+
+.reportTable tr:nth-child(4),
+.reportTable tr:nth-child(5) {
+  background-color: #FFA500 !important;
+  border-left-color: #E8710A   !important;
+  box-shadow: 0 8px 20px rgba(218, 165, 32, 0.2) !important;
+}
+
+.rowCell {
+  display: block !important;
+  width: 100% !important;
+  color: #ffffff !important; 
+  text-align: center !important;
+  font-family: 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 16px !important; 
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+  border: none !important;
+}
+
+.reportTable tr.headerRow, 
+.reportTable thead,
+.reportTable th {
+  display: none !important;
 }
