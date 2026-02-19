@@ -13,13 +13,12 @@
   justify-content: center !important;
 }
 
-
 .reportTable tr {
   display: flex !important;
   flex-direction: column !important;
   width: 105px !important;  
   height: 65px !important; 
-  background-color: #b12908; 
+  background-color: #b12908 !important; /* Varsayılan Kırmızı */
   border-radius: 15px !important;
   box-shadow: 0 8px 20px rgba(178, 34, 34, 0.2) !important;
   padding: 10px !important;
@@ -29,10 +28,21 @@
   border-left: 6px solid #781E12 !important; 
 }
 
-.reportTable tr.headerRow, 
-.reportTable thead,
-.reportTable th {
-  display: none !important;
+
+.reportTable tr:nth-child(1),
+.reportTable tr:nth-child(2),
+.reportTable tr:nth-child(3) {
+  background-color: #FFA500 !important; 
+  border-left-color: #1a5e1a !important;
+  box-shadow: 0 8px 20px rgba(34, 139, 34, 0.2) !important;
+}
+
+
+.reportTable tr:nth-child(4),
+.reportTable tr:nth-child(5) {
+  background-color: #FFD700 !important;
+  border-left-color: #b8860b !important;
+  box-shadow: 0 8px 20px rgba(218, 165, 32, 0.2) !important;
 }
 
 .rowCell {
@@ -42,34 +52,18 @@
   text-align: center !important;
   font-family: 'Segoe UI', Roboto, sans-serif !important;
   font-size: 12px !important; 
-  font-weight: 400 !important; /* Bold olmayan normal yazı */
+  font-weight: 400 !important;
   line-height: 1.2 !important;
   border: none !important;
 }
-.reportTable tr:nth-child(1) .rowCell,
-.reportTable tr:nth-child(2) .rowCell,
-.reportTable tr:nth-child(3) .rowCell {
-    background-color: #b22222 !important;
-}
 
-/* 4. ve 5. kutuyu sarı yap */
 .reportTable tr:nth-child(4) .rowCell,
 .reportTable tr:nth-child(5) .rowCell {
-    background-color: #DAA520 !important;
+  color: #000000 !important;
 }
-/*.rowCell:first-child {
-  font-size: 10px !important;
-  font-weight: 400 !important;
-  margin-bottom: 4px !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
-  padding-bottom: 2px !important;
-}*/
-
-
 
 .reportTable tr.headerRow, 
 .reportTable thead,
 .reportTable th {
   display: none !important;
 }
-
