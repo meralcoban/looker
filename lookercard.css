@@ -57,44 +57,30 @@
 
 
 
-.reportTable tr:has(.rowCell[tr*="0"]) {
-  background-color: #B22222 !important;
-  border-left: 6px solid #781E12 !important;
-}
-.reportTable tr:has(.rowCell[title*="0"]) .rowCell {
-  color: #ffffff !important; 
-}
-
-
-.reportTable tr:has(.rowCell[tr*="40"]) {
-  background-color: #228B22 !important;
-  border-left: 6px solid #145214 !important;
-}
-.reportTable tr:has(.rowCell[title*="40"]) .rowCell {
-  color: #ffffff !important;
-}
-
-
 .reportTable tr.headerRow, 
 .reportTable thead,
 .reportTable th {
   display: none !important;
 }
 
-.reportTable tr:has([tr*="CRIT"]) {
+.reportTable tr:has([title*="0"]), 
+.reportTable tr:has([aria-label*="0"]),
+.reportTable tr:has([title*="CRIT"]) {
   background-color: #B22222 !important;
   border-left: 6px solid #781E12 !important;
 }
+.reportTable tr:has([title*="0"]) .rowCell,
 .reportTable tr:has([title*="CRIT"]) .rowCell {
-  color: #ffffff !important; /* Yazıları beyaz yap */
+  color: #ffffff !important;
 }
 
-/* Eğer hücre içeriği "OK" (40) ise kartı YEŞİL yap */
-
-.reportTable tr:has([tr*="OK"]) {
+.reportTable tr:has([title*="40"]), 
+.reportTable tr:has([aria-label*="40"]),
+.reportTable tr:has([title*="OK"]) {
   background-color: #228B22 !important;
   border-left: 6px solid #145214 !important;
 }
+.reportTable tr:has([title*="40"]) .rowCell,
 .reportTable tr:has([title*="OK"]) .rowCell {
   color: #ffffff !important;
 }
