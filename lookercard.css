@@ -40,8 +40,8 @@
 
 .reportTable tr:nth-child(4),
 .reportTable tr:nth-child(5) {
-  background-color: #E8710A !important;
-  border-left-color: #F0E68C !important;
+  background-color: #FFA500 !important;
+  border-left-color: #E8710A   !important;
   box-shadow: 0 8px 20px rgba(218, 165, 32, 0.2) !important;
 }
 
