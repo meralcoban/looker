@@ -1,5 +1,3 @@
-}
-
 div#visContainer::before {
   content: "ACTIVE ROBOTS";
   position: absolute;
