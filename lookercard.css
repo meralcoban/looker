@@ -46,7 +46,17 @@
   line-height: 1.2 !important;
   border: none !important;
 }
+.reportTable tr:nth-child(1) .rowCell,
+.reportTable tr:nth-child(2) .rowCell,
+.reportTable tr:nth-child(3) .rowCell {
+    background-color: #b22222 !important;
+}
 
+/* 4. ve 5. kutuyu sarı yap */
+.reportTable tr:nth-child(4) .rowCell,
+.reportTable tr:nth-child(5) .rowCell {
+    background-color: #DAA520 !important;
+}
 /*.rowCell:first-child {
   font-size: 10px !important;
   font-weight: 400 !important;
@@ -63,6 +73,3 @@
   display: none !important;
 }
 
-.rowCell:contains("80") { 
-  background-color: #228B22 !important; 
-}
