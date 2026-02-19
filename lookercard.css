@@ -85,7 +85,7 @@
 .reportTable th {
   display: none !important;
 }
-.reportTable tr:has([title*="CRIT"]), 
+
 .reportTable tr:has([aria-label*="CRIT"]) {
   background-color: #B22222 !important;
   border-left: 6px solid #781E12 !important;
@@ -95,7 +95,7 @@
 }
 
 /* Eğer hücre içeriği "OK" (40) ise kartı YEŞİL yap */
-.reportTable tr:has([title*="OK"]), 
+
 .reportTable tr:has([aria-label*="OK"]) {
   background-color: #228B22 !important;
   border-left: 6px solid #145214 !important;
