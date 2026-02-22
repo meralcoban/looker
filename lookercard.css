@@ -64,10 +64,10 @@ div#visContainer::before {
   border-left-color: #E8710A   !important;
   box-shadow: 0 8px 20px rgba(218, 165, 32, 0.2) !important;
 }*/
-.reportTable td:nth-child(2) { background: #b22222 !important; }
+/*.reportTable td:nth-child(2) { background: #b22222 !important; }
 .reportTable td:nth-child(3) { background: #FFA500 !important; }
 .reportTable td:nth-child(4) { background: #228B22 !important; }
-.rowCell {
+.rowCell {*/
   display: block !important;
   width: 100% !important;
   color: #ffffff !important; 
@@ -84,3 +84,39 @@ div#visContainer::before {
 .reportTable th {
   display: none !important;
 }
+
+<script>
+(function colorCards() {
+  function applyColors() {
+    var rows = document.querySelectorAll('.reportTable tbody tr');
+    rows.forEach(function(tr) {
+      var firstTd = tr.querySelector('td');
+      if (!firstTd) return;
+      var text = firstTd.textContent || '';
+      
+      if (text.includes('Health:%0')) {
+        tr.style.setProperty('background-color', '#b22222', 'important');
+        tr.style.setProperty('border-left-color', '#781E12', 'important');
+      } else if (text.includes('Health:%40')) {
+        tr.style.setProperty('background-color', '#FFA500', 'important');
+        tr.style.setProperty('border-left-color', '#E8710A', 'important');
+      } else if (text.includes('Health:%80')) {
+        tr.style.setProperty('background-color', '#228B22', 'important');
+        tr.style.setProperty('border-left-color', '#1a5e1a', 'important');
+      } else if (text.includes('Health:%100')) {
+        tr.style.setProperty('background-color', '#1565C0', 'important');
+        tr.style.setProperty('border-left-color', '#0D47A1', 'important');
+      }
+    });
+  }
+
+  // İlk yüklemede çalıştır
+  setTimeout(applyColors, 1000);
+  
+  // Veri değişirse tekrar çalıştır
+  var observer = new MutationObserver(function() {
+    setTimeout(applyColors, 300);
+  });
+  observer.observe(document.body, { childList: true, subtree: true });
+})();
+</script>
