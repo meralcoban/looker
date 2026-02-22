@@ -110,10 +110,10 @@ div#visContainer::before {
     });
   }
 
-  // İlk yüklemede çalıştır
+  
   setTimeout(applyColors, 1000);
   
-  // Veri değişirse tekrar çalıştır
+
   var observer = new MutationObserver(function() {
     setTimeout(applyColors, 300);
   });
