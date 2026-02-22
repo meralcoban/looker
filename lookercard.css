@@ -80,7 +80,7 @@ div#visContainer::before {
 }
 
 .reportTable td.measure.numeric.normal::before {
-  content: "% ";
+  content: "Health: %";
 }
 
 /* cellSeries 3. sıradaysa → 0 değeri var → kırmızı tr */
