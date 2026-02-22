@@ -89,6 +89,10 @@ div#visContainer::before {
   background-color: #FFA500 !important;
   border-left-color: #E8710A !important;
 }
+
+.reportTable td.cellSeries {
+  display: none !important;
+}
 .reportTable tr.headerRow, 
 .reportTable thead,
 .reportTable th {
