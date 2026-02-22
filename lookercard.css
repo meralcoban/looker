@@ -49,7 +49,7 @@ div#visContainer::before {
 }
 
 
-.reportTable tr:nth-child(1),
+/*.reportTable tr:nth-child(1),
 .reportTable tr:nth-child(2),
 .reportTable tr:nth-child(3) {
   background-color: #b22222 !important; 
@@ -63,8 +63,10 @@ div#visContainer::before {
   background-color: #FFA500 !important;
   border-left-color: #E8710A   !important;
   box-shadow: 0 8px 20px rgba(218, 165, 32, 0.2) !important;
-}
-
+}*/
+.reportTable td:nth-child(2) { background: #b22222 !important; }
+.reportTable td:nth-child(3) { background: #FFA500 !important; }
+.reportTable td:nth-child(4) { background: #228B22 !important; }
 .rowCell {
   display: block !important;
   width: 100% !important;
