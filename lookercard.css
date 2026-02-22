@@ -94,16 +94,16 @@ div#visContainer::before {
       if (!firstTd) return;
       var text = firstTd.textContent || '';
       
-      if (text.includes('Health:%0')) {
+      if (text.includes('Health: %0')) {
         tr.style.setProperty('background-color', '#b22222', 'important');
         tr.style.setProperty('border-left-color', '#781E12', 'important');
-      } else if (text.includes('Health:%40')) {
+      } else if (text.includes('Health: %40')) {
         tr.style.setProperty('background-color', '#FFA500', 'important');
         tr.style.setProperty('border-left-color', '#E8710A', 'important');
-      } else if (text.includes('Health:%80')) {
+      } else if (text.includes('Health: %80')) {
         tr.style.setProperty('background-color', '#228B22', 'important');
         tr.style.setProperty('border-left-color', '#1a5e1a', 'important');
-      } else if (text.includes('Health:%100')) {
+      } else if (text.includes('Health: %100')) {
         tr.style.setProperty('background-color', '#1565C0', 'important');
         tr.style.setProperty('border-left-color', '#0D47A1', 'important');
       }
