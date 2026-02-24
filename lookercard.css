@@ -81,6 +81,9 @@ div#visContainer::before {
 .reportTable td.cellSeries {
   display: none !important;
 }
+.reportTable tr:not(:has(.rowCell)) {
+    display: none !important;
+}
 .reportTable td.measure.numeric.normal::before {
   content: "Health: %";
 }
