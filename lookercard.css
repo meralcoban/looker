@@ -90,23 +90,23 @@ div#visContainer::before {
 
 /*1.*/
 .reportTable tr:has(td:nth-child(3).cellSeries):not(:has(td:nth-child(2).cellSeries)) {
-  background-color: #b22222 ;
+  background-color: #B22222 ;
   border-left-color: #781E12 ;
 }
 /*2.*/
 .reportTable tr:has(td:nth-child(2).cellSeries):not(:has(td:nth-child(3).cellSeries)) {
-  background-color: #FFB6C1 ;
-  border-left: 6px solid #781E12 ;
+  background-color: #E8710A ;
+  border-left: 6px solid #D47F17 ;
 }
 /*3.*/
 .reportTable tr:has(td:nth-child(2).cellSeries):has(td:nth-child(3).cellSeries):not(:has(td:nth-child(4).cellSeries)) {
-  background-color: #FF6347 ;
-  border-left: 6px solid #781E12 ;
+  background-color: #FFA500 ;
+  border-left: 6px solid #E8710A ;
 }
 /*4.*/
 .reportTable tr:has(td:nth-child(2).cellSeries):has(td:nth-child(3).cellSeries):has(td:nth-child(4).cellSeries):not(:has(td:nth-child(5).cellSeries) {
   background-color: #F0E68C ;
-  border-left: 6px solid #781E12 ;
+  border-left: 6px solid #C9AF1E ;
 }
 /*.reportTable tr:has(td:nth-child(2).numeric:not(:empty)) {
   background-color: #b22222 !important;
