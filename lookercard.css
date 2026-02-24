@@ -83,23 +83,24 @@ div#visContainer::before {
   content: "Health:%";
 }
 
-
-.reportTable tr:has(td:nth-child(3).cellSeries) {
+/*1.*/
+.reportTable tr:has(td:nth-child(3).cellSeries):not(:has(td:nth-child(2).cellSeries)) {
   background-color: #b22222 ;
   border-left-color: #781E12 ;
 }
-
-
-.reportTable tr:has(td:nth-child(2).cellSeries) {
-  background-color: #FFA500 ;
-  border-left-color: #E8710A ;
-}
+/*2.*/
 .reportTable tr:has(td:nth-child(2).cellSeries):not(:has(td:nth-child(3).cellSeries)) {
-  background-color: #b22222 ;
+  background-color: #FFB6C1 ;
   border-left: 6px solid #781E12 ;
 }
+/*3.*/
 .reportTable tr:has(td:nth-child(2).cellSeries):has(td:nth-child(3).cellSeries):not(:has(td:nth-child(4).cellSeries)) {
-  background-color: #122222 ;
+  background-color: #FF6347 ;
+  border-left: 6px solid #781E12 ;
+}
+/*4.*/
+.reportTable tr:has(td:nth-child(2).cellSeries):has(td:nth-child(3).cellSeries):has(td:nth-child(4).cellSeries):not(:has(td:nth-child(5).cellSeries) {
+  background-color: #F0E68C ;
   border-left: 6px solid #781E12 ;
 }
 /*.reportTable tr:has(td:nth-child(2).numeric:not(:empty)) {
