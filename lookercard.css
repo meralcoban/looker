@@ -96,7 +96,7 @@ div#visContainer::before {
 /*2.*/
 .reportTable tr:has(td:nth-child(2).cellSeries):not(:has(td:nth-child(3).cellSeries)) {
   background-color: #E8710A ;
-  border-left: 6px solid #D47F17 ;
+  border-left: 6px solid #B55604 ;
 }
 /*3.*/
 .reportTable tr:has(td:nth-child(2).cellSeries):has(td:nth-child(3).cellSeries):not(:has(td:nth-child(4).cellSeries)) {
