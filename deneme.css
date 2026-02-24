@@ -1,48 +1,29 @@
-/* --- RENK MANTIĞI GÜNCELLEMESİ --- */
- 
-/* 1. DURUM: Health Value 0 ise -> KIRMIZI */
+/* 1. DURUM: EĞER 0 İSE (Veya veri yoksa/boşsa) -> KIRMIZI */
+/* 'health value' sütunu (5. td) 0 ise veya tüm pivot sütunları boşsa */
 .reportTable tr:has(td:nth-child(5):contains("0")) {
   background-color: #b22222 !important; 
   border-left-color: #781E12 !important;
-  box-shadow: 0 8px 20px rgba(178, 34, 34, 0.3) !important;
 }
  
-/* 2. DURUM: Health Value 20-60 arasındaysa -> TURUNCU */
-/* 20, 40 ve 60 değerlerini tek tek hedefliyoruz */
-.reportTable tr:has(td:nth-child(5):is(:contains("20"), :contains("40"), :contains("60"))) {
-  background-color: #FFA500 !important; /* Turuncu */
-  border-left-color: #E8710A !important;
-  box-shadow: 0 8px 20px rgba(255, 165, 0, 0.2) !important;
+/* 2. DURUM: 20, 40 VEYA 60 SÜTUNLARINDA VERİ VARSA -> TURUNCU */
+/* Pivot başlığı 20 (5. sütun), 40 (7. sütun) veya 60 (9. sütun) olan yerlerde 'ø' değilse */
+.reportTable tr:has(td:nth-child(5):not(:contains("ø")):not(:contains("0"))),
+.reportTable tr:has(td:nth-child(7):not(:contains("ø"))),
+.reportTable tr:has(td:nth-child(9):not(:contains("ø"))) {
+  background-color: #FF8C00 !important; /* Turuncu */
+  border-left-color: #CC7000 !important;
 }
  
-/* 3. DURUM: Health Value 60'tan büyükse -> SARI */
-/* 80, 100 gibi değerleri hedefliyoruz */
-.reportTable tr:has(td:nth-child(5):is(:contains("80"), :contains("100"))) {
-  background-color: #FFD700 !important; /* Altın Sarısı */
+/* 3. DURUM: 80 VEYA 100 SÜTUNLARINDA VERİ VARSA -> SARI */
+/* Pivot başlığı 80 veya 100 olan sütunları kontrol eder */
+.reportTable tr:has(td:nth-child(11):not(:contains("ø"))),
+.reportTable tr:has(td:nth-child(13):not(:contains("ø"))) {
+  background-color: #FFD700 !important; /* Sarı */
   border-left-color: #DAA520 !important;
-  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.2) !important;
 }
  
-/* Sarı kartlarda yazıların daha iyi okunması için koyu renk yapalım */
-.reportTable tr:has(td:nth-child(5):is(:contains("80"), :contains("100"))) .rowCell {
+/* Görselleştirme için ek düzeltme: Sarı kartta yazı okunabilirliği */
+.reportTable tr:has(td:nth-child(11):not(:contains("ø"))) .rowCell,
+.reportTable tr:has(td:nth-child(13):not(:contains("ø"))) .rowCell {
   color: #333333 !important;
-}
- 
-/* --- DİĞER SABİT STİLLER --- */
-.reportTable tr {
-  display: flex !important;
-  flex-direction: column !important;
-  width: 150px !important;  
-  height: 80px !important; /* İçerik için biraz artırıldı */
-  border-radius: 15px !important;
-  padding: 10px !important;
-  justify-content: center !important; 
-  align-items: center !important;    
-  position: relative !important;
-  border-left: 6px solid !important; 
-  transition: background 0.3s ease;
-}
- 
-.reportTable td.cellSeries {
-  display: none !important;
 }
