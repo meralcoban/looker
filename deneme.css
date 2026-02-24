@@ -1,29 +1,103 @@
-/* 1. DURUM: EĞER 0 İSE (Veya veri yoksa/boşsa) -> KIRMIZI */
-/* 'health value' sütunu (5. td) 0 ise veya tüm pivot sütunları boşsa */
-.reportTable tr:has(td:nth-child(5):contains("0")) {
-  background-color: #b22222 !important; 
+ 
+ 
+/* 1. DURUM: DEĞER 0 İSE (KIRMIZI) */
+/* td içeriği tam olarak "0" olan satırları bulur */
+.reportTable tr:has(td.cellSeries:empty),
+.reportTable tr:has(td.cellSeries:is([data-value="0"], :contains("0"))) {
+  background-color: #b22222 !important; /* Koyu Kırmızı */
   border-left-color: #781E12 !important;
+  box-shadow: 0 8px 20px rgba(178, 34, 34, 0.3) !important;
 }
  
-/* 2. DURUM: 20, 40 VEYA 60 SÜTUNLARINDA VERİ VARSA -> TURUNCU */
-/* Pivot başlığı 20 (5. sütun), 40 (7. sütun) veya 60 (9. sütun) olan yerlerde 'ø' değilse */
-.reportTable tr:has(td:nth-child(5):not(:contains("ø")):not(:contains("0"))),
-.reportTable tr:has(td:nth-child(7):not(:contains("ø"))),
-.reportTable tr:has(td:nth-child(9):not(:contains("ø"))) {
-  background-color: #FF8C00 !important; /* Turuncu */
+/* 2. DURUM: 20 İLE 60 ARASI (TURUNCU) */
+/* Not: CSS'te sayı aralığı kontrolü kısıtlıdır, bu yüzden genellikle 
+   belirli sınıflar veya data-nitelikleri üzerinden gidilir. */
+.reportTable tr.status-orange, 
+.reportTable tr:has(td.cellSeries[data-range="mid"]) {
+  background-color: #FF8C00 !important; /* Turuncu (DarkOrange) */
   border-left-color: #CC7000 !important;
 }
  
-/* 3. DURUM: 80 VEYA 100 SÜTUNLARINDA VERİ VARSA -> SARI */
-/* Pivot başlığı 80 veya 100 olan sütunları kontrol eder */
-.reportTable tr:has(td:nth-child(11):not(:contains("ø"))),
-.reportTable tr:has(td:nth-child(13):not(:contains("ø"))) {
-  background-color: #FFD700 !important; /* Sarı */
+/* 3. DURUM: 60'TAN BÜYÜKSE (SARI) */
+.reportTable tr.status-yellow,
+.reportTable tr:has(td.cellSeries[data-range="high"]) {
+  background-color: #FFD700 !important; /* Sarı (Gold) */
   border-left-color: #DAA520 !important;
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.2) !important;
 }
  
-/* Görselleştirme için ek düzeltme: Sarı kartta yazı okunabilirliği */
-.reportTable tr:has(td:nth-child(11):not(:contains("ø"))) .rowCell,
-.reportTable tr:has(td:nth-child(13):not(:contains("ø"))) .rowCell {
-  color: #333333 !important;
+/* Yazı rengini koyu yapmak gerekebilir (Sarı üzerinde beyaz okunmaz) */
+.reportTable tr:has(td.cellSeries[data-range="high"]) .rowCell {
+    color: #333333 !important;
+}
+ 
+/* --- RENK MANTIĞI BİTİŞİ --- */
+ 
+/* Diğer mevcut stilleriniz (Sabit kısımlar) */
+div#visContainer::before {
+  content: "ACTIVE ROBOTS";
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: 90% !important;
+  text-align: center; 
+  font-size: 20px; 
+  font-family: 'Roboto', sans-serif; 
+  font-weight: bold;
+  padding: 14px 40px; 
+  background: linear-gradient(115deg, #B22222 40%, #FFA6A6 100%); 
+  color: #ffffff; 
+  border-radius: 50px; 
+  box-shadow: 0 10px 15px -3px rgba(178, 34, 34, 0.4);
+  white-space: nowrap;
+}
+ 
+.reportTable {
+  display: block !important;
+  background: transparent !important;
+  border: none !important;
+}
+ 
+.reportTable tbody {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 15px !important; 
+  padding: 80px 20px 20px 20px !important;
+  justify-content: center !important;
+}
+ 
+.reportTable tr {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 150px !important;  
+  height: 65px !important; 
+  border-radius: 15px !important;
+  padding: 10px !important;
+  justify-content: center !important; 
+  align-items: center !important;    
+  position: relative !important;
+  border-left: 6px solid !important; 
+  transition: all 0.3s ease;
+}
+ 
+.rowCell {
+  display: block !important;
+  width: 100% !important;
+  color: #ffffff !important; 
+  text-align: center !important;
+  font-family: 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 16px !important; 
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+  border: none !important;
+}
+ 
+.reportTable td.cellSeries {
+  display: none !important;
+}
+ 
+.reportTable tr.headerRow, .reportTable thead, .reportTable th {
+  display: none !important;
 }
