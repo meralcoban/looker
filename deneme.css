@@ -1,106 +1,48 @@
-div#visContainer::before {
-  content: "ACTIVE ROBOTS";
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
-  width: 90% !important;
-  
-
-  text-align: center; 
-  font-size: 20px; 
-  font-family: 'Roboto', sans-serif; 
-  font-weight: bold;
-  padding: 14px 40px; 
-  background: linear-gradient(115deg, #B22222 40%, #FFA6A6 100%); 
-  color: #ffffff; 
-  border-radius: 50px; 
-  box-shadow: 0 10px 15px -3px rgba(178, 34, 34, 0.4);
-  white-space: nowrap;
+/* --- RENK MANTIĞI GÜNCELLEMESİ --- */
+ 
+/* 1. DURUM: Health Value 0 ise -> KIRMIZI */
+.reportTable tr:has(td:nth-child(5):contains("0")) {
+  background-color: #b22222 !important; 
+  border-left-color: #781E12 !important;
+  box-shadow: 0 8px 20px rgba(178, 34, 34, 0.3) !important;
 }
-.reportTable {
-  display: block !important;
-  background: transparent !important;
-  border: none !important;
+ 
+/* 2. DURUM: Health Value 20-60 arasındaysa -> TURUNCU */
+/* 20, 40 ve 60 değerlerini tek tek hedefliyoruz */
+.reportTable tr:has(td:nth-child(5):is(:contains("20"), :contains("40"), :contains("60"))) {
+  background-color: #FFA500 !important; /* Turuncu */
+  border-left-color: #E8710A !important;
+  box-shadow: 0 8px 20px rgba(255, 165, 0, 0.2) !important;
 }
-
-.reportTable tbody {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 15px !important; 
-  padding: 80px 20px 20px 20px !important;
-  justify-content: center !important;
+ 
+/* 3. DURUM: Health Value 60'tan büyükse -> SARI */
+/* 80, 100 gibi değerleri hedefliyoruz */
+.reportTable tr:has(td:nth-child(5):is(:contains("80"), :contains("100"))) {
+  background-color: #FFD700 !important; /* Altın Sarısı */
+  border-left-color: #DAA520 !important;
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.2) !important;
 }
-
+ 
+/* Sarı kartlarda yazıların daha iyi okunması için koyu renk yapalım */
+.reportTable tr:has(td:nth-child(5):is(:contains("80"), :contains("100"))) .rowCell {
+  color: #333333 !important;
+}
+ 
+/* --- DİĞER SABİT STİLLER --- */
 .reportTable tr {
   display: flex !important;
   flex-direction: column !important;
   width: 150px !important;  
-  height: 65px !important; 
-  background-color: #b22222 !important; 
+  height: 80px !important; /* İçerik için biraz artırıldı */
   border-radius: 15px !important;
-  box-shadow: 0 8px 20px rgba(178, 34, 34, 0.2) !important;
   padding: 10px !important;
   justify-content: center !important; 
   align-items: center !important;    
   position: relative !important;
-  border-left: 6px solid #781E12 !important; 
+  border-left: 6px solid !important; 
+  transition: background 0.3s ease;
 }
-
-
-/*.reportTable tr:nth-child(1),
-.reportTable tr:nth-child(2),
-.reportTable tr:nth-child(3) {
-  background-color: #b22222 !important; 
-  border-left-color: #781E12 !important;
-  box-shadow: 0 8px 20px rgba(34, 139, 34, 0.2) !important;
-}
-
-
-.reportTable tr:nth-child(4),
-.reportTable tr:nth-child(5) {
-  background-color: #FFA500 !important;
-  border-left-color: #E8710A   !important;
-  box-shadow: 0 8px 20px rgba(218, 165, 32, 0.2) !important;
-}*/
-/*.reportTable td:nth-child(2) { background: #b22222 !important; }
-.reportTable td:nth-child(3) { background: #FFA500 !important; }
-.reportTable td:nth-child(4) { background: #228B22 !important; }*/
-.rowCell {
-  display: block !important;
-  width: 100% !important;
-  color: #ffffff !important; 
-  text-align: center !important;
-  font-family: 'Segoe UI', Roboto, sans-serif !important;
-  font-size: 16px !important; 
-  font-weight: 400 !important;
-  line-height: 1.2 !important;
-  border: none !important;
-}
-
-.reportTable td.measure.numeric.normal::before {
-  content: "Health: %";
-}
-
-.reportTable tr:has(td:nth-child(3).cellSeries) {
-  background-color: #b22222 !important;
-  border-left-color: #781E12 !important;
-}
-.reportTable tr:has(td:nth-child(4).cellSeries) {
-  background-color: #b22222 !important;
-  border-left-color: #781E12 !important;
-}
-
-.reportTable tr:has(td:nth-child(2).cellSeries) {
-  background-color: #FFA500 !important;
-  border-left-color: #E8710A !important;
-}
+ 
 .reportTable td.cellSeries {
-  display: none !important;
-}
-.reportTable tr.headerRow, 
-.reportTable thead,
-.reportTable th {
   display: none !important;
 }
