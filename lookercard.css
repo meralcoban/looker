@@ -78,7 +78,9 @@ div#visContainer::before {
   line-height: 1.2 !important;
   border: none !important;
 }
-
+.reportTable td.cellSeries {
+  display: none !important;
+}
 .reportTable td.measure.numeric.normal::before {
   content: "Health: %";
 }
@@ -134,9 +136,7 @@ div#visContainer::before {
   border-left: 6px solid #E8710A !important;
 }*/
 
-.reportTable td.cellSeries {
-  display: none !important;
-}
+
 .reportTable tr.headerRow, 
 .reportTable thead,
 .reportTable th {
