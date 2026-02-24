@@ -83,7 +83,7 @@ div#visContainer::before {
   content: "Health: %";
 }
 
-/* 
+
 .reportTable tr:has(td:nth-child(3).cellSeries) {
   background-color: #b22222 !important;
   border-left-color: #781E12 !important;
@@ -94,11 +94,11 @@ div#visContainer::before {
   background-color: #FFA500 !important;
   border-left-color: #E8710A !important;
 }
-.reportTable tr:has(td:nth-child(1).cellSeries):has(:not(td:nth-child(2).cellSeries)) {
+.reportTable tr:has(td:nth-child(2).cellSeries):has(:not(td:nth-child(3).cellSeries)) {
   background-color: #b22222 !important;
   border-left: 6px solid #781E12 !important;
-}*/
-.reportTable tr:has(td:nth-child(2).numeric:not(:empty)) {
+}
+/*.reportTable tr:has(td:nth-child(2).numeric:not(:empty)) {
   background-color: #b22222 !important;
   border-left: 6px solid #781E12 !important;
 }
@@ -117,7 +117,18 @@ div#visContainer::before {
 .reportTable tr:has(td:nth-child(6).numeric:not(:empty)) {
   background-color: #FFA500 !important;
   border-left: 6px solid #781E12 !important;
+}*/
+/*.reportTable tr:has(td:nth-child(2).cellSeries) {
+  background-color: #FFA500 !important;
+  border-left: 6px solid #781E12 !important;
+  box-shadow: 0 8px 20px rgba(178, 34, 34, 0.2) !important;
 }
+
+.reportTable tr:has(:not(td:nth-child(3).cellSeries)) {
+  background-color: #b22222 !important;
+  border-left: 6px solid #E8710A !important;
+}*/
+
 .reportTable td.cellSeries {
   display: none !important;
 }
