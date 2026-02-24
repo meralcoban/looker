@@ -94,6 +94,10 @@ div#visContainer::before {
   background-color: #FFA500 !important;
   border-left-color: #E8710A !important;
 }
+.reportTable tr:has(td:nth-child(1).cellSeries):not(:has(td:nth-child(2).cellSeries)) {
+  background-color: #b22222 !important;
+  border-left: 6px solid #781E12 !important;
+  box-shadow: 0 8px 20px rgba(178, 34, 34, 0.2) !important;
 .reportTable td.cellSeries {
   display: none !important;
 }
