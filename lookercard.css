@@ -83,19 +83,39 @@ div#visContainer::before {
   content: "Health: %";
 }
 
-/* cellSeries 3. sıradaysa → 0 değeri var → kırmızı tr */
+/* 
 .reportTable tr:has(td:nth-child(3).cellSeries) {
   background-color: #b22222 !important;
   border-left-color: #781E12 !important;
 }
 
-/* cellSeries 2. sıradaysa → 0 yok, başka değer → sarı tr */
+
 .reportTable tr:has(td:nth-child(2).cellSeries) {
   background-color: #FFA500 !important;
   border-left-color: #E8710A !important;
 }
 .reportTable tr:has(td:nth-child(1).cellSeries):has(:not(td:nth-child(2).cellSeries)) {
   background-color: #b22222 !important;
+  border-left: 6px solid #781E12 !important;
+}*/
+.reportTable tr:has(td:nth-child(2).numeric:not(:empty)) {
+  background-color: #b22222 !important;
+  border-left: 6px solid #781E12 !important;
+}
+.reportTable tr:has(td:nth-child(3).numeric:not(:empty)) {
+  background-color: #b22222 !important;
+  border-left: 6px solid #781E12 !important;
+}
+.reportTable tr:has(td:nth-child(4).numeric:not(:empty)) {
+  background-color: #FFA500 !important;
+  border-left: 6px solid #781E12 !important;
+}
+.reportTable tr:has(td:nth-child(5).numeric:not(:empty)) {
+  background-color: #FFA500 !important;
+  border-left: 6px solid #781E12 !important;
+}
+.reportTable tr:has(td:nth-child(6).numeric:not(:empty)) {
+  background-color: #FFA500 !important;
   border-left: 6px solid #781E12 !important;
 }
 .reportTable td.cellSeries {
