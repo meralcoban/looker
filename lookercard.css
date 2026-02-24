@@ -40,12 +40,12 @@ div#visContainer::before {
   height: 65px !important; 
  /* background-color: #b22222 !important; */
   border-radius: 15px !important;
- /* box-shadow: 0 8px 20px rgba(178, 34, 34, 0.2) !important;*/
+  box-shadow: 0 8px 20px rgba(178, 34, 34, 0.2) !important;
   padding: 10px !important;
   justify-content: center !important; 
   align-items: center !important;    
   position: relative !important;
-  border-left: 6px solid #781E12 !important; 
+  /*border-left: 6px solid #781E12 !important; */
 }
 
 
