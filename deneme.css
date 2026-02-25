@@ -1,20 +1,18 @@
-/* Satırları birbirinden tamamen koparır */
+
 .reportTable {
   border-spacing: 0 15px !important; 
   border-collapse: separate !important;
 }
 
 .rowCell {
-  background: white !important;
+  background: #FFC4C4 !important;
   padding: 20px !important;
   border-radius: 12px !important;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
   border: none !important;
-  /* Sol tarafa durum rengi için kalın bir şerit ekler */
-  border-left: 8px solid #3b82f6 !important; 
+
 }
 
-/* Üzerine gelince kartın büyümesi efekti */
 .reportTable tr:hover .rowCell {
   transform: scale(1.02);
   transition: all 0.2s ease;
