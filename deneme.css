@@ -26,12 +26,12 @@ div#visContainer::before {
     linear-gradient(115deg, #B22222 60%, #FFA6A6 100%);   
     
   background-position: 
-    left 20px center, 
-    right 20px center, 
+    left 10px center, 
+    right 10px center, 
     center;
     
   background-repeat: no-repeat;
-  background-size: 60px 60px, 60px 60px, cover;
+  background-size: 80px 80px,80px 80px, cover;
  
 }
 .reportTable {
