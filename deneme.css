@@ -32,7 +32,7 @@ div#visContainer::before {
     center;
     
   background-repeat: no-repeat;
-  background-size: 45px 45px, 45px 45px, cover;
+  background-size: 45px 47px, 45px 47px, cover;
  
 }
 .reportTable {
