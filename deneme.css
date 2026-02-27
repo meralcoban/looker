@@ -60,11 +60,5 @@
 
 .reportTable td.rowCell:last-child {
   border-right: 1px solid #94a3b8 !important; 
-  border-top-right-radius: 8px !important;
-  border-bottom-right-radius: 8px !important;
-  border-left: 1px solid #94a3b8 !important; 
-  border-top-left-radius: 8px !important;
-  border-bottom-left-radius: 8px !important;
-  border-top: 1px solid #94a3b8 !important;
-  border-bottom: 1px solid #94a3b8 !important; 
+
 }
