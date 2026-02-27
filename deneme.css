@@ -1,7 +1,9 @@
 
 .reportTable {
   border-spacing: 0 15px !important; 
-  border-collapse: separate !important;
+  border-collapse: collapse !important;
+  border-inline: solid !important;
+  border-inline-color: #E49BA6 !important;
 }
 
 .rowCell {
@@ -10,9 +12,6 @@
   border-radius: 12px !important;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
   border: none !important;
-  border-left: 6px solid #E49BA6 !important;
-  border-right: 6px solid #E49BA6 !important;
-
 
 }
 
