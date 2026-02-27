@@ -6,70 +6,72 @@
   border: none !important;
 }
 
-/* 2. Sol Üstteki Gereksiz Çift Başlığı Gizle */
+/* 2. Sol Üstteki Gereksiz Başlığı Gizle */
 .viz-title { display: none !important; }
 
-/* 3. BAŞLIKLARI KESİN ORTALAMA (DERİN SEÇİCİLER) */
-/* Looker'ın iç içe koyduğu tüm div ve span'leri zorla ortalarız */
+/* 3. BAŞLIKLAR (Ortalanmış ve Uyumlu) */
 .reportTable .headerRow th,
 .reportTable th.headerCell,
 .reportTable th.headerCell div,
-.reportTable th.headerCell span,
-.reportTable th.dimension,
-.reportTable th.measure {
+.reportTable th.headerCell span {
   text-align: center !important;
   justify-content: center !important;
   align-items: center !important;
   margin: 0 auto !important;
   background: transparent !important;
-  color: #64748b !important; /* Modern Gri */
+  color: #475569 !important; /* Başlıklar için biraz daha koyu gri */
   font-size: 11px !important;
   font-weight: 700 !important;
   text-transform: uppercase !important; 
   letter-spacing: 1px !important;
   border: none !important;
-}
-
-/* Başlıkların altına çok hafif bir ayırıcı çizgi */
-.reportTable .headerRow th {
-  border-bottom: 2px solid #e2e8f0 !important; 
+  border-bottom: 2px solid #94a3b8 !important; /* Başlık altı çizgisi de keskinleşti */
   padding-bottom: 10px !important;
 }
 
-/* 4. VERİ HÜCRELERİ (Tamamen Ortalanmış) */
+/* 4. VERİ HÜCRELERİ (Keskin Gri Kenarlıklar) */
 .reportTable td.rowCell {
   background: #ffffff !important;
   padding: 16px 10px !important;
   border: none !important;
-  border-top: 1px solid #f8fafc !important;
-  border-bottom: 1px solid #f8fafc !important;
+  
+  /* --- KESKİNLEŞTİRİLMİŞ ALT VE ÜST ÇİZGİLER --- */
+  border-top: 1px solid #94a3b8 !important;    /* Belirgin Slate Gri */
+  border-bottom: 1px solid #94a3b8 !important; /* Belirgin Slate Gri */
+  
   color: #1e293b !important; 
   font-family: 'Segoe UI', Roboto, sans-serif !important;
   font-size: 13px !important;
   font-weight: 500 !important;
-  text-align: center !important; /* Hücre içindeki veriyi ortalar */
+  text-align: center !important; 
   vertical-align: middle !important;
   transition: background 0.2s ease !important;
 }
 
-/* 5. Kartın Sol Tarafı (Pembe Şerit ve Yuvarlama) */
+/* 5. KARTIN SOL TARAFI (Yeni Renk ve Yuvarlama) */
 .reportTable td.rowCell:first-child {
-  border-left: 5px solid #E49BA6 !important; /* Pembe Vurgu */
-  border-top-left-radius: 12px !important;
-  border-bottom-left-radius: 12px !important;
+  /* --- PEMBE YERİNE MODERN ELEKTRİK MAVİSİ --- */
+  border-left: 5px solid #3b82f6 !important; 
+  
+  border-top-left-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;
+  /* Sol tarafın üst/alt çizgisinin de maviyle uyumlu kapanması için */
+  border-top: 1px solid #94a3b8 !important;
+  border-bottom: 1px solid #94a3b8 !important;
 }
 
-/* 6. Kartın Sağ Tarafı (Yuvarlama) */
+/* 6. KARTIN SAĞ TARAFI (Yuvarlama ve Çizgi Kapanışı) */
 .reportTable td.rowCell:last-child {
-  border-right: 1px solid #f8fafc !important;
-  border-top-right-radius: 12px !important;
-  border-bottom-right-radius: 12px !important;
+  border-right: 1px solid #94a3b8 !important; /* Sağ kenarı da aynı griyle kapattık */
+  border-top-right-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
 }
 
-/* 7. Hover (Üzerine Gelme) Efekti */
+/* 7. HOVER (Üzerine Gelme) EFEKTİ */
 .reportTable tr:hover {
   transform: translateY(-3px) !important;
-  box-shadow: 0 12px 25px rgba(0,0,0,0.08) !important;
+  /* Gölgeyi biraz daha belirgin yaptık */
+  box-shadow: 0 12px 20px rgba(148, 163, 184, 0.2) !important; 
   transition: all 0.3s ease !important;
 }
 
