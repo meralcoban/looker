@@ -1,24 +1,67 @@
-
+/* 1. Tablo İskeleti: Ayrık Satırlar (Row Gap) İçin Kritik Ayar */
 .reportTable {
-  border-spacing: 0 15px !important; 
-  border-collapse: collapse !important;
-  writing-mode: horizontal-tb;
-  border-inline: solid !important;
-  border-inline-end: solid;
-  border-inline-color: #E49BA6 !important;
-}
-
-.rowCell {
-  background: white !important;
-  padding: 20px !important;
-  border-radius: 12px !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
+  border-collapse: separate !important; /* Artık boşluklar çalışacak */
+  border-spacing: 0 16px !important; /* Satırlar arası yatay boşluk */
+  background: transparent !important;
   border: none !important;
-
 }
 
-.reportTable tr:hover .rowCell {
-  transform: scale(1.02);
-  transition: all 0.2s ease;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+/* 2. Sol Üstteki Gereksiz Çift Başlığı Gizle */
+.viz-title { 
+  display: none !important; 
+}
+
+/* 3. Başlık (Header) Tasarımı (Minimalist, Gri ve Büyük Harf) */
+.reportTable .headerRow th {
+  background: transparent !important;
+  color: #64748b !important; /* Modern Slate Gri */
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important; /* Başlıkları daha resmi yapar */
+  letter-spacing: 1px !important;
+  padding: 0 20px 10px 20px !important;
+  border: none !important;
+  border-bottom: 2px solid #e2e8f0 !important; /* Altını hafifçe çizer */
+  text-align: left !important;
+}
+
+/* 4. Satır İçindeki Hücreler (Bütünleşik Kart Görünümü) */
+.reportTable td.rowCell {
+  background: #ffffff !important;
+  padding: 16px 20px !important;
+  border: none !important;
+  border-top: 1px solid #f8fafc !important;
+  border-bottom: 1px solid #f8fafc !important;
+  color: #1e293b !important;
+  font-family: 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  vertical-align: middle !important;
+  transition: background 0.2s ease !important;
+}
+
+/* 5. Kartın SADECE Sol Tarafını Yuvarla ve Pembe Vurguyu Ekle */
+.reportTable td.rowCell:first-child {
+  border-left: 5px solid #E49BA6 !important; /* Senin pembe rengin */
+  border-top-left-radius: 12px !important;
+  border-bottom-left-radius: 12px !important;
+}
+
+/* 6. Kartın SADECE Sağ Tarafını Yuvarla */
+.reportTable td.rowCell:last-child {
+  border-right: 1px solid #f8fafc !important;
+  border-top-right-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
+}
+
+/* 7. Hover (Üzerine Gelme) Efekti - Tüm satırı hareket ettirir */
+.reportTable tr:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.08) !important;
+  transition: all 0.3s ease !important;
+}
+
+.reportTable tr:hover td.rowCell {
+  background: #f8fafc !important; /* Üzerine gelince kart çok hafif grileşir */
+  cursor: pointer;
 }
