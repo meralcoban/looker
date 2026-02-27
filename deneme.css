@@ -4,6 +4,7 @@
   border-collapse: collapse !important;
   writing-mode: horizontal-tb;
   border-inline: solid !important;
+  border-inline-end: solid;
   border-inline-color: #E49BA6 !important;
 }
 
