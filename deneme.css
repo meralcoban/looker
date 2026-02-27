@@ -1,60 +1,71 @@
-/* 1. Tablo İskeleti: Ayrık Satırlar (Row Gap) İçin Kritik Ayar */
+/* 1. Tablo İskeleti ve Boşluklar */
 .reportTable {
-  border-collapse: separate !important; /* Artık boşluklar çalışacak */
-  border-spacing: 0 16px !important; /* Satırlar arası yatay boşluk */
+  border-collapse: separate !important; 
+  border-spacing: 0 16px !important; 
   background: transparent !important;
   border: none !important;
 }
 
-/* 2. Sol Üstteki Gereksiz Çift Başlığı Gizle */
-.viz-title { 
-  display: none !important; 
-}
+/* 2. Sol Üstteki Gereksiz Başlığı Gizle */
+.viz-title { display: none !important; }
 
-/* 3. Başlık (Header) Tasarımı (Minimalist, Gri ve Büyük Harf) */
+/* 3. BAŞLIKLAR (ORTALANDI) */
 .reportTable .headerRow th {
   background: transparent !important;
-  color: #64748b !important; /* Modern Slate Gri */
+  color: #64748b !important; 
   font-size: 11px !important;
   font-weight: 700 !important;
-  text-transform: uppercase !important; /* Başlıkları daha resmi yapar */
+  text-transform: uppercase !important; 
   letter-spacing: 1px !important;
-  padding: 0 20px 10px 20px !important;
+  padding: 0 10px 10px 10px !important;
   border: none !important;
-  border-bottom: 2px solid #e2e8f0 !important; /* Altını hafifçe çizer */
-  text-align: left !important;
+  border-bottom: 2px solid #e2e8f0 !important; 
+  text-align: center !important; /* <--- MERKEZE ALINDI */
 }
 
-/* 4. Satır İçindeki Hücreler (Bütünleşik Kart Görünümü) */
+/* 4. VERİ HÜCRELERİ (ORTALANDI ve RENK ENGELİ KALDIRILDI) */
 .reportTable td.rowCell {
   background: #ffffff !important;
-  padding: 16px 20px !important;
+  padding: 16px 10px !important;
   border: none !important;
   border-top: 1px solid #f8fafc !important;
   border-bottom: 1px solid #f8fafc !important;
-  color: #1e293b ;
+  
+  /* DİKKAT: !important kaldırıldı ki Looker'ın kırmızısı çalışsın */
+  color: #1e293b; 
+  
   font-family: 'Segoe UI', Roboto, sans-serif !important;
   font-size: 13px !important;
   font-weight: 500 !important;
+  text-align: center !important; /* <--- MERKEZE ALINDI */
   vertical-align: middle !important;
   transition: background 0.2s ease !important;
 }
 
-/* 5. Kartın SADECE Sol Tarafını Yuvarla ve Pembe Vurguyu Ekle */
+/* 5. KIRMIZI RENGİ "MODERN" YAPMA HACK'İ */
+/* Looker'ın standart cırtlak kırmızısını yakalayıp daha modern bir kırmızıya çevirir ve kalınlaştırır */
+.reportTable td.rowCell font[color="red"],
+.reportTable td.rowCell span[style*="color: red"],
+.reportTable td.rowCell span[style*="color:red"] {
+    color: #ef4444 !important; 
+    font-weight: 800 !important;
+}
+
+/* 6. Kartın Sol Tarafı (Pembe Şerit ve Yuvarlama) */
 .reportTable td.rowCell:first-child {
-  border-left: 5px solid #E49BA6 !important; /* Senin pembe rengin */
+  border-left: 5px solid #E49BA6 !important; 
   border-top-left-radius: 12px !important;
   border-bottom-left-radius: 12px !important;
 }
 
-/* 6. Kartın SADECE Sağ Tarafını Yuvarla */
+/* 7. Kartın Sağ Tarafı (Yuvarlama) */
 .reportTable td.rowCell:last-child {
   border-right: 1px solid #f8fafc !important;
   border-top-right-radius: 12px !important;
   border-bottom-right-radius: 12px !important;
 }
 
-/* 7. Hover (Üzerine Gelme) Efekti - Tüm satırı hareket ettirir */
+/* 8. Hover (Üzerine Gelme) Efekti */
 .reportTable tr:hover {
   transform: translateY(-3px) !important;
   box-shadow: 0 12px 25px rgba(0,0,0,0.08) !important;
@@ -62,6 +73,6 @@
 }
 
 .reportTable tr:hover td.rowCell {
-  background: #f8fafc !important; /* Üzerine gelince kart çok hafif grileşir */
+  background: #f8fafc !important; 
   cursor: pointer;
 }
