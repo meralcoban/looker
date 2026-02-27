@@ -76,7 +76,12 @@
   color: #ef4444 !important; /* Profesyonel SaaS Kırmızısı */
   font-weight: 700 !important;
 }
-
+.reportTable td.rowCell:empty {
+  display: none !important; /* Alanı tamamen siler */
+  width: 0 !important; /* Sütun genişliğini yok eder */
+  padding: 0 !important;
+  border: none !important;
+}
 .reportTable tr:hover {
   transform: translateY(-2px) !important;
   box-shadow: 0 6px 12px rgba(148, 163, 184, 0.2) !important; 
