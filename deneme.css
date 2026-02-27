@@ -1,4 +1,11 @@
-
+#tooltip, 
+.looker-vis-tooltip, 
+.vis-tooltip {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
 .reportTable {
   border-collapse: separate !important; 
 
