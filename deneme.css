@@ -1,63 +1,73 @@
 
 .reportTable {
   border-collapse: separate !important; 
-  border-spacing: 0 1px !important; 
+  border-spacing: 0 4px !important; 
   background: transparent !important;
   border: none !important;
 }
 
 .viz-title { display: none !important; }
 
+
 .reportTable .headerRow th,
-.reportTable th.headerCell,
 .reportTable th.headerCell div,
 .reportTable th.headerCell span {
   text-align: left !important;
-  justify-content: flex-start !important; 
-  align-items: center !important;
-  margin: 0 !important; 
-  padding: 4px 6px !important;
-  background: transparent !important;
   color: #0D1A63 !important; 
   font-size: 11px !important;
   font-weight: 700 !important;
   text-transform: uppercase !important; 
+  letter-spacing: 0.5px !important;
+  padding: 8px 12px !important;
   border: none !important;
-  border-bottom: 2px solid #94a3b8 !important; 
+
+  border-bottom: 1px solid #e2e8f0 !important;
 }
+
 
 .reportTable td.rowCell {
   background: #ffffff !important;
+  padding: 6px 14px !important;
   border: none !important;
   
-  padding: 1px 12px !important; 
+
+  border-top: 1px solid #e2e8f0 !important;
+  border-bottom: 1px solid #e2e8f0 !important;
   
-  border-top: 1px solid #94a3b8 !important;    
-  border-bottom: 1px solid #94a3b8 !important; 
-  
-  color: #1e293b !important; 
-  font-family: 'Segoe UI', Roboto, sans-serif !important;
-  font-size: 10px !important;
+  color: #334155 !important; 
+  font-family: 'Inter', 'Segoe UI', sans-serif !important;
+  font-size: 11px !important;
   font-weight: 500 !important;
-  
-  text-align: left !important; 
-  vertical-align: middle !important;
-  transition: background 0.2s ease !important;
+  text-align: left !important;
+  transition: all 0.2s ease !important;
+}
+
+
+.reportTable tbody tr:first-child td {
+  border-top: 1px solid #94a3b8 !important;
 }
 
 
 .reportTable td.rowCell:first-child {
-  border-left: 1px solid #94a3b8 !important; 
-  border-top-left-radius: 8px !important;
-  border-bottom-left-radius: 8px !important;
-  border-top: 1px solid #94a3b8 !important;
-  border-bottom: 1px solid #94a3b8 !important; 
+
+  border-left: 4px solid #3b82f6 !important; 
+  border-top-left-radius: 6px !important;
+  border-bottom-left-radius: 6px !important;
+
+  font-weight: 600 !important;
 }
 
 
 .reportTable td.rowCell:last-child {
-  border-right: 1px solid #94a3b8 !important; 
-  border-top-right-radius: 8px !important;
-  border-bottom-right-radius: 8px !important;
+  border-right: 1px solid #e2e8f0 !important;
+  border-top-right-radius: 6px !important;
+  border-bottom-right-radius: 6px !important;
 }
 
+
+.reportTable tr:hover td.rowCell {
+  background: #f8fafc !important;
+  border-color: #3b82f6 !important; 
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.08) !important;
+  cursor: pointer;
+}
