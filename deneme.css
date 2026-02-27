@@ -1,4 +1,4 @@
-/* 1. Tablo İskeleti ve Boşluklar */
+
 .reportTable {
   border-collapse: separate !important; 
   border-spacing: 0 16px !important; 
@@ -6,10 +6,8 @@
   border: none !important;
 }
 
-/* 2. Sol Üstteki Gereksiz Başlığı Gizle */
 .viz-title { display: none !important; }
 
-/* 3. BAŞLIKLAR (Ortalanmış ve Uyumlu) */
 .reportTable .headerRow th,
 .reportTable th.headerCell,
 .reportTable th.headerCell div,
@@ -19,63 +17,52 @@
   align-items: center !important;
   margin: 0 auto !important;
   background: transparent !important;
-  color: #475569 !important; /* Başlıklar için biraz daha koyu gri */
-  font-size: 11px !important;
+  color: #0D1A63 !important; 
+  font-size: 16px !important;
   font-weight: 700 !important;
   text-transform: uppercase !important; 
   letter-spacing: 1px !important;
   border: none !important;
-  border-bottom: 2px solid #94a3b8 !important; /* Başlık altı çizgisi de keskinleşti */
+  border-bottom: 2px solid #94a3b8 !important; 
   padding-bottom: 10px !important;
 }
 
-/* 4. VERİ HÜCRELERİ (Keskin Gri Kenarlıklar) */
+
 .reportTable td.rowCell {
   background: #ffffff !important;
   padding: 16px 10px !important;
   border: none !important;
   
-  /* --- KESKİNLEŞTİRİLMİŞ ALT VE ÜST ÇİZGİLER --- */
-  border-top: 1px solid #94a3b8 !important;    /* Belirgin Slate Gri */
-  border-bottom: 1px solid #94a3b8 !important; /* Belirgin Slate Gri */
+
+  border-top: 1px solid #94a3b8 !important;    
+  border-bottom: 1px solid #94a3b8 !important; 
   
   color: #1e293b !important; 
   font-family: 'Segoe UI', Roboto, sans-serif !important;
-  font-size: 13px !important;
+  font-size: 14px !important;
   font-weight: 500 !important;
   text-align: center !important; 
   vertical-align: middle !important;
   transition: background 0.2s ease !important;
 }
 
-/* 5. KARTIN SOL TARAFI (Yeni Renk ve Yuvarlama) */
+
 .reportTable td.rowCell:first-child {
-  /* --- PEMBE YERİNE MODERN ELEKTRİK MAVİSİ --- */
+
   border-left: 5px solid #3b82f6 !important; 
   
   border-top-left-radius: 10px !important;
   border-bottom-left-radius: 10px !important;
-  /* Sol tarafın üst/alt çizgisinin de maviyle uyumlu kapanması için */
+
   border-top: 1px solid #94a3b8 !important;
   border-bottom: 1px solid #94a3b8 !important;
 }
 
-/* 6. KARTIN SAĞ TARAFI (Yuvarlama ve Çizgi Kapanışı) */
+
 .reportTable td.rowCell:last-child {
-  border-right: 1px solid #94a3b8 !important; /* Sağ kenarı da aynı griyle kapattık */
+  border-right: 1px solid #94a3b8 !important; 
   border-top-right-radius: 10px !important;
   border-bottom-right-radius: 10px !important;
 }
 
-/* 7. HOVER (Üzerine Gelme) EFEKTİ */
-.reportTable tr:hover {
-  transform: translateY(-3px) !important;
-  /* Gölgeyi biraz daha belirgin yaptık */
-  box-shadow: 0 12px 20px rgba(148, 163, 184, 0.2) !important; 
-  transition: all 0.3s ease !important;
-}
 
-.reportTable tr:hover td.rowCell {
-  background: #f8fafc !important; 
-  cursor: pointer;
-}
