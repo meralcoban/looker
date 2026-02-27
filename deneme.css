@@ -6,66 +6,67 @@
   border: none !important;
 }
 
-/* 2. Sol Üstteki Gereksiz Başlığı Gizle */
+/* 2. Sol Üstteki Gereksiz Çift Başlığı Gizle */
 .viz-title { display: none !important; }
 
-/* 3. BAŞLIKLAR (ORTALANDI) */
-.reportTable .headerRow th {
+/* 3. BAŞLIKLARI KESİN ORTALAMA (DERİN SEÇİCİLER) */
+/* Looker'ın iç içe koyduğu tüm div ve span'leri zorla ortalarız */
+.reportTable .headerRow th,
+.reportTable th.headerCell,
+.reportTable th.headerCell div,
+.reportTable th.headerCell span,
+.reportTable th.dimension,
+.reportTable th.measure {
+  text-align: center !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0 auto !important;
   background: transparent !important;
-  color: #64748b !important; 
+  color: #64748b !important; /* Modern Gri */
   font-size: 11px !important;
   font-weight: 700 !important;
   text-transform: uppercase !important; 
   letter-spacing: 1px !important;
-  padding: 0 10px 10px 10px !important;
   border: none !important;
-  border-bottom: 2px solid #e2e8f0 !important; 
-  text-align: center !important; /* <--- MERKEZE ALINDI */
 }
 
-/* 4. VERİ HÜCRELERİ (ORTALANDI ve RENK ENGELİ KALDIRILDI) */
+/* Başlıkların altına çok hafif bir ayırıcı çizgi */
+.reportTable .headerRow th {
+  border-bottom: 2px solid #e2e8f0 !important; 
+  padding-bottom: 10px !important;
+}
+
+/* 4. VERİ HÜCRELERİ (Tamamen Ortalanmış) */
 .reportTable td.rowCell {
   background: #ffffff !important;
   padding: 16px 10px !important;
   border: none !important;
   border-top: 1px solid #f8fafc !important;
   border-bottom: 1px solid #f8fafc !important;
-  
-  /* DİKKAT: !important kaldırıldı ki Looker'ın kırmızısı çalışsın */
-  color: #1e293b; 
-  
+  color: #1e293b !important; 
   font-family: 'Segoe UI', Roboto, sans-serif !important;
   font-size: 13px !important;
   font-weight: 500 !important;
-  text-align: center !important; /* <--- MERKEZE ALINDI */
+  text-align: center !important; /* Hücre içindeki veriyi ortalar */
   vertical-align: middle !important;
   transition: background 0.2s ease !important;
 }
 
-/* 5. KIRMIZI RENGİ "MODERN" YAPMA HACK'İ */
-/* Looker'ın standart cırtlak kırmızısını yakalayıp daha modern bir kırmızıya çevirir ve kalınlaştırır */
-.reportTable td.rowCell font[color="red"],
-.reportTable td.rowCell span[style*="color: red"],
-.reportTable td.rowCell span[style*="color:red"] {
-    color: #ef4444 !important; 
-    font-weight: 800 !important;
-}
-
-/* 6. Kartın Sol Tarafı (Pembe Şerit ve Yuvarlama) */
+/* 5. Kartın Sol Tarafı (Pembe Şerit ve Yuvarlama) */
 .reportTable td.rowCell:first-child {
-  border-left: 5px solid #E49BA6 !important; 
+  border-left: 5px solid #E49BA6 !important; /* Pembe Vurgu */
   border-top-left-radius: 12px !important;
   border-bottom-left-radius: 12px !important;
 }
 
-/* 7. Kartın Sağ Tarafı (Yuvarlama) */
+/* 6. Kartın Sağ Tarafı (Yuvarlama) */
 .reportTable td.rowCell:last-child {
   border-right: 1px solid #f8fafc !important;
   border-top-right-radius: 12px !important;
   border-bottom-right-radius: 12px !important;
 }
 
-/* 8. Hover (Üzerine Gelme) Efekti */
+/* 7. Hover (Üzerine Gelme) Efekti */
 .reportTable tr:hover {
   transform: translateY(-3px) !important;
   box-shadow: 0 12px 25px rgba(0,0,0,0.08) !important;
