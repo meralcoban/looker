@@ -1,25 +1,4 @@
-/* 1. LOOKER HATA KUTUSUNU TAMAMEN GÖRÜNMEZ YAP */
-/* Kutu ekranda yer kaplamaya devam eder ama içindeki ikon ve yazı buharlaşır */
-div[class*="ElementErrorContent__Container"] {
-  visibility: hidden !important;
-  position: relative !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-}
 
-/* 2. KENDİ "ALERT YOK" METNİMİZİ ZORLA GÖRÜNÜR KIL */
-/* Görünmez kutunun içine girip sadece kendi metnimizi görünür yapıyoruz */
-div[class*="ElementErrorContent__Container"]::after {
-  content: "Alert Yok" !important;
-  visibility: visible !important; /* Pelerini sadece bu metin için kaldırır */
-  position: absolute !important;
-  font-size: 15px !important;
-  font-weight: 600 !important;
-  color: #64748b !important; /* Kurumsal SaaS Grisi */
-  font-family: 'Segoe UI', Roboto, sans-serif !important;
-  letter-spacing: 0.5px !important;
-}
 div#visContainer::before {
   content: "ACTIVE ALERT ROBOTS";
   position: absolute;
