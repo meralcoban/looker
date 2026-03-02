@@ -125,3 +125,10 @@
 .reportTable tr:hover td.rowCell {
   background: #f8fafc !important; 
 }
+.reportTable tr:hover td.rowCell:nth-child(5) {
+  background: #dcfce7 !important; 
+}
+
+.reportTable tr:hover td.rowCell:last-child {
+  background: #fee2e2 !important; 
+}
