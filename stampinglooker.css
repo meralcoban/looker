@@ -122,18 +122,22 @@
   transition: all 0.2s ease !important;
 }
 
-
-/* HOVER OLUNCA ARKA PLANDA YAVAŞÇA AKAN HAREKETLİ RENK EFEKTİ */
 .reportTable tr:hover td.rowCell {
-  /* Pastel yeşilden daha açık bir yeşile ve tekrar geri dönen bir geçiş */
-  background: linear-gradient(270deg, #f0fdf4, #dcfce7, #f0fdf4) !important;
-  background-size: 400% 400% !important;
-  animation: YavascaAkanRenk 4s ease infinite !important; /* 4 saniyelik sonsuz hareket (GIF GİBİ) */
+  background: #f8fafc !important; 
+}
+/*.reportTable tr:hover td.rowCell:nth-child(5) {
+  background: #dcfce7 !important; 
 }
 
-/* Hareketi Sağlayan Motor (Bunu CSS'in en altına ekle) */
-@keyframes YavascaAkanRenk {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.reportTable tr:hover td.rowCell:last-child {
+  background: #fee2e2 !important; 
+}*/
+
+.reportTable tr:has(td.rowCell:nth-child(5):not(:empty)):hover td.rowCell {
+  background: #f0fdf4 !important; 
+}
+
+
+.reportTable tr:has(td.rowCell:last-child:not(:empty)):hover td.rowCell {
+  background: #fef2f2 !important; 
 }
