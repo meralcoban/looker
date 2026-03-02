@@ -134,10 +134,10 @@
 }*/
 
 .reportTable tr:has(td.rowCell:nth-child(5):not(:empty)):hover td.rowCell {
-  background: #F0FFF0 !important; 
+  background: #f0fdf4 !important; 
 }
 
 
 .reportTable tr:has(td.rowCell:last-child:not(:empty)):hover td.rowCell {
-  background: #FFD0D0 !important; 
+  background: #fef2f2 !important; 
 }
