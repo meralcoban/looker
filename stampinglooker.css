@@ -1,10 +1,33 @@
-#tooltip, 
+/*#tooltip, 
 .looker-vis-tooltip, 
 .vis-tooltip {
   display: none !important;
   visibility: hidden !important;
   opacity: 0 !important;
   pointer-events: none !important;
+}*/
+
+#tooltip, 
+.looker-vis-tooltip, 
+.vis-tooltip {
+  display: block !important; 
+  visibility: visible !important;
+  opacity: 1 !important;
+  
+  position: fixed !important; 
+  top: auto; 
+  left: auto;
+  z-index: 99999 !important; 
+
+  background: #1e293b !important; 
+  color: #f8fafc !important; 
+  border-radius: 8px !important; 
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3) !important; 
+  padding: 10px 14px !important;
+  border: 1px solid #334155 !important; 
+  font-family: 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 11px !important;
+  pointer-events: none !important; 
 }
 .reportTable {
   border-collapse: separate !important; 
