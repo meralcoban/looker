@@ -106,7 +106,7 @@
 }
 
 
-.reportTable td.rowCell:last-child {
+.reportTable td.rowCell:nth-child(5) {
   border-right: 1px solid #94a3b8 !important; 
   border-top-right-radius: 8px !important;
   border-bottom-right-radius: 8px !important;
