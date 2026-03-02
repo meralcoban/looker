@@ -125,10 +125,19 @@
 .reportTable tr:hover td.rowCell {
   background: #f8fafc !important; 
 }
-.reportTable tr:hover td.rowCell:nth-child(5) {
+/*.reportTable tr:hover td.rowCell:nth-child(5) {
   background: #dcfce7 !important; 
 }
 
 .reportTable tr:hover td.rowCell:last-child {
   background: #fee2e2 !important; 
+}*/
+
+.reportTable tr:has(td.rowCell:nth-child(5):not(:empty)):hover td.rowCell {
+  background: #f0fdf4 !important; 
+}
+
+
+.reportTable tr:has(td.rowCell:last-child:not(:empty)):hover td.rowCell {
+  background: #fef2f2 !important; 
 }
