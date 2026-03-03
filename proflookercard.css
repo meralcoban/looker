@@ -14,10 +14,10 @@ div#visContainer::before {
   font-family: 'Roboto', sans-serif; 
   font-weight: bold;
   padding: 14px 40px; 
-  background: linear-gradient(115deg, #B22222 40%, #FFA6A6 100%); 
+  background: linear-gradient(115deg, #191970 40%, #ADD8E6  100%); 
   color: #ffffff; 
   border-radius: 50px; 
-  box-shadow: 0 10px 15px -3px rgba(178, 34, 34, 0.4);
+  box-shadow: 0 10px 15px -3px #191970;
   white-space: nowrap;
 
   padding: 14px 60px; 
