@@ -53,8 +53,8 @@ div#visContainer::before {
 .reportTable tr {
   display: flex !important;
   flex-direction: column !important;
-  width: 150px !important;  
-  height: 65px !important; 
+  max-width: 220px !important;  
+  min-height: 120px !important;
   flex: 1 1 180px !important; 
  /* background-color: #b22222 !important; */
   border-radius: 20px !important;
@@ -63,6 +63,7 @@ div#visContainer::before {
   justify-content: center !important; 
   align-items: center !important;    
   position: relative !important;
+  box-sizing: border-box !important;
   /*border-left: 6px solid #781E12 !important; */
 }
 
