@@ -104,7 +104,7 @@ div#visContainer::before {
     display: none !important;
 }
 .reportTable td.measure.numeric.normal::before {
-  content: "Health: %";
+  content: "HEALTH: %";
   font-size: 14px;
   font-weight: 600;
 }
