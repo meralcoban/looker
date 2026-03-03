@@ -92,7 +92,7 @@ div#visContainer::before {
   color: #ffffff !important; 
   text-align: center !important;
   font-family: 'Segoe UI', Roboto, sans-serif !important;
-  font-size: 16px !important; 
+  font-size: 15px !important; 
   font-weight: 400 !important;
   line-height: 1.2 !important;
   border: none !important;
@@ -105,7 +105,7 @@ div#visContainer::before {
 }
 .reportTable td.measure.numeric.normal::before {
   content: "Health: %";
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
 }
 
