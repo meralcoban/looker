@@ -43,19 +43,20 @@ div#visContainer::before {
 }
 
 .reportTable tbody {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 15px !important; 
-  padding: 80px 20px 20px 20px !important;
-  justify-content: center !important;
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important; 
+  
+  gap: 15px !important;
+  padding: 80px 20px 20px 20px !important; 
+  width: 100% !important;
 }
 
 .reportTable tr {
   display: flex !important;
   flex-direction: column !important;
-  max-width: 220px !important;  
+   /* max-width: 220px !important;  */
   min-height: 120px !important;
-  flex: 1 1 180px !important; 
+   /* flex: 1 1 180px !important; */
  /* background-color: #b22222 !important; */
   border-radius: 20px !important;
   box-shadow: 0 10px 0px #781E12, 0 15px 25px rgba(0,0,0,0.2) !important;
@@ -64,6 +65,7 @@ div#visContainer::before {
   align-items: center !important;    
   position: relative !important;
   box-sizing: border-box !important;
+  width: 100% !important;
   /*border-left: 6px solid #781E12 !important; */
 }
 
