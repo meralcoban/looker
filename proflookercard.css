@@ -27,11 +27,11 @@ div#visContainer::before {
     
   background-position: 
     left 5px center, 
-    right 20px center, 
+    right 10px center, 
     center;
     
   background-repeat: no-repeat;
-  background-size: 75px 45px, 65px 55px, cover;
+  background-size: 75px 45px, 65px 50px, cover;
  
 }
 .reportTable {
