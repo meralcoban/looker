@@ -128,7 +128,7 @@ div#visContainer::before {
   box-shadow: 0 10px 0px #E8710A, 0 15px 25px rgba(0,0,0,0.2) !important;
 }
 /*4.*/
-.reportTable tr:has(td:nth-child(2).cellSeries):has(td:nth-child(3).cellSeries):has(td:nth-child(4).cellSeries):not(:has(td:nth-child(5).cellSeries) {
+.reportTable tr:has(td:nth-child(2).cellSeries):has(td:nth-child(3).cellSeries):has(td:nth-child(4).cellSeries):not(:has(td:nth-child(5).cellSeries)) {
   background-color: #F0E371 ;
   border-left: 6px solid #C9AF1E ;
   box-shadow: 0 10px 0px #C9AF1E, 0 15px 25px rgba(0,0,0,0.2) !important;
