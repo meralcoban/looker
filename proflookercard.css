@@ -53,7 +53,7 @@ div#visContainer::before {
 .reportTable tr {
   display: flex !important;
   flex-direction: column !important;
-  max-width: 220px !important;  
+  max-width: 200px !important;  
   min-height: 120px !important;
   flex: 1 1 180px !important; 
  /* background-color: #b22222 !important; */
