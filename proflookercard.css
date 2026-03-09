@@ -55,15 +55,16 @@ div#visContainer::before {
   max-width: 200px !important;  
   min-height: 120px !important;
   flex: 1 1 180px !important; 
- /* background-color: #b22222 !important; */
   border-radius: 20px !important;
-  box-shadow: 0 10px 0px #781E12, 0 15px 25px rgba(0,0,0,0.2) !important;
   padding: 15px !important;
   justify-content: center !important; 
   align-items: center !important;    
   position: relative !important;
   box-sizing: border-box !important;
-  /*border-left: 6px solid #781E12 !important; */
+  background-color: #B22222 !important; /* 0 veya tek veri gelirse varsayılan KIRMIZI */
+  border-left: 6px solid #781E12 !important;
+  box-shadow: 0 10px 0px #781E12, 0 15px 25px rgba(0,0,0,0.2) !important;
+
 }
 
 
@@ -109,11 +110,7 @@ div#visContainer::before {
 }
 
 /*1.*/
-.reportTable tr:has(td:nth-child(3).cellSeries):not(:has(td:nth-child(2).cellSeries)) {
-  background-color: #B22222 ;
-  border-left: 6px solid #781E12 ;
-  box-shadow: 0 10px 0px #781E12, 0 15px 25px rgba(0,0,0,0.2) !important;
-}
+
 /*2.*/
 .reportTable tr:has(td:nth-child(2).cellSeries):not(:has(td:nth-child(3).cellSeries)) {
   background-color: #E8710A ;
