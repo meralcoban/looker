@@ -61,9 +61,9 @@ div#visContainer::before {
   align-items: center !important;    
   position: relative !important;
   box-sizing: border-box !important;
-  background-color: #B22222 !important; /* 0 veya tek veri gelirse varsayılan KIRMIZI */
-  border-left: 6px solid #781E12 !important;
-  box-shadow: 0 10px 0px #781E12, 0 15px 25px rgba(0,0,0,0.2) !important;
+  background-color: #B22222 ; 
+  border-left: 6px solid #781E12 ;
+  box-shadow: 0 10px 0px #781E12, 0 15px 25px rgba(0,0,0,0.2) ;
 
 }
 
