@@ -1,15 +1,20 @@
 div#visContainer::before {
-  content: "TOP INCREASES (LAST 1 HOUR)";
-  display: block;
+  content: "🕒 TOP INCREASES (LAST 1 HOUR)"; /* Küçük bir ikon ekledik */
+  display: inline-block; /* Tüm satırı kaplamasın, sadece yazı kadar olsun */
   font-family: 'Segoe UI', Roboto, sans-serif !important;
   font-size: 10px !important;
-  font-weight: 700 !important;
-  color: #94a3b8 !important;
-  letter-spacing: 1px;
+  font-weight: 800 !important;
+  color: #0D1A63 !important; /* Tablo başlıklarındaki lacivert ile aynı */
+  
+  background: #f1f5f9 !important; /* Hafif gri arka plan */
+  padding: 4px 10px !important;
+  border-radius: 4px !important;
+  border-left: 3px solid #94a3b8 !important; /* Tablonun solundaki çizgiyle aynı renk */
+  
+  letter-spacing: 0.5px;
   text-transform: uppercase;
-  margin-bottom: 12px; /* Tablo ile aradaki boşluk */
-  padding-left: 2px;
- 
+  margin-bottom: 16px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05); /* Çok hafif derinlik */
 }
 #tooltip, 
 .looker-vis-tooltip, 
