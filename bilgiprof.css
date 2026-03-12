@@ -1,0 +1,33 @@
+/* 1. "aa" Sütun Başlığını Tamamen Gizle */
+.reportTable thead, 
+.reportTable .headerRow, 
+.reportTable th.headerCell {
+  display: none !important;
+}
+
+/* 2. Tablonun Kendi Varsayılan Çizgilerini ve Arka Planını Temizle */
+.reportTable {
+  border: none !important;
+  background: transparent !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+}
+
+/* 3. Hücreyi (İçindeki Yazıyı) Rozet (Badge) Gibi Tasarla */
+.reportTable td.rowCell {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important; /* İkon ile yazı arasındaki boşluk */
+  
+  color: #191970 !important;
+  font-size: 12px !important;
+  font-family: 'Segoe UI', Roboto, sans-serif !important;
+  
+  background: rgba(59, 130, 246, 0.08) !important;
+  padding: 8px 16px !important;
+  border-radius: 6px !important;
+  
+  border: none !important; /* Standart hücre kenarlıklarını sil */
+  border-left: 4px solid #191970 !important; /* Sadece sol kalın mavi çizgiyi ekle */
+  
+  white-space: nowrap !
