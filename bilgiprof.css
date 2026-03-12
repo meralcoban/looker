@@ -20,8 +20,8 @@
 
 /* 2. Dikey padding'i (üst/alt boşluk) biraz kıs */
 .reportTable td.rowCell {
-  padding-top: 4px !important;    /* 8px yerine 4px yaparak nefes aldırıyoruz */
-  padding-bottom: 4px !important; 
+  padding-top: 6px !important;    /* 8px yerine 4px yaparak nefes aldırıyoruz */
+  padding-bottom: 6px !important; 
   line-height: 1 !important;      /* Metin satır yüksekliğini sıkılaştır */
 }
 /* 3. Hücreyi (İçindeki Yazıyı) Rozet (Badge) Gibi Tasarla */
