@@ -9,11 +9,11 @@ div#visContainer::before {
   background: #f1f5f9 !important; /* Hafif gri arka plan */
   padding: 4px 10px !important;
   border-radius: 4px !important;
-  border-left: 3px solid #94a3b8 !important; /* Tablonun solundaki çizgiyle aynı renk */
+ 
   
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 1px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.05); /* Çok hafif derinlik */
 }
 #tooltip, 
