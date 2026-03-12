@@ -1,6 +1,6 @@
 div#visContainer::before {
   content: "🕒 TOP INCREASES (LAST 1 HOUR)"; /* Küçük bir ikon ekledik */
-  display: inline-block; /* Tüm satırı kaplamasın, sadece yazı kadar olsun */
+  display: block; /* Tüm satırı kaplamasın, sadece yazı kadar olsun */
   font-family: 'Segoe UI', Roboto, sans-serif !important;
   font-size: 10px !important;
   font-weight: 800 !important;
@@ -9,7 +9,8 @@ div#visContainer::before {
   background: #f1f5f9 !important; /* Hafif gri arka plan */
   padding: 4px 10px !important;
   border-radius: 4px !important;
- 
+  text-align: center !important;  /* Metni ortaya hizalıyoruz */
+  padding-left: 0 !important;
   
   letter-spacing: 0.5px;
   text-transform: uppercase;
