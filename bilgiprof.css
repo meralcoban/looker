@@ -12,7 +12,18 @@
   margin: 0 !important;
   box-shadow: none !important;
 }
+/* 1. Kaydırma çubuğunu tamamen devre dışı bırak */
+.reportTable, 
+.reportTable td.rowCell {
+  overflow: hidden !important; /* Bu satır sihirli dokunuştur */
+}
 
+/* 2. Dikey padding'i (üst/alt boşluk) biraz kıs */
+.reportTable td.rowCell {
+  padding-top: 4px !important;    /* 8px yerine 4px yaparak nefes aldırıyoruz */
+  padding-bottom: 4px !important; 
+  line-height: 1 !important;      /* Metin satır yüksekliğini sıkılaştır */
+}
 /* 3. Hücreyi (İçindeki Yazıyı) Rozet (Badge) Gibi Tasarla */
 .reportTable td.rowCell {
   display: flex !important;
@@ -24,7 +35,7 @@
   font-family: 'Segoe UI', Roboto, sans-serif !important;
   
   background: rgba(59, 130, 246, 0.08) !important;
-  padding: 8px 16px !important;
+
   border-radius: 6px !important;
   
   border: none !important; /* Standart hücre kenarlıklarını sil */
