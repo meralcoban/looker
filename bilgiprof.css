@@ -1,34 +1,31 @@
-/* 1. "aa" Sütun Başlığını Tamamen Gizle */
 .reportTable thead, 
 .reportTable .headerRow, 
 .reportTable th.headerCell {
   display: none !important;
 }
 
-/* 2. Tablonun Kendi Varsayılan Çizgilerini ve Arka Planını Temizle */
 .reportTable {
   border: none !important;
   background: transparent !important;
   margin: 0 !important;
   box-shadow: none !important;
 }
-/* 1. Kaydırma çubuğunu tamamen devre dışı bırak */
+
 .reportTable, 
 .reportTable td.rowCell {
-  overflow: hidden !important; /* Bu satır sihirli dokunuştur */
+  overflow: hidden !important; 
 }
 
-/* 2. Dikey padding'i (üst/alt boşluk) biraz kıs */
 .reportTable td.rowCell {
-  padding-top: 6px !important;    /* 8px yerine 4px yaparak nefes aldırıyoruz */
+  padding-top: 6px !important;    
   padding-bottom: 6px !important; 
-  line-height: 1 !important;      /* Metin satır yüksekliğini sıkılaştır */
+  line-height: 1 !important;   
 }
-/* 3. Hücreyi (İçindeki Yazıyı) Rozet (Badge) Gibi Tasarla */
+
 .reportTable td.rowCell {
   display: flex !important;
   align-items: center !important;
-  gap: 8px !important; /* İkon ile yazı arasındaki boşluk */
+  gap: 8px !important; 
   
   color: #191970 !important;
   font-size: 12px !important;
@@ -38,7 +35,7 @@
 
   border-radius: 6px !important;
   
-  border: none !important; /* Standart hücre kenarlıklarını sil */
-  border-left: 4px solid #191970 !important; /* Sadece sol kalın mavi çizgiyi ekle */
+  border: none !important; 
+  border-left: 4px solid #191970 !important;
   
   white-space: nowrap !
