@@ -1,16 +1,15 @@
-/* Tablo üzerine küçük İngilizce başlık ekleme */
-.reportTable:before {
+/* Tekrarlamayı önlemek için ana görselleştirme alanını hedefliyoruz */
+.vis:before {
   content: "TOP INCREASES (LAST 1 HOUR)";
   display: block;
-  text-align: left;
   font-family: 'Segoe UI', Roboto, sans-serif !important;
-  font-size: 10px !important; /* Küçük olması için 10px */
+  font-size: 10px !important;
   font-weight: 700 !important;
-  color: #94a3b8 !important; /* Mevcut border renginle uyumlu, çok göze batmayan bir gri */
+  color: #94a3b8 !important;
   letter-spacing: 1px;
   text-transform: uppercase;
-  margin-bottom: 8px;
-  padding-left: 4px;
+  margin-bottom: 12px; /* Tablo ile aradaki boşluk */
+  padding-left: 2px;
 }
 #tooltip, 
 .looker-vis-tooltip, 
