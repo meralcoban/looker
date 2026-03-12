@@ -127,3 +127,6 @@
 .reportTable tr:has(td.rowCell:last-child:not(:empty)):hover td.rowCell {
   background: #fef2f2 !important; 
 }
+.reportTable tr:nth-child(n+5) {
+  display: none !important;
+}
