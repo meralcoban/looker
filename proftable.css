@@ -2,7 +2,7 @@ div#visContainer::before {
   content: "🕒 TOP INCREASES (LAST 1 HOUR)"; 
   display: block; 
   font-family: 'Segoe UI', Roboto, sans-serif !important;
-  font-size: 10px !important;
+  font-size: 14.3px !important;
   font-weight: 800 !important;
   color: #0D1A63 !important; 
   
@@ -47,7 +47,7 @@ div#visContainer::before {
   padding: 8px 12px !important; 
   background: transparent !important;
   color: #0D1A63 !important; 
-  font-size: 11px !important;
+  font-size: 12.2px !important;
   font-weight: 700 !important;
   text-transform: uppercase !important; 
   border: none !important;
@@ -67,7 +67,7 @@ div#visContainer::before {
   
   color: #1e293b !important; 
   font-family: 'Segoe UI', Roboto, sans-serif !important;
-  font-size: 11px !important;
+  font-size: 10.8px !important;
   font-weight: 500 !important;
   
   text-align: left !important;
