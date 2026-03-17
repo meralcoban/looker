@@ -1,0 +1,118 @@
+#tooltip, 
+.looker-vis-tooltip, 
+.vis-tooltip {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.reportTable {
+  border-collapse: separate !important; 
+  border-spacing: 0 6px !important; 
+  background: transparent !important;
+  border: none !important;
+}
+
+.viz-title { display: none !important; }
+
+.reportTable .headerRow th,
+.reportTable th.headerCell,
+.reportTable th.headerCell div,
+.reportTable th.headerCell span {
+  text-align: left !important; 
+  justify-content: flex-start !important; 
+  align-items: center !important;
+  margin: 0 !important; 
+  padding: 8px 12px !important; 
+  background: transparent !important;
+  color: #0D1A63 !important; 
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important; 
+  border: none !important;
+  border-bottom: 2px solid #94a3b8 !important; 
+}
+
+.reportTable td.rowCell {
+  background: #ffffff !important;
+  border: none !important;
+  padding: 1px 12px !important; 
+  border-top: 1px solid #94a3b8 !important;   
+  border-bottom: 1px solid #94a3b8 !important; 
+  color: #1e293b !important; 
+  font-family: 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  text-align: left !important;
+  vertical-align: middle !important;
+  transition: background 0.2s ease !important;
+}
+
+/* --- PIVOT DÜZENİ: RENKLENDİRME --- */
+
+/* RED (Kırmızı) Kolonları: 6, 10, 14, 18... */
+.reportTable td.rowCell:nth-child(4n + 6) {
+  color: #b22222 !important; 
+  font-weight: 700 !important;
+}
+
+/* GREEN (Yeşil) Kolonları: 7, 11, 15, 19... */
+.reportTable td.rowCell:nth-child(4n + 7) {
+  color: #2E8B57 !important; 
+  font-weight: 700 !important;
+}
+
+/* Eğer eski kodundaki gibi red/green başlık yazılarını gizlemek istersen bu bloğu açabilirsin:
+.reportTable th.headerCell:nth-child(4n + 6) span,
+.reportTable th.headerCell:nth-child(4n + 7) span {
+  font-size: 0 !important; 
+  color: transparent !important; 
+  pointer-events: none !important;
+}
+*/
+
+.reportTable td.rowCell:empty {
+  display: none !important; 
+  width: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+.reportTable th.headerCell:empty {
+  display: none !important;
+}
+
+/* --- KÖŞE YUVARLAMA VE KENARLIKLAR --- */
+
+.reportTable td.rowCell:first-child {
+  border-left: 3px solid #94a3b8 !important; 
+  border-top-left-radius: 8px !important;
+  border-bottom-left-radius: 8px !important;
+  border-top: 1px solid #94a3b8 !important;
+  border-bottom: 1px solid #94a3b8 !important;
+}
+
+
+.reportTable td.rowCell:last-child {
+  border-right: 1px solid #94a3b8 !important; 
+  border-top-right-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+}
+
+
+
+.reportTable tr:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 12px rgba(148, 163, 184, 0.2) !important; 
+  transition: all 0.2s ease !important;
+}
+
+.reportTable tr:hover td.rowCell {
+  background: #f8fafc !important; 
+}
+
+
+.reportTable tr:has(td.rowCell:last-child:not(:empty)):hover td.rowCell {
+  background: #fef2f2 !important; 
+}
+
