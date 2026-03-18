@@ -67,35 +67,54 @@ tbody td:empty,
   border: none !important;
 }
 
-/* --- SEVİYELERE GÖRE RENKLENDİRME --- */
+/* --- SEVİYELERE GÖRE RENKLENDİRME (MODERN KUTUCUK TASARIMI) --- */
 
-/* 1. Seviye: 5. Sütun (%30 - %50) - Turuncu/Sarımtırak */
-tbody td:nth-child(5),
-.reportTable td.rowCell:nth-child(5) {
-  color: #d97706 !important; /* Koyu Turuncu */
+/* Ortak Ayarlar: Metni ortala, köşeleri yuvarlat ve kutucuk illüzyonu yarat */
+.reportTable td.rowCell:nth-child(5),
+.reportTable td.rowCell:nth-child(6),
+.reportTable td.rowCell:nth-child(7) {
+  text-align: center !important;
+  vertical-align: middle !important;
   font-weight: 700 !important;
-  background: #fef3c7 !important; /* Açık sarı */
+  border-radius: 16px !important; /* Köşeleri yuvarlatır (Hap görünümü) */
+  
+  /* İŞİN SIRRI: Hücre etrafına satırın kendi renginde kalın bir çerçeve atarak "ayrı kutucuk" illüzyonu yaratırız */
+  border: 6px solid #ffffff !important; 
+  background-clip: padding-box !important;
 }
 
-/* 2. Seviye: 6. Sütun (%50 - %100) - Kırmızı */
-tbody td:nth-child(6),
+/* 1. Seviye: 5. Sütun (%30 - %50) - Pastel Turuncu Kutucuk */
+.reportTable td.rowCell:nth-child(5) {
+  color: #9a3412 !important; /* Koyu Turuncu Yazı */
+  background-color: #ffedd5 !important; /* Açık Turuncu Arka Plan */
+}
+
+/* 2. Seviye: 6. Sütun (%50 - %100) - Pastel Kırmızı Kutucuk */
 .reportTable td.rowCell:nth-child(6) {
-  color: #dc2626 !important; /* Kırmızı */
-  font-weight: 800 !important;
-  background: #fee2e2 !important; /* Açık kırmızı */
+  color: #991b1b !important; /* Koyu Kırmızı Yazı */
+  background-color: #fee2e2 !important; /* Açık Kırmızı Arka Plan */
 }
 
-/* 3. Seviye: 7. Sütun (> %100) - Koyu Bordo */
-tbody td:nth-child(7),
+/* 3. Seviye: 7. Sütun (> %100) - Dikkat Çekici Bordo Kutucuk */
 .reportTable td.rowCell:nth-child(7) {
   color: #ffffff !important; /* Beyaz Yazı */
-  font-weight: 900 !important;
-  background: #991b1b !important; /* Koyu Bordo */
-  border: 1px solid #7f1d1d !important;
+  background-color: #dc2626 !important; /* Canlı Kırmızı Arka Plan */
+  border: 6px solid #ffffff !important; 
 }
 
-/* Hover efekti bozulmasın diye 7. sütuna özel */
-tbody tr:hover td:nth-child(7),
-.reportTable tr:hover td.rowCell:nth-child(7) {
-  background: #7f1d1d !important;
+
+/* --- HOVER VE ZEBRA UYUMU (Kutucukların kenar boşluklarının rengi de satırla değişmeli) --- */
+
+/* Çift satırlardaki (Zebra) sahte boşluk rengi */
+tbody tr:nth-child(even) td.rowCell:nth-child(5),
+tbody tr:nth-child(even) td.rowCell:nth-child(6),
+tbody tr:nth-child(even) td.rowCell:nth-child(7) {
+  border-color: #f8f9fd !important;
+}
+
+/* Üzerine gelindiğindeki (Hover) sahte boşluk rengi */
+tbody tr:hover td.rowCell:nth-child(5),
+tbody tr:hover td.rowCell:nth-child(6),
+tbody tr:hover td.rowCell:nth-child(7) {
+  border-color: #eef1fb !important;
 }
