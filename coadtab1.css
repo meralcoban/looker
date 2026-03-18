@@ -67,54 +67,40 @@ tbody td:empty,
   border: none !important;
 }
 
-/* --- SEVİYELERE GÖRE RENKLENDİRME (MODERN KUTUCUK TASARIMI) --- */
+/* --- SEVİYELERE GÖRE RENKLENDİRME (PREMIUM BADGE TASARIMI) --- */
 
-/* Ortak Ayarlar: Metni ortala, köşeleri yuvarlat ve kutucuk illüzyonu yarat */
+/* Ortak Ayarlar: Metni ortala ve şeffaf çerçeve ile gerçekçi boşluk yarat */
 .reportTable td.rowCell:nth-child(5),
 .reportTable td.rowCell:nth-child(6),
 .reportTable td.rowCell:nth-child(7) {
   text-align: center !important;
   vertical-align: middle !important;
   font-weight: 700 !important;
-  border-radius: 16px !important; /* Köşeleri yuvarlatır (Hap görünümü) */
   
-  /* İŞİN SIRRI: Hücre etrafına satırın kendi renginde kalın bir çerçeve atarak "ayrı kutucuk" illüzyonu yaratırız */
-  border: 6px solid #ffffff !important; 
+  /* Kurumsal hafif yuvarlak köşeler (Çok yuvarlak yapmıyoruz) */
+  border-radius: 6px !important; 
+  
+  /* İŞİN SIRRI: Beyaz renk yerine ŞEFFAF border. Böylece arkadaki satır rengi görünür! */
+  border: 4px solid transparent !important; 
   background-clip: padding-box !important;
 }
 
-/* 1. Seviye: 5. Sütun (%30 - %50) - Pastel Turuncu Kutucuk */
+/* 1. Seviye: 5. Sütun (%30 - %50) - Pastel Turuncu */
 .reportTable td.rowCell:nth-child(5) {
-  color: #9a3412 !important; /* Koyu Turuncu Yazı */
+  color: #c2410c !important; /* Koyu Turuncu Yazı */
   background-color: #ffedd5 !important; /* Açık Turuncu Arka Plan */
 }
 
-/* 2. Seviye: 6. Sütun (%50 - %100) - Pastel Kırmızı Kutucuk */
+/* 2. Seviye: 6. Sütun (%50 - %100) - Pastel Kırmızı */
 .reportTable td.rowCell:nth-child(6) {
-  color: #991b1b !important; /* Koyu Kırmızı Yazı */
+  color: #b91c1c !important; /* Koyu Kırmızı Yazı */
   background-color: #fee2e2 !important; /* Açık Kırmızı Arka Plan */
 }
 
-/* 3. Seviye: 7. Sütun (> %100) - Dikkat Çekici Bordo Kutucuk */
+/* 3. Seviye: 7. Sütun (> %100) - Dikkat Çekici Bordo */
 .reportTable td.rowCell:nth-child(7) {
   color: #ffffff !important; /* Beyaz Yazı */
-  background-color: #dc2626 !important; /* Canlı Kırmızı Arka Plan */
-  border: 6px solid #ffffff !important; 
+  background-color: #991b1b !important; /* Koyu Bordo Arka Plan */
 }
 
-
-/* --- HOVER VE ZEBRA UYUMU (Kutucukların kenar boşluklarının rengi de satırla değişmeli) --- */
-
-/* Çift satırlardaki (Zebra) sahte boşluk rengi */
-tbody tr:nth-child(even) td.rowCell:nth-child(5),
-tbody tr:nth-child(even) td.rowCell:nth-child(6),
-tbody tr:nth-child(even) td.rowCell:nth-child(7) {
-  border-color: #f8f9fd !important;
-}
-
-/* Üzerine gelindiğindeki (Hover) sahte boşluk rengi */
-tbody tr:hover td.rowCell:nth-child(5),
-tbody tr:hover td.rowCell:nth-child(6),
-tbody tr:hover td.rowCell:nth-child(7) {
-  border-color: #eef1fb !important;
-}
+/* NOT: Şeffaf border kullandığımız için artık Hover ve Zebra uyumu için ekstra kod yazmamıza GEREK KALMADI. Sistem arkadaki rengi otomatik okuyacak. */
