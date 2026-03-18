@@ -46,9 +46,11 @@ thead th:last-child {
   border-right: none;
 }
 /* --- BAŞLIKLARI DÜZENLEME --- */
-/* Sadece 6. sütunun başlığı kalsın, 7 ve 8. sütunların başlıklarını gizleyelim ki tek sütun gibi görünsün */
-.reportTable th.headerCell:nth-child(7),
-.reportTable th.headerCell:nth-child(8) {
+/* 6. ve 7. sütun başlıklarını gizle. Ekranda sadece 5. sütunun ("30-50" veya "Artış Oranı") başlığı kalsın */
+thead th:nth-child(6),
+thead th:nth-child(7),
+.reportTable th.headerCell:nth-child(6),
+.reportTable th.headerCell:nth-child(7) {
   display: none !important; 
   width: 0 !important;
   padding: 0 !important;
@@ -56,6 +58,8 @@ thead th:last-child {
 }
 
 /* --- BOŞ HÜCRELERİ GİZLEME (SENİN HARİKA KURALIN) --- */
+/* Formüllerimiz artık "" (gerçek boşluk) verdiği için bu kural kusursuz çalışacak ve sütunları sola kaydıracak */
+tbody td:empty,
 .reportTable td.rowCell:empty {
   display: none !important; 
   width: 0 !important;
@@ -65,29 +69,33 @@ thead th:last-child {
 
 /* --- SEVİYELERE GÖRE RENKLENDİRME --- */
 
-/* 1. Seviye: 6. Sütun (%30 - %50) - Turuncu/Sarımtırak */
-.reportTable td.rowCell:nth-child(6) {
+/* 1. Seviye: 5. Sütun (%30 - %50) - Turuncu/Sarımtırak */
+tbody td:nth-child(5),
+.reportTable td.rowCell:nth-child(5) {
   color: #d97706 !important; /* Koyu Turuncu */
   font-weight: 700 !important;
-  background: #fef3c7 !important; /* Çok açık sarı arka plan */
+  background: #fef3c7 !important; /* Açık sarı */
 }
 
-/* 2. Seviye: 7. Sütun (%50 - %100) - Kırmızı */
-.reportTable td.rowCell:nth-child(7) {
+/* 2. Seviye: 6. Sütun (%50 - %100) - Kırmızı */
+tbody td:nth-child(6),
+.reportTable td.rowCell:nth-child(6) {
   color: #dc2626 !important; /* Kırmızı */
   font-weight: 800 !important;
-  background: #fee2e2 !important; /* Açık kırmızı arka plan */
+  background: #fee2e2 !important; /* Açık kırmızı */
 }
 
-/* 3. Seviye: 8. Sütun (> %100) - Koyu Bordo ve Dikkat Çekici */
-.reportTable td.rowCell:nth-child(8) {
+/* 3. Seviye: 7. Sütun (> %100) - Koyu Bordo */
+tbody td:nth-child(7),
+.reportTable td.rowCell:nth-child(7) {
   color: #ffffff !important; /* Beyaz Yazı */
   font-weight: 900 !important;
-  background: #991b1b !important; /* Koyu Bordo arka plan */
+  background: #991b1b !important; /* Koyu Bordo */
   border: 1px solid #7f1d1d !important;
 }
 
-/* Hover efektlerinde arka planın bozulmaması için (İsteğe bağlı) */
-.reportTable tr:hover td.rowCell:nth-child(8) {
-  background: #7f1d1d !important; /* Hover olunca biraz daha koyulaşsın */
+/* Hover efekti bozulmasın diye 7. sütuna özel */
+tbody tr:hover td:nth-child(7),
+.reportTable tr:hover td.rowCell:nth-child(7) {
+  background: #7f1d1d !important;
 }
