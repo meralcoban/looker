@@ -45,8 +45,7 @@ tbody td:last-child,
 thead th:last-child {
   border-right: none;
 }
-/* --- BAŞLIKLARI DÜZENLEME --- */
-/* 6. ve 7. sütun başlıklarını gizle. Ekranda sadece 5. sütunun ("30-50" veya "Artış Oranı") başlığı kalsın */
+
 thead th:nth-child(6),
 thead th:nth-child(7),
 .reportTable th.headerCell:nth-child(6),
@@ -57,8 +56,7 @@ thead th:nth-child(7),
   border: none !important;
 }
 
-/* --- BOŞ HÜCRELERİ GİZLEME (SENİN HARİKA KURALIN) --- */
-/* Formüllerimiz artık "" (gerçek boşluk) verdiği için bu kural kusursuz çalışacak ve sütunları sola kaydıracak */
+
 tbody td:empty,
 .reportTable td.rowCell:empty {
   display: none !important; 
@@ -67,9 +65,8 @@ tbody td:empty,
   border: none !important;
 }
 
-/* --- SEVİYELERE GÖRE RENKLENDİRME (PREMIUM BADGE TASARIMI) --- */
 
-/* Ortak Ayarlar: Metni ortala ve şeffaf çerçeve ile gerçekçi boşluk yarat */
+
 .reportTable td.rowCell:nth-child(5),
 .reportTable td.rowCell:nth-child(6),
 .reportTable td.rowCell:nth-child(7) {
@@ -77,30 +74,32 @@ tbody td:empty,
   vertical-align: middle !important;
   font-weight: 700 !important;
   
-  /* Kurumsal hafif yuvarlak köşeler (Çok yuvarlak yapmıyoruz) */
   border-radius: 6px !important; 
   
-  /* İŞİN SIRRI: Beyaz renk yerine ŞEFFAF border. Böylece arkadaki satır rengi görünür! */
   border: 4px solid transparent !important; 
   background-clip: padding-box !important;
 }
 
-/* 1. Seviye: 5. Sütun (%30 - %50) - Pastel Turuncu */
 .reportTable td.rowCell:nth-child(5) {
-  color: #c2410c !important; /* Koyu Turuncu Yazı */
-  background-color: #ffedd5 !important; /* Açık Turuncu Arka Plan */
+  color: #c2410c !important; 
+  background-color: #ffedd5 !important; 
 }
 
-/* 2. Seviye: 6. Sütun (%50 - %100) - Pastel Kırmızı */
 .reportTable td.rowCell:nth-child(6) {
-  color: #b91c1c !important; /* Koyu Kırmızı Yazı */
-  background-color: #fee2e2 !important; /* Açık Kırmızı Arka Plan */
+  color: #b91c1c !important; 
+  background-color: #fee2e2 !important; 
 }
 
-/* 3. Seviye: 7. Sütun (> %100) - Dikkat Çekici Bordo */
 .reportTable td.rowCell:nth-child(7) {
-  color: #ffffff !important; /* Beyaz Yazı */
-  background-color: #991b1b !important; /* Koyu Bordo Arka Plan */
+  color: #ffffff !important;
+  background-color: #991b1b !important;
 }
 
-/* NOT: Şeffaf border kullandığımız için artık Hover ve Zebra uyumu için ekstra kod yazmamıza GEREK KALMADI. Sistem arkadaki rengi otomatik okuyacak. */
+#tooltip, 
+.looker-vis-tooltip, 
+.vis-tooltip {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
