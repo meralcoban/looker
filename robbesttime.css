@@ -1,4 +1,4 @@
-/* --- TOOLTIP GİZLEME --- */
+
 #tooltip, 
 .looker-vis-tooltip, 
 .vis-tooltip {
@@ -8,7 +8,6 @@
   pointer-events: none !important;
 }
 
-/* --- TABLO ANA YAPISI --- */
 .reportTable {
   border-collapse: separate !important; 
   border-spacing: 0 6px !important; 
@@ -16,7 +15,6 @@
   border: none !important;
 }
 
-/* --- BAŞLIKLAR (HEADERS) --- */
 .reportTable .headerRow th,
 .reportTable th.headerCell {
   text-align: left !important; 
@@ -28,24 +26,20 @@
   font-size: 11px !important;
   font-weight: 700 !important;
   text-transform: uppercase !important; 
-  /* Looker'ın kendi çizgilerini sıfırlayıp bizimkileri ekliyoruz */
   border-top: none !important;
   border-left: none !important;
   border-bottom: 2px solid #94a3b8 !important; 
-  border-right: 1px solid #d1d5db !important; /* Araya giren dikey çizgi */
+  border-right: 1px solid #d1d5db !important;
 }
 .reportTable th.headerCell:last-child {
-  border-right: none !important; /* En sağ başlıkta çizgi olmasın */
+  border-right: none !important; 
 }
 
-/* --- HÜCRELER (CELLS) --- */
 .reportTable td.rowCell {
   background: #ffffff !important;
-  padding: 8px 12px !important; 
-  /* Yatay çizgiler (Kapsülün altı ve üstü) */
+  padding: 1px 12px !important; 
   border-top: 1px solid #94a3b8 !important;   
   border-bottom: 1px solid #94a3b8 !important; 
-  /* Dikey çizgiler (Kolonları ayıran çizgiler) */
   border-right: 1px solid #d1d5db !important; 
   border-left: none !important;
   
@@ -58,7 +52,6 @@
   transition: background 0.2s ease !important;
 }
 
-/* --- HOVER (ÜZERİNE GELİNCE) EFEKTLERİ --- */
 .reportTable tr:hover {
   transform: translateY(-2px) !important;
   box-shadow: 0 6px 12px rgba(148, 163, 184, 0.2) !important; 
@@ -68,14 +61,13 @@
   background: #f8fafc !important; 
 }
 
-/* --- KÖŞE YUVARLAMA VE DIŞ KENARLIKLAR --- */
+
 .reportTable td.rowCell:first-child {
   border-left: 3px solid #94a3b8 !important; 
   border-top-left-radius: 8px !important;
   border-bottom-left-radius: 8px !important;
 }
 .reportTable td.rowCell:last-child {
-  /* En sağdaki ana dış çerçeve çizgisi, aradaki ince çizgiyi ezer */
   border-right: 1px solid #94a3b8 !important; 
   border-top-right-radius: 8px !important;
   border-bottom-right-radius: 8px !important;
