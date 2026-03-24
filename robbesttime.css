@@ -16,9 +16,7 @@
 
 /* --- BAŞLIKLAR TEMEL STİL --- */
 .reportTable .headerRow th,
-.reportTable th.headerCell,
-.reportTable th.headerCell div,
-.reportTable th.headerCell span {
+.reportTable th.headerCell {
   text-align: left !important; 
   align-items: center !important;
   margin: 0 !important; 
@@ -50,29 +48,67 @@
 
 /* =========================================================
    PIVOT DÜZENİ: İKİ KOLONU TEK KOLON GİBİ BİRLEŞTİRME 
+   (SADECE EN ALT BAŞLIK SATIRINI ETKİLER)
    ========================================================= */
 
-/* 1. "GREEN" ve "RED" Başlık Yazılarını Gizle */
-.reportTable th.headerCell:nth-child(3n + 5) span,
-.reportTable th.headerCell:nth-child(3n + 6) span {
+/* 1. SADECE en alt başlık satırındaki GREEN ve RED yazılarını gizle */
+.reportTable tr.headerRow:last-of-type th.headerCell:nth-child(3n + 5) span,
+.reportTable tr.headerRow:last-of-type th.headerCell:nth-child(3n + 6) span {
   font-size: 0 !important; 
   color: transparent !important; 
   display: none !important;
 }
 
-/* 2. Ortak Bir Başlık Ekle (Green kolonunun tepesine CYCLE TIME yazar) */
-.reportTable th.headerCell:nth-child(3n + 5)::after {
-  content: "REALIZED SPM" !important; /* Buraya görünmesini istediğin başlığı yaz */
+/* 2. Green kolonunun başlığına ortak ismi (REALIZED SPM) yaz */
+.reportTable tr.headerRow:last-of-type th.headerCell:nth-child(3n + 5)::after {
+  content: "REALIZED SPM" !important; 
   font-size: 11px !important;
   color: #0D1A63 !important;
   display: block !important;
 }
 
-/* 3. Hücreleri Birbirine Yapıştır (Ortadaki çizgiyi ve padding'i sil) */
-
-/* GREEN Kolonları (Sol Taraf) */
+/* 3. GREEN Kolonları (Sol Taraf) - Çizgiyi kaldır, sağa yanaştır */
 .reportTable td.rowCell:nth-child(3n + 5) {
   color: #2E8B57 !important; 
   font-weight: 700 !important;
-  border-right: none !important; /* RED ile aradaki çizgiyi kaldır */
-  padding-right
+  border-right: none !important; 
+  padding-right: 0 !important;   
+  text-align: right !important;  
+}
+.reportTable tr.headerRow:last-of-type th.headerCell:nth-child(3n + 5) {
+  border-right: none !important;
+}
+
+/* 4. RED Kolonları (Sağ Taraf) - Çizgiyi kaldır, sola yanaştır */
+.reportTable td.rowCell:nth-child(3n + 6) {
+  color: #b22222 !important; 
+  font-weight: 700 !important;
+  border-left: none !important; 
+  padding-left: 4px !important; 
+  text-align: left !important;  
+}
+.reportTable tr.headerRow:last-of-type th.headerCell:nth-child(3n + 6) {
+  border-left: none !important;
+}
+
+/* --- HOVER (ÜZERİNE GELİNCE) EFEKTLERİ --- */
+.reportTable tr:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 12px rgba(148, 163, 184, 0.2) !important; 
+  transition: all 0.2s ease !important;
+}
+.reportTable tr:hover td.rowCell {
+  background: #f8fafc !important; 
+}
+
+/* --- KÖŞE YUVARLAMA VE DIŞ KENARLIKLAR --- */
+.reportTable td.rowCell:first-child {
+  border-left: 3px solid #94a3b8 !important; 
+  border-top-left-radius: 8px !important;
+  border-bottom-left-radius: 8px !important;
+}
+.reportTable td.rowCell:last-child {
+  border-right: 1px solid #94a3b8 !important; 
+  border-top-right-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+}
