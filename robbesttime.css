@@ -51,21 +51,21 @@
   transition: background 0.2s ease !important;
 }
 
-/* --- PIVOT DÜZENİ: METİN RENKLENDİRME --- */
+/* --- PIVOT DÜZENİ: SADECE YAZI RENKLENDİRME --- */
 
-/* GREEN (Yeşil) Kolonları: 7, 12, 17... (5n + 2) */
-.reportTable td.rowCell:nth-child(5n + 2) {
+/* İlk 3 kolon ATLANIR. GREEN Kolonları: 7, 12, 17... */
+.reportTable td.rowCell:nth-child(5n + 7) {
   color: #2E8B57 !important; 
   font-weight: 700 !important;
 }
 
-/* RED (Kırmızı) Kolonları: 8, 13, 18... (5n + 3) */
-.reportTable td.rowCell:nth-child(5n + 3) {
+/* İlk 3 kolon ATLANIR. RED Kolonları: 8, 13, 18... */
+.reportTable td.rowCell:nth-child(5n + 8) {
   color: #b22222 !important; 
   font-weight: 700 !important;
 }
 
-/* Null veya boş değerleri gizleme */
+/* --- BOŞ HÜCRELERİ VE SIFIRLARI TEMİZLEME --- */
 .reportTable td.rowCell:empty {
   display: none !important; 
   width: 0 !important;
@@ -76,45 +76,19 @@
   display: none !important;
 }
 
-/* --- SATIR ARKA PLAN RENKLENDİRMESİ (TÜM SATIRI BOYAMA) --- */
-
-/* Satırdaki herhangi bir "Green" kolonu doluysa satırı açık yeşil yap */
-.reportTable tr:has(td.rowCell:nth-child(5n + 2):not(:empty)) td.rowCell {
-  background: #f0fdf4 !important; 
-}
-
-/* Satırdaki herhangi bir "Red" kolonu doluysa satırı açık kırmızı yap. 
-   (Kırmızı öncelikli olduğu için kural altta) */
-.reportTable tr:has(td.rowCell:nth-child(5n + 3):not(:empty)) td.rowCell {
-  background: #fef2f2 !important; 
-}
-
-
 /* --- HOVER (ÜZERİNE GELİNCE) EFEKTLERİ --- */
-
 .reportTable tr:hover {
   transform: translateY(-2px) !important;
   box-shadow: 0 6px 12px rgba(148, 163, 184, 0.2) !important; 
   transition: all 0.2s ease !important;
 }
 
-/* Normal satır hover */
+/* Üzerine gelince temiz, çok hafif mavi/gri bir arka plan (Renkliler kalktı) */
 .reportTable tr:hover td.rowCell {
   background: #f8fafc !important; 
 }
 
-/* Yeşile boyalı satır hover */
-.reportTable tr:has(td.rowCell:nth-child(5n + 2):not(:empty)):hover td.rowCell {
-  background: #dcfce7 !important;
-}
-
-/* Kırmızıya boyalı satır hover */
-.reportTable tr:has(td.rowCell:nth-child(5n + 3):not(:empty)):hover td.rowCell {
-  background: #fee2e2 !important;
-}
-
 /* --- KÖŞE YUVARLAMA VE KENARLIKLAR --- */
-
 .reportTable td.rowCell:first-child {
   border-left: 3px solid #94a3b8 !important; 
   border-top-left-radius: 8px !important;
