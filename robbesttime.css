@@ -16,12 +16,12 @@
 
 .viz-title { display: none !important; }
 
+/* --- BAŞLIKLAR --- */
 .reportTable .headerRow th,
 .reportTable th.headerCell,
 .reportTable th.headerCell div,
 .reportTable th.headerCell span {
   text-align: left !important; 
-  justify-content: flex-start !important; 
   align-items: center !important;
   margin: 0 !important; 
   padding: 8px 12px !important; 
@@ -34,6 +34,7 @@
   border-bottom: 2px solid #94a3b8 !important; 
 }
 
+/* --- HÜCRE TEMEL STİLLERİ --- */
 .reportTable td.rowCell {
   background: #ffffff !important;
   border: none !important;
@@ -49,18 +50,35 @@
   transition: background 0.2s ease !important;
 }
 
+/* --- PIVOT DÜZENİ: RENKLENDİRME VE BOŞLUK SIKILAŞTIRMA --- */
 
-.reportTable td.rowCell:nth-child(4n + 6) {
+/* İlk 3 Kolon Sabit (Atlanır). Her pivot grubunda 3 kolon var. */
+
+/* GREEN Kolonları: 5, 8, 11... (3n + 2) */
+.reportTable td.rowCell:nth-child(3n + 2) {
   color: #2E8B57 !important; 
   font-weight: 700 !important;
+  /* Red kolonuyla arasındaki boşluğu azaltmak için sağ padding'i kısıyoruz */
+  padding-right: 4px !important; 
 }
 
-.reportTable td.rowCell:nth-child(4n + 7) {
+/* RED Kolonları: 6, 9, 12... (3n + 3) */
+.reportTable td.rowCell:nth-child(3n + 3) {
   color: #b22222 !important; 
   font-weight: 700 !important;
+  /* Green kolonuyla arasındaki boşluğu azaltmak için sol padding'i kısıyoruz */
+  padding-left: 4px !important; 
 }
 
+/* Başlıkların altındaki boşluk da uyumlu olsun diye daraltıyoruz */
+.reportTable th.headerCell:nth-child(3n + 2) {
+  padding-right: 4px !important;
+}
+.reportTable th.headerCell:nth-child(3n + 3) {
+  padding-left: 4px !important;
+}
 
+/* --- HOVER (ÜZERİNE GELİNCE) EFEKTLERİ --- */
 .reportTable tr:hover {
   transform: translateY(-2px) !important;
   box-shadow: 0 6px 12px rgba(148, 163, 184, 0.2) !important; 
@@ -71,12 +89,11 @@
   background: #f8fafc !important; 
 }
 
+/* --- KÖŞE YUVARLAMA VE KENARLIKLAR --- */
 .reportTable td.rowCell:first-child {
   border-left: 3px solid #94a3b8 !important; 
   border-top-left-radius: 8px !important;
   border-bottom-left-radius: 8px !important;
-  border-top: 1px solid #94a3b8 !important;
-  border-bottom: 1px solid #94a3b8 !important;
 }
 
 .reportTable td.rowCell:last-child {
