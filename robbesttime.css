@@ -14,9 +14,7 @@
   border: none !important;
 }
 
-/* Başlık gizlenmesin diye viz-title kodunu kaldırdık! */
-
-/* --- BAŞLIKLAR --- */
+/* --- BAŞLIKLAR TEMEL STİL --- */
 .reportTable .headerRow th,
 .reportTable th.headerCell,
 .reportTable th.headerCell div,
@@ -50,48 +48,31 @@
   transition: background 0.2s ease !important;
 }
 
-/* --- PIVOT DÜZENİ: RENKLENDİRME --- */
+/* =========================================================
+   PIVOT DÜZENİ: İKİ KOLONU TEK KOLON GİBİ BİRLEŞTİRME 
+   ========================================================= */
 
-/* İlk 3 Kolon ATLANIR. GREEN Kolonları: 5, 8, 11... (3n + 5) */
+/* 1. "GREEN" ve "RED" Başlık Yazılarını Gizle */
+.reportTable th.headerCell:nth-child(3n + 5) span,
+.reportTable th.headerCell:nth-child(3n + 6) span {
+  font-size: 0 !important; 
+  color: transparent !important; 
+  display: none !important;
+}
+
+/* 2. Ortak Bir Başlık Ekle (Green kolonunun tepesine CYCLE TIME yazar) */
+.reportTable th.headerCell:nth-child(3n + 5)::after {
+  content: "REALIZED SPM" !important; /* Buraya görünmesini istediğin başlığı yaz */
+  font-size: 11px !important;
+  color: #0D1A63 !important;
+  display: block !important;
+}
+
+/* 3. Hücreleri Birbirine Yapıştır (Ortadaki çizgiyi ve padding'i sil) */
+
+/* GREEN Kolonları (Sol Taraf) */
 .reportTable td.rowCell:nth-child(3n + 5) {
   color: #2E8B57 !important; 
   font-weight: 700 !important;
-  padding-right: 4px !important; 
-}
-.reportTable th.headerCell:nth-child(3n + 5) {
-  padding-right: 4px !important;
-}
-
-/* İlk 3 Kolon ATLANIR. RED Kolonları: 6, 9, 12... (3n + 6) */
-.reportTable td.rowCell:nth-child(3n + 6) {
-  color: #b22222 !important; 
-  font-weight: 700 !important;
-  padding-left: 4px !important; 
-}
-.reportTable th.headerCell:nth-child(3n + 6) {
-  padding-left: 4px !important;
-}
-
-/* --- HOVER (ÜZERİNE GELİNCE) EFEKTLERİ --- */
-.reportTable tr:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6px 12px rgba(148, 163, 184, 0.2) !important; 
-  transition: all 0.2s ease !important;
-}
-
-.reportTable tr:hover td.rowCell {
-  background: #f8fafc !important; 
-}
-
-/* --- KÖŞE YUVARLAMA VE KENARLIKLAR --- */
-.reportTable td.rowCell:first-child {
-  border-left: 3px solid #94a3b8 !important; 
-  border-top-left-radius: 8px !important;
-  border-bottom-left-radius: 8px !important;
-}
-
-.reportTable td.rowCell:last-child {
-  border-right: 1px solid #94a3b8 !important; 
-  border-top-right-radius: 8px !important;
-  border-bottom-right-radius: 8px !important;
-}
+  border-right: none !important; /* RED ile aradaki çizgiyi kaldır */
+  padding-right
