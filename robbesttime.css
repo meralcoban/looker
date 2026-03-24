@@ -16,7 +16,6 @@
 
 .viz-title { display: none !important; }
 
-/* --- BAŞLIKLAR --- */
 .reportTable .headerRow th,
 .reportTable th.headerCell,
 .reportTable th.headerCell div,
@@ -35,7 +34,6 @@
   border-bottom: 2px solid #94a3b8 !important; 
 }
 
-/* --- HÜCRE TEMEL STİLLERİ --- */
 .reportTable td.rowCell {
   background: #ffffff !important;
   border: none !important;
@@ -51,44 +49,28 @@
   transition: background 0.2s ease !important;
 }
 
-/* --- PIVOT DÜZENİ: SADECE YAZI RENKLENDİRME --- */
 
-/* İlk 3 kolon ATLANIR. GREEN Kolonları: 7, 12, 17... */
-.reportTable td.rowCell:nth-child(5n + 7) {
+.reportTable td.rowCell:nth-child(4n + 6) {
   color: #2E8B57 !important; 
   font-weight: 700 !important;
 }
 
-/* İlk 3 kolon ATLANIR. RED Kolonları: 8, 13, 18... */
-.reportTable td.rowCell:nth-child(5n + 8) {
+.reportTable td.rowCell:nth-child(4n + 7) {
   color: #b22222 !important; 
   font-weight: 700 !important;
 }
 
-/* --- BOŞ HÜCRELERİ VE SIFIRLARI TEMİZLEME --- */
-.reportTable td.rowCell:empty {
-  display: none !important; 
-  width: 0 !important;
-  padding: 0 !important;
-  border: none !important;
-}
-.reportTable th.headerCell:empty {
-  display: none !important;
-}
 
-/* --- HOVER (ÜZERİNE GELİNCE) EFEKTLERİ --- */
 .reportTable tr:hover {
   transform: translateY(-2px) !important;
   box-shadow: 0 6px 12px rgba(148, 163, 184, 0.2) !important; 
   transition: all 0.2s ease !important;
 }
 
-/* Üzerine gelince temiz, çok hafif mavi/gri bir arka plan (Renkliler kalktı) */
 .reportTable tr:hover td.rowCell {
   background: #f8fafc !important; 
 }
 
-/* --- KÖŞE YUVARLAMA VE KENARLIKLAR --- */
 .reportTable td.rowCell:first-child {
   border-left: 3px solid #94a3b8 !important; 
   border-top-left-radius: 8px !important;
