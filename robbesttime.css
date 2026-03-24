@@ -28,24 +28,27 @@
   font-size: 11px !important;
   font-weight: 700 !important;
   text-transform: uppercase !important; 
-  border: none !important;
+  /* Looker'ın kendi çizgilerini sıfırlayıp bizimkileri ekliyoruz */
+  border-top: none !important;
+  border-left: none !important;
   border-bottom: 2px solid #94a3b8 !important; 
-  /* YENİ: Başlıklar arasına hafif dikey çizgi */
-  border-right: 1px solid #cbd5e1 !important; 
+  border-right: 1px solid #d1d5db !important; /* Araya giren dikey çizgi */
 }
 .reportTable th.headerCell:last-child {
-  border-right: none !important; /* En sağda dış çerçeve ile çakışmasın */
+  border-right: none !important; /* En sağ başlıkta çizgi olmasın */
 }
 
 /* --- HÜCRELER (CELLS) --- */
 .reportTable td.rowCell {
   background: #ffffff !important;
-  border: none !important;
   padding: 8px 12px !important; 
+  /* Yatay çizgiler (Kapsülün altı ve üstü) */
   border-top: 1px solid #94a3b8 !important;   
   border-bottom: 1px solid #94a3b8 !important; 
-  /* YENİ: Hücreler (sayılar) arasına hafif dikey çizgi */
-  border-right: 1px solid #cbd5e1 !important; 
+  /* Dikey çizgiler (Kolonları ayıran çizgiler) */
+  border-right: 1px solid #d1d5db !important; 
+  border-left: none !important;
+  
   color: #1e293b !important; 
   font-family: 'Segoe UI', Roboto, sans-serif !important;
   font-size: 11px !important;
@@ -72,7 +75,7 @@
   border-bottom-left-radius: 8px !important;
 }
 .reportTable td.rowCell:last-child {
-  /* En sağdaki ana dış çerçeve çizgisi */
+  /* En sağdaki ana dış çerçeve çizgisi, aradaki ince çizgiyi ezer */
   border-right: 1px solid #94a3b8 !important; 
   border-top-right-radius: 8px !important;
   border-bottom-right-radius: 8px !important;
