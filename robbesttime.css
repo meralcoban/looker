@@ -41,54 +41,54 @@
   font-family: 'Segoe UI', Roboto, sans-serif !important;
   font-size: 11px !important;
   font-weight: 500 !important;
-  text-align: left !important;
   vertical-align: middle !important;
   transition: background 0.2s ease !important;
 }
 
 /* =========================================================
-   PIVOT DÜZENİ: İKİ KOLONU TEK KOLON GİBİ BİRLEŞTİRME 
-   (SADECE EN ALT BAŞLIK SATIRINI ETKİLER)
+   PIVOT DÜZENİ: İKİ KOLONU "KAYNATIP" TEK KOLON YAPMA
    ========================================================= */
 
-/* 1. SADECE en alt başlık satırındaki GREEN ve RED yazılarını gizle */
-.reportTable tr.headerRow:last-of-type th.headerCell:nth-child(3n + 5) span,
-.reportTable tr.headerRow:last-of-type th.headerCell:nth-child(3n + 6) span {
+/* 1. BAŞLIKLARI GİZLEME (Üstteki KONV vs. bozulmasın diye [colspan] olanlar atlanır) */
+.reportTable th.headerCell:not([colspan]):nth-child(3n + 5) span,
+.reportTable th.headerCell:not([colspan]):nth-child(3n + 5) div,
+.reportTable th.headerCell:not([colspan]):nth-child(3n + 6) span,
+.reportTable th.headerCell:not([colspan]):nth-child(3n + 6) div {
   font-size: 0 !important; 
   color: transparent !important; 
   display: none !important;
 }
 
-/* 2. Green kolonunun başlığına ortak ismi (REALIZED SPM) yaz */
-.reportTable tr.headerRow:last-of-type th.headerCell:nth-child(3n + 5)::after {
+/* 2. ORTAK BAŞLIK YAZDIRMA (Sadece Green'in üstüne yazılır, Red'e taşar) */
+.reportTable th.headerCell:not([colspan]):nth-child(3n + 5)::after {
   content: "REALIZED SPM" !important; 
   font-size: 11px !important;
   color: #0D1A63 !important;
   display: block !important;
 }
 
-/* 3. GREEN Kolonları (Sol Taraf) - Çizgiyi kaldır, sağa yanaştır */
+/* 3. GREEN KOLONU (SOL YARI) - Aradaki sağ çizgiyi sil, veriyi sağa daya */
 .reportTable td.rowCell:nth-child(3n + 5) {
   color: #2E8B57 !important; 
   font-weight: 700 !important;
-  border-right: none !important; 
-  padding-right: 0 !important;   
+  border-right: 0 !important; 
+  padding-right: 1px !important;   
   text-align: right !important;  
 }
-.reportTable tr.headerRow:last-of-type th.headerCell:nth-child(3n + 5) {
-  border-right: none !important;
+.reportTable th.headerCell:not([colspan]):nth-child(3n + 5) {
+  border-right: 0 !important;
 }
 
-/* 4. RED Kolonları (Sağ Taraf) - Çizgiyi kaldır, sola yanaştır */
+/* 4. RED KOLONU (SAĞ YARI) - Aradaki sol çizgiyi sil, veriyi sola daya */
 .reportTable td.rowCell:nth-child(3n + 6) {
   color: #b22222 !important; 
   font-weight: 700 !important;
-  border-left: none !important; 
-  padding-left: 4px !important; 
+  border-left: 0 !important; 
+  padding-left: 1px !important; 
   text-align: left !important;  
 }
-.reportTable tr.headerRow:last-of-type th.headerCell:nth-child(3n + 6) {
-  border-left: none !important;
+.reportTable th.headerCell:not([colspan]):nth-child(3n + 6) {
+  border-left: 0 !important;
 }
 
 /* --- HOVER (ÜZERİNE GELİNCE) EFEKTLERİ --- */
