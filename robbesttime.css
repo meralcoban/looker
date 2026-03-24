@@ -14,7 +14,7 @@
   border: none !important;
 }
 
-.viz-title { display: none !important; }
+/* Başlık gizlenmesin diye viz-title kodunu kaldırdık! */
 
 /* --- BAŞLIKLAR --- */
 .reportTable .headerRow th,
@@ -50,31 +50,25 @@
   transition: background 0.2s ease !important;
 }
 
-/* --- PIVOT DÜZENİ: RENKLENDİRME VE BOŞLUK SIKILAŞTIRMA --- */
+/* --- PIVOT DÜZENİ: RENKLENDİRME --- */
 
-/* İlk 3 Kolon Sabit (Atlanır). Her pivot grubunda 3 kolon var. */
-
-/* GREEN Kolonları: 5, 8, 11... (3n + 2) */
-.reportTable td.rowCell:nth-child(3n + 2) {
+/* İlk 3 Kolon ATLANIR. GREEN Kolonları: 5, 8, 11... (3n + 5) */
+.reportTable td.rowCell:nth-child(3n + 5) {
   color: #2E8B57 !important; 
   font-weight: 700 !important;
-  /* Red kolonuyla arasındaki boşluğu azaltmak için sağ padding'i kısıyoruz */
   padding-right: 4px !important; 
 }
-
-/* RED Kolonları: 6, 9, 12... (3n + 3) */
-.reportTable td.rowCell:nth-child(3n + 3) {
-  color: #b22222 !important; 
-  font-weight: 700 !important;
-  /* Green kolonuyla arasındaki boşluğu azaltmak için sol padding'i kısıyoruz */
-  padding-left: 4px !important; 
-}
-
-/* Başlıkların altındaki boşluk da uyumlu olsun diye daraltıyoruz */
-.reportTable th.headerCell:nth-child(3n + 2) {
+.reportTable th.headerCell:nth-child(3n + 5) {
   padding-right: 4px !important;
 }
-.reportTable th.headerCell:nth-child(3n + 3) {
+
+/* İlk 3 Kolon ATLANIR. RED Kolonları: 6, 9, 12... (3n + 6) */
+.reportTable td.rowCell:nth-child(3n + 6) {
+  color: #b22222 !important; 
+  font-weight: 700 !important;
+  padding-left: 4px !important; 
+}
+.reportTable th.headerCell:nth-child(3n + 6) {
   padding-left: 4px !important;
 }
 
