@@ -1,3 +1,4 @@
+
 #tooltip, 
 .looker-vis-tooltip, 
 .vis-tooltip {
@@ -7,6 +8,7 @@
   pointer-events: none !important;
 }
 
+
 .reportTable {
   border-collapse: separate !important; 
   border-spacing: 0 6px !important; 
@@ -14,7 +16,6 @@
   border: none !important;
 }
 
-/* --- BAŞLIKLAR TEMEL STİL --- */
 .reportTable .headerRow th,
 .reportTable th.headerCell {
   text-align: left !important; 
@@ -30,68 +31,22 @@
   border-bottom: 2px solid #94a3b8 !important; 
 }
 
-/* --- HÜCRE TEMEL STİLLERİ --- */
 .reportTable td.rowCell {
   background: #ffffff !important;
   border: none !important;
-  padding: 1px 12px !important; 
+  padding: 8px 12px !important; 
   border-top: 1px solid #94a3b8 !important;   
   border-bottom: 1px solid #94a3b8 !important; 
   color: #1e293b !important; 
   font-family: 'Segoe UI', Roboto, sans-serif !important;
   font-size: 11px !important;
   font-weight: 500 !important;
+  text-align: left !important;
   vertical-align: middle !important;
   transition: background 0.2s ease !important;
 }
 
-/* =========================================================
-   PIVOT DÜZENİ: İKİ KOLONU "KAYNATIP" TEK KOLON YAPMA
-   ========================================================= */
 
-/* 1. BAŞLIKLARI GİZLEME (Üstteki KONV vs. bozulmasın diye [colspan] olanlar atlanır) */
-.reportTable th.headerCell:not([colspan]):nth-child(3n + 5) span,
-.reportTable th.headerCell:not([colspan]):nth-child(3n + 5) div,
-.reportTable th.headerCell:not([colspan]):nth-child(3n + 6) span,
-.reportTable th.headerCell:not([colspan]):nth-child(3n + 6) div {
-  font-size: 0 !important; 
-  color: transparent !important; 
-  display: none !important;
-}
-
-/* 2. ORTAK BAŞLIK YAZDIRMA (Sadece Green'in üstüne yazılır, Red'e taşar) */
-.reportTable th.headerCell:not([colspan]):nth-child(3n + 5)::after {
-  content: "REALIZED SPM" !important; 
-  font-size: 11px !important;
-  color: #0D1A63 !important;
-  display: block !important;
-}
-
-/* 3. GREEN KOLONU (SOL YARI) - Aradaki sağ çizgiyi sil, veriyi sağa daya */
-.reportTable td.rowCell:nth-child(3n + 5) {
-  color: #2E8B57 !important; 
-  font-weight: 700 !important;
-  border-right: 0 !important; 
-  padding-right: 1px !important;   
-  text-align: right !important;  
-}
-.reportTable th.headerCell:not([colspan]):nth-child(3n + 5) {
-  border-right: 0 !important;
-}
-
-/* 4. RED KOLONU (SAĞ YARI) - Aradaki sol çizgiyi sil, veriyi sola daya */
-.reportTable td.rowCell:nth-child(3n + 6) {
-  color: #b22222 !important; 
-  font-weight: 700 !important;
-  border-left: 0 !important; 
-  padding-left: 1px !important; 
-  text-align: left !important;  
-}
-.reportTable th.headerCell:not([colspan]):nth-child(3n + 6) {
-  border-left: 0 !important;
-}
-
-/* --- HOVER (ÜZERİNE GELİNCE) EFEKTLERİ --- */
 .reportTable tr:hover {
   transform: translateY(-2px) !important;
   box-shadow: 0 6px 12px rgba(148, 163, 184, 0.2) !important; 
@@ -101,7 +56,7 @@
   background: #f8fafc !important; 
 }
 
-/* --- KÖŞE YUVARLAMA VE DIŞ KENARLIKLAR --- */
+
 .reportTable td.rowCell:first-child {
   border-left: 3px solid #94a3b8 !important; 
   border-top-left-radius: 8px !important;
