@@ -16,6 +16,7 @@
 
 .viz-title { display: none !important; }
 
+/* --- BAŞLIKLAR --- */
 .reportTable .headerRow th,
 .reportTable th.headerCell,
 .reportTable th.headerCell div,
@@ -34,6 +35,7 @@
   border-bottom: 2px solid #94a3b8 !important; 
 }
 
+/* --- HÜCRE TEMEL STİLLERİ --- */
 .reportTable td.rowCell {
   background: #ffffff !important;
   border: none !important;
@@ -49,29 +51,21 @@
   transition: background 0.2s ease !important;
 }
 
-/* --- PIVOT DÜZENİ: RENKLENDİRME --- */
+/* --- PIVOT DÜZENİ: METİN RENKLENDİRME --- */
 
-/* RED (Kırmızı) Kolonları: 6, 10, 14, 18... */
-.reportTable td.rowCell:nth-child(4n + 6) {
-  color: #b22222 !important; 
-  font-weight: 700 !important;
-}
-
-/* GREEN (Yeşil) Kolonları: 7, 11, 15, 19... */
-.reportTable td.rowCell:nth-child(4n + 7) {
+/* GREEN (Yeşil) Kolonları: 7, 12, 17... (5n + 2) */
+.reportTable td.rowCell:nth-child(5n + 2) {
   color: #2E8B57 !important; 
   font-weight: 700 !important;
 }
 
-/* Eğer eski kodundaki gibi red/green başlık yazılarını gizlemek istersen bu bloğu açabilirsin:
-.reportTable th.headerCell:nth-child(4n + 6) span,
-.reportTable th.headerCell:nth-child(4n + 7) span {
-  font-size: 0 !important; 
-  color: transparent !important; 
-  pointer-events: none !important;
+/* RED (Kırmızı) Kolonları: 8, 13, 18... (5n + 3) */
+.reportTable td.rowCell:nth-child(5n + 3) {
+  color: #b22222 !important; 
+  font-weight: 700 !important;
 }
-*/
 
+/* Null veya boş değerleri gizleme */
 .reportTable td.rowCell:empty {
   display: none !important; 
   width: 0 !important;
@@ -80,6 +74,43 @@
 }
 .reportTable th.headerCell:empty {
   display: none !important;
+}
+
+/* --- SATIR ARKA PLAN RENKLENDİRMESİ (TÜM SATIRI BOYAMA) --- */
+
+/* Satırdaki herhangi bir "Green" kolonu doluysa satırı açık yeşil yap */
+.reportTable tr:has(td.rowCell:nth-child(5n + 2):not(:empty)) td.rowCell {
+  background: #f0fdf4 !important; 
+}
+
+/* Satırdaki herhangi bir "Red" kolonu doluysa satırı açık kırmızı yap. 
+   (Kırmızı öncelikli olduğu için kural altta) */
+.reportTable tr:has(td.rowCell:nth-child(5n + 3):not(:empty)) td.rowCell {
+  background: #fef2f2 !important; 
+}
+
+
+/* --- HOVER (ÜZERİNE GELİNCE) EFEKTLERİ --- */
+
+.reportTable tr:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 12px rgba(148, 163, 184, 0.2) !important; 
+  transition: all 0.2s ease !important;
+}
+
+/* Normal satır hover */
+.reportTable tr:hover td.rowCell {
+  background: #f8fafc !important; 
+}
+
+/* Yeşile boyalı satır hover */
+.reportTable tr:has(td.rowCell:nth-child(5n + 2):not(:empty)):hover td.rowCell {
+  background: #dcfce7 !important;
+}
+
+/* Kırmızıya boyalı satır hover */
+.reportTable tr:has(td.rowCell:nth-child(5n + 3):not(:empty)):hover td.rowCell {
+  background: #fee2e2 !important;
 }
 
 /* --- KÖŞE YUVARLAMA VE KENARLIKLAR --- */
@@ -92,27 +123,8 @@
   border-bottom: 1px solid #94a3b8 !important;
 }
 
-
 .reportTable td.rowCell:last-child {
   border-right: 1px solid #94a3b8 !important; 
   border-top-right-radius: 8px !important;
   border-bottom-right-radius: 8px !important;
 }
-
-
-
-.reportTable tr:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6px 12px rgba(148, 163, 184, 0.2) !important; 
-  transition: all 0.2s ease !important;
-}
-
-.reportTable tr:hover td.rowCell {
-  background: #f8fafc !important; 
-}
-
-
-.reportTable tr:has(td.rowCell:last-child:not(:empty)):hover td.rowCell {
-  background: #fef2f2 !important; 
-}
-
