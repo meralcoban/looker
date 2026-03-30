@@ -179,7 +179,7 @@ div#visContainer::before {
 
 .reportTable tr:nth-child(2),
 .reportTable tr:nth-child(3) {
-  background-color: #B4D3D9 !important;
-  border-left-color: #191970   !important;
+  background-color: #2E8B57 !important;
+  border-left-color: #96A78D   !important;
   box-shadow: 0 8px 20px rgba(218, 165, 32, 0.2) !important;
 }
