@@ -3,22 +3,23 @@
   display: block !important;
   background: transparent !important;
   border: none !important;
+  width: 100% !important;
 }
 
 .reportTable tbody {
   display: flex !important;
-  flex-direction: column !important; /* Kartları ALT ALTA dizer */
-  gap: 25px !important; /* Kartlar arasındaki dikey boşluk */
-  padding: 20px !important;
+  flex-direction: column !important; 
+  gap: 20px !important; 
+  padding: 10px !important;
   align-items: center !important;
+  width: 100% !important;
 }
 
 /* Her Bir Satır Yapısı */
 .reportTable tr {
   display: flex !important;
   flex-direction: column !important;
-  width: 100% !important; /* Paneli yatayda kaplaması için */
-  max-width: 1250px !important; /* Kartların çok fazla yayılmaması için sınır */
+  width: 100% !important; /* Satırı tam genişlik yap */
   background-color: transparent !important;
   border: none !important;
 }
@@ -29,69 +30,71 @@
   flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
-  width: 100% !important;
-  min-height: 200px !important; /* Kart yüksekliği */
-  border-radius: 20px !important;
-  padding: 30px !important;
-  position: relative !important;
-  box-sizing: border-box !important;
-  color: #ffffff !important;
-  font-family: 'Segoe UI', Roboto, sans-serif !important;
   
-  /* Yeşil Görünüm ve 3D Efekti */
+  /* Genişlik Ayarları - Taşmayı Önleyen Kısım */
+  width: 100% !important;
+  min-width: 250px !important; /* Çok küçülmesini engeller */
+  box-sizing: border-box !important;
+  
+  min-height: 160px !important; 
+  border-radius: 25px !important;
+  padding: 20px !important;
+  margin-bottom: 15px !important;
+  
+  color: #ffffff !important;
+  font-family: 'Arial Black', Gadget, sans-serif !important; /* Daha kalın font */
+  
+  /* Yeşil Görünüm */
   background: #00CD00 !important; 
-  border-left: 10px solid #00A300 !important;
-  box-shadow: 0 12px 0px #00A300, 0 20px 30px rgba(0,0,0,0.2) !important;
+  border-left: 8px solid #00A300 !important;
+  box-shadow: 0 10px 0px #00A300, 0 15px 25px rgba(0,0,0,0.2) !important;
+}
+
+/* --- Yazı Boyutları ve İçerik --- */
+.reportTable td::before {
+  font-size: 12px !important;
+  font-weight: bold !important;
   margin-bottom: 10px !important;
+  white-space: nowrap !important; /* Yazının tek satırda kalmasını sağlar */
 }
 
-/* --- 1. KART ÜST METNİ (Production TCT) --- */
+/* 1. KART DEĞERİ (1223) */
+.reportTable td:nth-child(1) {
+  font-size: 48px !important; /* Boyutu biraz küçülttük ki sığsın */
+  font-weight: 900 !important;
+}
 .reportTable td:nth-child(1)::before {
-  content: "[ TARGET : 1220 ] - [ TIME : J-1 ] - [ ACTION : ▲ ]";
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 15px;
-  letter-spacing: 1px;
+  content: "[ TARGET : 1220 ] - [ TIME : J-1 ]";
 }
-
-/* --- 2. KART ÜST METNİ (OEE) --- */
-.reportTable td:nth-child(2)::before {
-  content: "[ TARGET : 95% ] - [ TIME : J-1 ] - [ ACTION : ▲ ]";
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 15px;
-  letter-spacing: 1px;
-}
-
-/* Değerlerin Boyutu (1223 ve 97,1%) */
-.reportTable td {
-  font-size: 68px !important;
-  font-weight: 800 !important;
-  line-height: 1 !important;
-}
-
-/* Alt Metinler */
 .reportTable td:nth-child(1)::after {
   content: "PRODUCTION TCT";
-  font-size: 18px;
-  margin-top: 15px;
-  text-transform: uppercase;
+  font-size: 14px !important;
+  margin-top: 10px !important;
 }
 
+/* 2. KART DEĞERİ (97,1%) */
+.reportTable td:nth-child(2) {
+  font-size: 48px !important;
+  font-weight: 900 !important;
+}
+.reportTable td:nth-child(2)::before {
+  content: "[ TARGET : 95% ] - [ TIME : J-1 ]";
+}
 .reportTable td:nth-child(2)::after {
   content: "OEE";
-  font-size: 18px;
-  margin-top: 15px;
-  text-transform: uppercase;
+  font-size: 14px !important;
+  margin-top: 10px !important;
 }
 
 /* Temizlik */
 .reportTable thead, 
-.reportTable td.cellSeries,
-.reportTable .rowCell:empty {
+.reportTable .cellSeries,
+.reportTable td.cellSeries {
   display: none !important;
 }
 
+/* Orijinal hücre metnini (rowCell) gizle ya da karta yedir */
 .rowCell {
   color: white !important;
+  display: block !important;
 }
