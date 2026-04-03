@@ -8,9 +8,8 @@ div#visContainer::before {
   top: 10px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1000;
-  width: 90% !important;
-  
+  width: 70% !important;
+  margin-bottom: 25px;
   text-align: center; 
   font-size: 20px; 
   font-family: 'Roboto', sans-serif; 
