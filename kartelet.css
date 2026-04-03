@@ -18,7 +18,7 @@
   display: flex !important;
   flex-direction: column !important;
   width: 100% !important; /* Paneli yatayda kaplaması için */
-  max-width: 450px !important; /* Kartların çok fazla yayılmaması için sınır */
+  max-width: 1250px !important; /* Kartların çok fazla yayılmaması için sınır */
   background-color: transparent !important;
   border: none !important;
 }
