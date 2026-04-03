@@ -4,17 +4,25 @@
   background: transparent !important;
   border: none !important;
   width: 100% !important;
-  overflow: hidden !important; /* Scrollbar'ı tamamen öldürür */
+  overflow: hidden !important; 
 }
 
 .reportTable tbody {
   display: flex !important;
   flex-direction: column !important; 
-  gap: 12px !important; /* Boşluğu biraz daralttık */
-  padding: 5px !important; /* Dış boşluğu azalttık */
+  gap: 30px !important; /* KARTLAR ARASI BOŞLUK ARTIRILDI */
+  padding: 10px !important;
   align-items: center !important;
   width: 100% !important;
   box-sizing: border-box !important;
+}
+
+/* Üstteki Tooltip / Başlık Kısmını Gizleme */
+.reportTable thead, 
+.reportTable .rowCell:not(.measure),
+.reportTable .dimension,
+.reportTable tr:first-child:not(:has(.measure)) {
+  display: none !important;
 }
 
 /* Her Bir Satır */
@@ -26,73 +34,65 @@
   border: none !important;
 }
 
-/* Kart Tasarımı - Tam Sığma Ayarı */
+/* Kart Tasarımı */
 .reportTable td {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
   
-  width: 100% !important; /* Başlık genişliğine tam oturur */
-  min-width: unset !important; /* Sabit genişliği kaldırdık */
+  width: 100% !important;
+  min-width: unset !important;
   box-sizing: border-box !important;
   
-  min-height: 140px !important; /* Yüksekliği biraz optimize ettik */
+  min-height: 150px !important; 
   border-radius: 20px !important;
-  padding: 15px !important;
-  margin-bottom: 5px !important;
+  padding: 20px !important;
   
   color: #ffffff !important;
   font-family: 'Arial Black', Gadget, sans-serif !important;
   
   background: #00CD00 !important; 
-  border-left: 6px solid #00A300 !important;
-  box-shadow: 0 8px 0px #00A300, 0 10px 20px rgba(0,0,0,0.15) !important;
+  border-left: 8px solid #00A300 !important;
+  box-shadow: 0 10px 0px #00A300, 0 15px 25px rgba(0,0,0,0.2) !important;
 }
 
-/* --- Başlıkları Kartın İçine Sabitleme --- */
+/* Kart İçindeki Yazılar */
 .reportTable td::before {
-  font-size: 11px !important;
+  font-size: 12px !important;
   font-weight: bold !important;
-  margin-bottom: 8px !important;
+  margin-bottom: 10px !important;
   white-space: nowrap !important;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
 }
 
 /* 1. KART: PRODUCTION */
 .reportTable td:nth-child(1) {
-  font-size: 42px !important; /* Fontu sığması için bir tık küçülttük */
+  font-size: 48px !important;
 }
 .reportTable td:nth-child(1)::before {
   content: "[ TARGET : 1220 ] - [ TIME : J-1 ] - [ ACTION : ▲ ]";
 }
 .reportTable td:nth-child(1)::after {
   content: "PRODUCTION TCT";
-  font-size: 13px !important;
-  margin-top: 8px !important;
+  font-size: 14px !important;
+  margin-top: 10px !important;
 }
 
 /* 2. KART: OEE */
 .reportTable td:nth-child(2) {
-  font-size: 42px !important;
+  font-size: 48px !important;
 }
 .reportTable td:nth-child(2)::before {
-  /* Üstteki "OEE: 97,1%" metni yerine burayı kullanıyoruz */
   content: "[ TARGET : 95% ] - [ TIME : J-1 ] - [ ACTION : ▲ ]";
 }
 .reportTable td:nth-child(2)::after {
   content: "OEE";
-  font-size: 13px !important;
-  margin-top: 8px !important;
-}
-
-/* Üstteki bağımsız metni (OEE: 97,1%) gizlemek istersen: */
-/* Not: Bu metin bir rowCell içindeyse aşağıdaki kod çalışır */
-.reportTable .rowCell:not(.measure) {
-    display: none !important;
+  font-size: 14px !important;
+  margin-top: 10px !important;
 }
 
 /* Temizlik */
-.reportTable thead, .reportTable .cellSeries, .reportTable td.cellSeries {
+.reportTable .cellSeries, .reportTable td.cellSeries {
   display: none !important;
 }
