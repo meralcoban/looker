@@ -1,0 +1,99 @@
+/* Genel Tablo Yapısı */
+.reportTable {
+  display: block !important;
+  background: transparent !important;
+  border: none !important;
+  overflow: hidden !important;
+}
+
+.reportTable tbody {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 20px !important; 
+  padding: 40px 20px !important;
+  justify-content: center !important;
+}
+
+/* Her Bir Satırı Karta Dönüştürme */
+.reportTable tr {
+  display: flex !important;
+  flex-direction: row !important; /* Hücreleri yan yana veya alt alta dizmek için */
+  gap: 15px !important;
+  background-color: transparent !important; /* Arka planı hücrelere vereceğiz */
+  border: none !important;
+}
+
+/* Ortak Kart Tasarımı (Hücreler/TD'ler artık kartımız olacak) */
+.reportTable td {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 280px !important;
+  min-height: 180px !important;
+  border-radius: 15px !important;
+  padding: 20px !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+  color: #ffffff !important;
+  font-family: 'Segoe UI', Roboto, sans-serif !important;
+  /* Yeşil Gradyan ve Gölge (Görseldeki gibi) */
+  background: #00CD00 !important; 
+  border-left: 8px solid #00A300 !important;
+  box-shadow: 0 10px 0px #00A300, 0 15px 25px rgba(0,0,0,0.15) !important;
+}
+
+/* --- 1. KART: PRODUCTION TCT (İlk Sütun) --- */
+.reportTable td:nth-child(1)::before {
+  content: "[ TARGET : 1220 ] - [ TIME : J-1 ] - [ ACTION : ▲ ]";
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+
+.reportTable td:nth-child(1) {
+  font-size: 54px !important; /* Büyük rakam */
+  font-weight: 700 !important;
+}
+
+.reportTable td:nth-child(1)::after {
+  content: "PRODUCTION TCT";
+  font-size: 16px;
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+
+/* --- 2. KART: OEE (İkinci Sütun) --- */
+.reportTable td:nth-child(2)::before {
+  content: "[ TARGET : 95% ] - [ TIME : J-1 ] - [ ACTION : ▲ ]";
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+
+.reportTable td:nth-child(2) {
+  font-size: 54px !important;
+  font-weight: 700 !important;
+}
+
+.reportTable td:nth-child(2)::after {
+  content: "OEE";
+  font-size: 16px;
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+
+/* Gereksiz kısımları temizleme */
+.reportTable thead, 
+.reportTable .cellSeries,
+.reportTable td.cellSeries {
+  display: none !important;
+}
+
+.rowCell {
+  color: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+}
