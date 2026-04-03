@@ -12,32 +12,18 @@ div#visContainer::before {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  width: 90% !important; /* Genişliği panele göre ayarladık */
-  height: 60px; /* Başlığın yüksekliği sabitlendi */
+  width: 90% !important; 
+  height: 60px; 
   
-  /* Görsel Tasarım */
   background: linear-gradient(115deg, #191970 40%, #ADD8E6 100%);
   border-radius: 50px;
   box-shadow: 0 10px 15px -3px rgba(25, 25, 112, 0.5);
   
-  /* Logo Yerleşimi */
-  background-image: url(data:image/png;base64,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);
+  /* background-image: url(data:image/png;base64,.....); (Kendi kodunuzu buraya ekleyin) */
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
-
-/* 3. KARTLARI AŞAĞI İTEN BOŞLUK (KRİTİK KISIM) */
-.reportTable tbody {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 25px !important;
-  padding-top: 90px !important; /* BAŞLIĞIN ALTINDA KALMAMASI İÇİN */
-  padding-bottom: 20px !important;
-  align-items: center !important;
-  width: 100% !important;
-}
-
 
 /* Genel Tablo ve Scroll Engelleme */
 .reportTable {
@@ -48,11 +34,18 @@ div#visContainer::before {
   overflow: hidden !important; 
 }
 
+/* 3. BİRLEŞTİRİLMİŞ TBODY (KRİTİK KISIM) */
 .reportTable tbody {
   display: flex !important;
   flex-direction: column !important; 
-  gap: 30px !important; /* KARTLAR ARASI BOŞLUK ARTIRILDI */
-  padding: 10px !important;
+  gap: 30px !important; /* Kartlar arası boşluk */
+  
+  /* BAŞLIĞIN ALTINDA KALMAMASI İÇİN ÜST BOŞLUK (Banner boyu 60px + 30px ekstra) */
+  padding-top: 90px !important; 
+  padding-right: 10px !important;
+  padding-bottom: 20px !important;
+  padding-left: 10px !important;
+  
   align-items: center !important;
   width: 100% !important;
   box-sizing: border-box !important;
@@ -89,7 +82,7 @@ div#visContainer::before {
   min-height: 150px !important; 
   border-radius: 20px !important;
   padding: 20px !important;
-  margin-bottom: 25px !important;
+  margin-bottom: 25px !important; /* İsterseniz bunu sıfırlayıp sadece tbody'deki gap:30px'i kullanabilirsiniz */
   color: #ffffff !important;
   font-family: 'Arial Black', Gadget, sans-serif !important;
   
