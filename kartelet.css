@@ -3,97 +3,95 @@
   display: block !important;
   background: transparent !important;
   border: none !important;
-  overflow: hidden !important;
 }
 
 .reportTable tbody {
   display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 20px !important; 
-  padding: 40px 20px !important;
-  justify-content: center !important;
+  flex-direction: column !important; /* Kartları ALT ALTA dizer */
+  gap: 25px !important; /* Kartlar arasındaki dikey boşluk */
+  padding: 20px !important;
+  align-items: center !important;
 }
 
-/* Her Bir Satırı Karta Dönüştürme */
+/* Her Bir Satır Yapısı */
 .reportTable tr {
   display: flex !important;
-  flex-direction: row !important; /* Hücreleri yan yana veya alt alta dizmek için */
-  gap: 15px !important;
-  background-color: transparent !important; /* Arka planı hücrelere vereceğiz */
+  flex-direction: column !important;
+  width: 100% !important; /* Paneli yatayda kaplaması için */
+  max-width: 450px !important; /* Kartların çok fazla yayılmaması için sınır */
+  background-color: transparent !important;
   border: none !important;
 }
 
-/* Ortak Kart Tasarımı (Hücreler/TD'ler artık kartımız olacak) */
+/* Kart Tasarımı (Hücreler) */
 .reportTable td {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
-  min-width: 280px !important;
-  min-height: 180px !important;
-  border-radius: 15px !important;
-  padding: 20px !important;
+  width: 100% !important;
+  min-height: 200px !important; /* Kart yüksekliği */
+  border-radius: 20px !important;
+  padding: 30px !important;
   position: relative !important;
   box-sizing: border-box !important;
   color: #ffffff !important;
   font-family: 'Segoe UI', Roboto, sans-serif !important;
-  /* Yeşil Gradyan ve Gölge (Görseldeki gibi) */
+  
+  /* Yeşil Görünüm ve 3D Efekti */
   background: #00CD00 !important; 
-  border-left: 8px solid #00A300 !important;
-  box-shadow: 0 10px 0px #00A300, 0 15px 25px rgba(0,0,0,0.15) !important;
+  border-left: 10px solid #00A300 !important;
+  box-shadow: 0 12px 0px #00A300, 0 20px 30px rgba(0,0,0,0.2) !important;
+  margin-bottom: 10px !important;
 }
 
-/* --- 1. KART: PRODUCTION TCT (İlk Sütun) --- */
+/* --- 1. KART ÜST METNİ (Production TCT) --- */
 .reportTable td:nth-child(1)::before {
   content: "[ TARGET : 1220 ] - [ TIME : J-1 ] - [ ACTION : ▲ ]";
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   margin-bottom: 15px;
-  opacity: 0.9;
-}
-
-.reportTable td:nth-child(1) {
-  font-size: 54px !important; /* Büyük rakam */
-  font-weight: 700 !important;
-}
-
-.reportTable td:nth-child(1)::after {
-  content: "PRODUCTION TCT";
-  font-size: 16px;
-  margin-top: 10px;
   letter-spacing: 1px;
 }
 
-/* --- 2. KART: OEE (İkinci Sütun) --- */
+/* --- 2. KART ÜST METNİ (OEE) --- */
 .reportTable td:nth-child(2)::before {
   content: "[ TARGET : 95% ] - [ TIME : J-1 ] - [ ACTION : ▲ ]";
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   margin-bottom: 15px;
-  opacity: 0.9;
+  letter-spacing: 1px;
 }
 
-.reportTable td:nth-child(2) {
-  font-size: 54px !important;
-  font-weight: 700 !important;
+/* Değerlerin Boyutu (1223 ve 97,1%) */
+.reportTable td {
+  font-size: 68px !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+}
+
+/* Alt Metinler */
+.reportTable td:nth-child(1)::after {
+  content: "PRODUCTION TCT";
+  font-size: 18px;
+  margin-top: 15px;
+  text-transform: uppercase;
 }
 
 .reportTable td:nth-child(2)::after {
   content: "OEE";
-  font-size: 16px;
-  margin-top: 10px;
-  letter-spacing: 1px;
+  font-size: 18px;
+  margin-top: 15px;
+  text-transform: uppercase;
 }
 
-/* Gereksiz kısımları temizleme */
+/* Temizlik */
 .reportTable thead, 
-.reportTable .cellSeries,
-.reportTable td.cellSeries {
+.reportTable td.cellSeries,
+.reportTable .rowCell:empty {
   display: none !important;
 }
 
 .rowCell {
-  color: inherit !important;
-  font-size: inherit !important;
-  font-weight: inherit !important;
+  color: white !important;
 }
