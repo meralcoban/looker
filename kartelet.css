@@ -48,7 +48,7 @@
   min-height: 150px !important; 
   border-radius: 20px !important;
   padding: 20px !important;
-  
+  margin-bottom: 25px !important;
   color: #ffffff !important;
   font-family: 'Arial Black', Gadget, sans-serif !important;
   
@@ -68,28 +68,28 @@
 
 /* 1. KART: PRODUCTION */
 .reportTable td:nth-child(1) {
-  font-size: 48px !important;
+  font-size: 42px !important;
 }
 .reportTable td:nth-child(1)::before {
   content: "[ TARGET : 1220 ] - [ TIME : J-1 ] - [ ACTION : ▲ ]";
 }
 .reportTable td:nth-child(1)::after {
   content: "PRODUCTION TCT";
-  font-size: 14px !important;
-  margin-top: 10px !important;
+  font-size: 13px !important;
+  margin-top: 8px !important;
 }
 
 /* 2. KART: OEE */
 .reportTable td:nth-child(2) {
-  font-size: 48px !important;
+  font-size: 42px !important;
 }
 .reportTable td:nth-child(2)::before {
   content: "[ TARGET : 95% ] - [ TIME : J-1 ] - [ ACTION : ▲ ]";
 }
 .reportTable td:nth-child(2)::after {
   content: "OEE";
-  font-size: 14px !important;
-  margin-top: 10px !important;
+  font-size: 13px !important;
+  margin-top: 8px !important;
 }
 
 /* Temizlik */
