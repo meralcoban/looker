@@ -16,7 +16,6 @@
 
 .viz-title { display: none !important; }
 
-/* BAŞLIKLAR */
 .reportTable .headerRow th,
 .reportTable th.headerCell,
 .reportTable th.headerCell div,
@@ -35,14 +34,11 @@
   border-bottom: 2px solid #94a3b8 !important; 
 }
 
-/* TÜM HÜCRELER İÇİN ORTAK AYARLAR (Sadece Alt ve Üst Çizgi) */
 .reportTable td.rowCell {
   background: #ffffff !important;
-  padding: 8px 12px !important; /* Padding'i biraz toparladım */
+  padding: 1px 12px !important; 
   border-top: 1px solid #94a3b8 !important;    
   border-bottom: 1px solid #94a3b8 !important; 
-  border-left: none !important;
-  border-right: none !important;
   color: #1e293b !important; 
   font-family: 'Segoe UI', Roboto, sans-serif !important;
   font-size: 11px !important;
@@ -52,67 +48,147 @@
   transition: background 0.2s ease !important;
 }
 
-/* 1. SÜTUN (En Sol - Köşe Yuvarlatma) */
 .reportTable td.rowCell:first-child {
-  border-left: 2px solid #94a3b8 !important; 
-  border-top-left-radius: 8px !important;
-  border-bottom-left-radius: 8px !important;
+  border-top: 1px solid #94a3b8 !important;
+  border-bottom: 1px solid #94a3b8 !important;
 }
 
-/* SON SÜTUN (En Sağ - Köşe Yuvarlatma) */
+
 .reportTable td.rowCell:last-child {
   border-right: 1px solid #94a3b8 !important; 
   border-top-right-radius: 8px !important;
   border-bottom-right-radius: 8px !important;
 }
 
-/* 6. SÜTUN (Realized SPM - Eski 5. Sütun) */
 .reportTable td.rowCell:nth-child(6) {
   color: #2E8B57 !important; 
   font-weight: 700 !important;
 }
 
-/* 7. SÜTUN (Oklar/Durum - Eski 6. Sütun) */
 .reportTable td.rowCell:nth-child(7) {
   color: #b22222 !important; 
   font-weight: 700 !important;
 }
 
-/* 7. SÜTUN BAŞLIĞINI GİZLEME */
+
+
 .reportTable th.headerCell:nth-child(7),
 .reportTable th.headerCell:nth-child(7) div,
 .reportTable th.headerCell:nth-child(7) span {
   font-size: 0 !important; 
   color: transparent !important; 
   pointer-events: none !important;
+}
+
+
+
+.reportTable th.headerCell:nth-child(7) {
   border-bottom: none !important; 
 }
 
-/* BOŞ HÜCRELER (Tabloyu bozmaması için display:none yerine şeffaf yapıyoruz) */
+
+
+
+
+
+
+
+
+
+
 .reportTable td.rowCell:empty {
-  background: transparent !important;
+  display: none !important; 
+  width: 0 !important;
+  padding: 0 !important;
+  border: none !important;
 }
+
+
+
 .reportTable th.headerCell:empty {
   display: none !important;
 }
 
-/* HOVER EFEKTLERİ */
+
+
+
+
+
+
+.reportTable td.rowCell:first-child {
+  border-left: 3px solid #94a3b8 !important; 
+  border-top-left-radius: 8px !important;
+  border-bottom-left-radius: 8px !important;
+  border-top: 1px solid #94a3b8 !important;
+  border-bottom: 1px solid #94a3b8 !important;
+}
+
+.reportTable td.rowCell:nth-child(6) {
+  border-right: 1px solid #94a3b8 !important; 
+  border-top-right-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+}
+
+
+
+.reportTable td.rowCell:last-child {
+  border-right: 1px solid #94a3b8 !important; 
+  border-top-right-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+}
+
+
+
 .reportTable tr:hover {
   transform: translateY(-2px) !important;
   box-shadow: 0 6px 12px rgba(148, 163, 184, 0.2) !important; 
   transition: all 0.2s ease !important;
 }
 
+
 .reportTable tr:hover td.rowCell {
   background: #f8fafc !important; 
 }
 
-/* 6. Sütun doluysa yeşil hover */
+
+
+/*.reportTable tr:hover td.rowCell:nth-child(5) {
+
+
+
+  background: #dcfce7 !important; 
+
+
+
+}
+
+
+
+
+
+
+
+.reportTable tr:hover td.rowCell:last-child {
+
+
+
+  background: #fee2e2 !important; 
+
+
+
+}*/
+
+
+
+
+
+
+
 .reportTable tr:has(td.rowCell:nth-child(6):not(:empty)):hover td.rowCell {
   background: #f0fdf4 !important; 
 }
 
-/* Son Sütun doluysa kırmızı hover */
+
 .reportTable tr:has(td.rowCell:last-child:not(:empty)):hover td.rowCell {
   background: #fef2f2 !important; 
 }
