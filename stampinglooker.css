@@ -55,20 +55,6 @@
 
 }
 
-.reportTable td.rowCell:first-child {
-  border-left: 1px solid #94a3b8 !important; /* Sol çizgi */
-  border-top-left-radius: 8px !important;
-  border-bottom-left-radius: 8px !important;
-}
-
-
-
-.reportTable td.rowCell:last-child {
-  border-right: 1px solid #94a3b8 !important; /* Sağ çizgi */
-  border-top-right-radius: 8px !important;
-  border-bottom-right-radius: 8px !important;
-
-
 }
 
 .reportTable td.rowCell:nth-child(6) {
@@ -113,18 +99,6 @@
 
 
 
-.reportTable td.rowCell:empty {
-
-  display: none !important; 
-
-  width: 0 !important;
-
-  padding: 0 !important;
-
-  border: none !important;
-
-}
-
 .reportTable th.headerCell:empty {
 
   display: none !important;
@@ -141,9 +115,7 @@
 
   border-bottom-left-radius: 8px !important;
 
-  border-top: 1px solid #94a3b8 !important;
-
-  border-bottom: 1px solid #94a3b8 !important;
+  
 
 }
 
