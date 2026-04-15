@@ -1,135 +1,72 @@
 #tooltip, 
-
 .looker-vis-tooltip, 
-
 .vis-tooltip {
-
   display: none !important;
-
   visibility: hidden !important;
-
   opacity: 0 !important;
-
   pointer-events: none !important;
-
 }
 
 .reportTable {
-
   border-collapse: separate !important; 
-
-
-
   border-spacing: 0 6px !important; 
-
   background: transparent !important;
-
   border: none !important;
-
 }
-
-
 
 .viz-title { display: none !important; }
 
-
-
-
-
 .reportTable .headerRow th,
-
 .reportTable th.headerCell,
-
 .reportTable th.headerCell div,
-
 .reportTable th.headerCell span {
-
   text-align: left !important; 
-
   justify-content: flex-start !important; 
-
   align-items: center !important;
-
   margin: 0 !important; 
-
   padding: 8px 12px !important; 
-
   background: transparent !important;
-
   color: #0D1A63 !important; 
-
   font-size: 11px !important;
-
   font-weight: 700 !important;
-
   text-transform: uppercase !important; 
-
   border: none !important;
-
   border-bottom: 2px solid #94a3b8 !important; 
-
 }
 
-
-
-
-
+.reportTable th.headerCell {
+  border-bottom: 2px solid #94a3b8 !important;
+  padding-bottom: 10px !important;
+}
 .reportTable td.rowCell {
-
   background: #ffffff !important;
-
-  border: none !important;
-
-  
-
-
-
   padding: 1px 12px !important; 
-
-  
-
   border-top: 1px solid #94a3b8 !important;    
-
   border-bottom: 1px solid #94a3b8 !important; 
-
-  
-
+  border-left: none !important;
+  border-right: none !important;
   color: #1e293b !important; 
-
   font-family: 'Segoe UI', Roboto, sans-serif !important;
-
   font-size: 11px !important;
-
   font-weight: 500 !important;
-
-  
-
   text-align: left !important;
-
   vertical-align: middle !important;
-
   transition: background 0.2s ease !important;
 
 }
 
-
-
-
-
 .reportTable td.rowCell:first-child {
-
-
-
-  border-top: 1px solid #94a3b8 !important;
-
-  border-bottom: 1px solid #94a3b8 !important;
-
+  border-left: 1px solid #94a3b8 !important; /* Sol çizgi */
+  border-top-left-radius: 8px !important;
+  border-bottom-left-radius: 8px !important;
 }
 
 
 
 .reportTable td.rowCell:last-child {
-
+  border-right: 1px solid #94a3b8 !important; /* Sağ çizgi */
+  border-top-right-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
 
 
 }
@@ -214,15 +151,7 @@
 
 
 
-.reportTable td.rowCell:nth-child(5) {
 
-  border-right: 1px solid #94a3b8 !important; 
-
-  border-top-right-radius: 8px !important;
-
-  border-bottom-right-radius: 8px !important;
-
-}
 
 .reportTable td.rowCell:last-child {
 
