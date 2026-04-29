@@ -1,0 +1,12 @@
+/* Sınıf adı "ElementErrorContent__Container" ile başlayan div'i hedefle */
+div[class*="ElementErrorContent__Container"] span {
+    font-size: 0 !important;
+    visibility: hidden;
+}
+
+div[class*="ElementErrorContent__Container"] span::after {
+    content: "Özel mesajınız buraya gelecek.";
+    font-size: 14px;
+    visibility: visible;
+    display: block;
+}
