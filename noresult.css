@@ -1,12 +1,19 @@
-/* Sınıf adı "ElementErrorContent__Container" ile başlayan div'i hedefle */
-div[class*="ElementErrorContent__Container"] span {
-    font-size: 0 !important;
-    visibility: hidden;
+/* 1. Orijinal "No results" metnini görünmez yapıyoruz */
+.ElementErrorContent__Container-sc-wjno8i-0 span {
+    font-size: 0 !important; /* Mevcut metni DOM'dan silmeden ekrandan gizler */
+    visibility: hidden; 
 }
 
-div[class*="ElementErrorContent__Container"] span::after {
-    content: "Özel mesajınız buraya gelecek.";
-    font-size: 14px;
+/* 2. Yerine kendi özel mesajımızı ekliyoruz */
+.ElementErrorContent__Container-sc-wjno8i-0 span::after {
+    content: "Bu tarih aralığında / filtrede kayıt bulunamadı."; /* İstediğiniz metin */
+    font-size: 14px; /* Looker temanıza uygun boyutu ayarlayın */
+    color: #666666; /* Metin rengi */
     visibility: visible;
     display: block;
+}
+
+/* Opsiyonel: Uyarı ikonunu (yuvarlak içindeki ünlem/bilgi işareti) gizlemek isterseniz */
+.ElementErrorContent__Container-sc-wjno8i-0 div[role="img"] {
+    display: none !important;
 }
